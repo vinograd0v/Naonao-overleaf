@@ -92,7 +92,32 @@ de donde se sigue la equivalencia deseada.
   \setcounter{enumi}{3}
   \item Mostrar que la suma de los angulos interiores de un triangulo es $\pi$
 
-\textcolor{red}{Toca preguntarle al degenerado del Cesar}
+  Sean $z_1,z_2,z_3\in \mathbb{C}$ vertices de un triangulo cualquiera y $\theta_1,\theta_2,\theta_3\in[0,\pi)$ los respectivos angulos. Primero note que si trasladamos el triangulo tal que el vertice $z_1$ quede sobre el origen, los vertices del triangulo en sentido antihorario son $0,z_2-z_1$ y $z_3-z_1.$ donde el angulo entre estos dos vectores sigue siendo $\theta_1$ ya que trasladar no afecta los angulos. Recordemos que $e^{i\theta_1}$ rota a un vector a traves del origen el angulo $\theta_1$ en sentido antihorario, asi $(z_2-z_1)e^{i\theta_1}=r_1(z_3-z_1),$ donde $r_1$ es un factor de escalacion. Haciendo el mismo proceso para los verices $z_2$ y $z_3$ tenemos las siguientes ecuaciones
+  $$\begin{cases}
+    (z_2-z_1)e^{i\theta_1}=r_1(z_3-z_1),\\
+    (z_3-z_2)e^{i\theta_2}=r_2(z_1-z_2),\\
+    (z_1-z_3)e^{i\theta_3}=r_3(z_2-z_3).
+  \end{cases}$$
+  Luego 
+  $$\begin{cases}
+    e^{i\theta_1}=r_1\dfrac{z_3-z_1}{z_2-z_1},\\
+    e^{i\theta_2}=r_2\dfrac{z_1-z_2}{z_3-z_2},\\
+    e^{i\theta_3}=r_3\dfrac{z_2-z_3}{z_1-z_3}.
+  \end{cases}$$
+  Tomando el argumento principal en ambos lados de la ecuacion obtenemos
+  $$\begin{cases}
+    \theta_1=Arg\left(r_1\dfrac{z_3-z_1}{z_2-z_1}\right),\\
+    \theta_2=Arg\left(r_2\dfrac{z_1-z_2}{z_3-z_2}\right),\\
+    \theta_3=Arg\left(r_3\dfrac{z_2-z_3}{z_1-z_3}\right).
+  \end{cases}$$
+  Recordemos que el argumento del producto de dos complejos es igual a la suma de los argumentos, luego
+  \begin{align*}
+    \theta_1+\theta_2+\theta_3&=Arg\left(r_1\dfrac{z_3-z_1}{z_2-z_1}\right)+Arg\left(r_2\dfrac{z_1-z_2}{z_3-z_2}\right)+Arg\left(r_3\dfrac{z_2-z_3}{z_1-z_3}\right)\\
+    &=Arg\left(\left(r_1\dfrac{z_3-z_1}{z_2-z_1}\right)\left(r_2\dfrac{z_1-z_2}{z_3-z_2}\right)\left(r_3\dfrac{z_2-z_3}{z_1-z_3}\right)\right)\\
+    &=Arg(-r_1r_2r_3)\\
+    &=Arg(r_1r_2r_3e^{i\pi})\\
+    &=\pi
+  \end{align*}
 
   \item Mostrar que
 \end{enumerate}
@@ -128,7 +153,7 @@ $$
 $$
   \item $\cos 8 x+28 \cos 4 x+35=64\left(\cos ^{8} x+\sin ^{8} x\right)$\\
 
-\textcolor{red}{Qué es esta gran puta mierda??????????????}
+  Recordemos que $\sin^2x+\cos^2x=1,$ luego $\sin^4x+\cos^4x+2\sin^2x\cos^2x=1$ \textcolor{blue}{Luego sigo me dio pereza hacer esto :p}
 
 \end{itemize}
 

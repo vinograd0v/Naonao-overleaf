@@ -66,16 +66,64 @@ con $k\in \mathbb{Z}$
 
     \item Si en las expresiones del ejercicio (2) definimos $\cos z$, $\sin z$ reemplazando $\theta$ por $z$, mostrar que los ceros de $\cos z$ y $\sin z$ coinciden con los ceros de las funciones trigonométricas reales correspondientes.
 
+    \begin{proof}
+    Reemplazando $z$ en las ecuaciones anteriores obtenemos que
+
+    $$\frac{e^{iz}+e^{-iz}}{2}=\Re(e^{iz})=\Re(\cos(z)+i\sin(z))=cos(z)$$
+
+    análogamente $\displaystyle\frac{e^{iz}-e^{-iz}}{2i}=\sin(z)$, luego los ceros coinciden en ambas expreciones \textcolor{red}{depronto estoy  tirando burradas xd}
+    \end{proof}
+
     \item Probar que para $z \neq 1$, se tiene
     \[
-    1 + z + z^2 + \dots + z^n = \frac{z^{n+1} - 1}{z - 1}.
+    1 + z + z^2 + \dots + z^n = \dfrac{z^{n+1} - 1}{z - 1}.
     \]
+
+    \begin{proof}
+    Supongamos que usted ya vió integración y series, entonces
+
+    $$S(n)=\sum_{k=0}^{n} z^k=1+zS(n)-z^{n+1},$$
+
+    así $S(n)-zS(n)=1-z^{n+1}$, esto es $S(n)=\dfrac{1-z^{n+1}}{1-z}$ y fecho. 
+    \end{proof}
 
     \item Tomando la parte real del ejercicio precedente, probar
     \[
     1 + \cos \theta + \cos(2\theta) + \dots + \cos(n\theta) = \frac{1}{2} + \frac{\sin\left((n + \frac{1}{2})\theta\right)}{2 \sin\left(\frac{\theta}{2}\right)},
     \]
-    para $0 < \theta < 2\pi$.
+    para $0 < \theta < 2\pi$.\\
+
+    \textcolor{red}{En este punto voy a usar exp para denotar la exponencial porque si no se vería horrible}
+
+    \begin{proof}
+    Note que si tomamos $|z|=1$, entonces $z=exp(i\theta)$, de esto se sigue que
+
+    $$\Re\left(\sum_{k=0}^{n} z^k\right)=\sum_{k=0}^{n} \Re(z^k)=\sum_{k=0}^{n}cos(kn)$$
+
+    por el punto anterior también tenemos que
+
+    \begin{align*}
+      \Re\left(\sum_{k=0}^{n} z^k\right)&=\Re\left(\frac{z^{n+1}-1}{z-1}\right)\\
+      &=\Re\left(\frac{exp\left(i(n+1)\theta)\right) -1}{exp(i\theta)-1}\right)\\
+      &=\Re\left(\frac{exp(i(n+1)\theta/2)}{exp(i\theta/2)}\frac{exp(-i(n+1)\theta/2)-exp(i(n+1)\theta/2)}{exp(-i\theta/2)-exp(i\theta/2)}\right)
+    .\end{align*}
+
+   Note que el último término de la derecha  de puede escribir como
+
+   $$\Re\left(exp(in\theta/2)\frac{\sin\left((n+1)\theta/2\right)}{\sin(\theta/2)}\right)=\cos(n\theta/2)\frac{\sin((n+1)\theta/2)}{\sin(\theta/2)},$$
+
+   además
+   
+   $$
+\begin{aligned}
+\cos \left(\frac{n \theta}{2}\right) \sin \left(\frac{(n+1) \theta}{2}\right)&=\frac{1}{2}\left(\sin \left(\frac{\theta n}{2}+\frac{\theta(n+1)}{2}\right)+\sin \left(\frac{\theta(n+1)}{2}-\frac{n \theta}{2}\right)\right. \\
+& =\frac{1}{2}\left(\sin \left(\frac{\theta(2 n+1)}{2}\right)+\sin \left(\frac{\theta}{2}\right)\right) \\
+& =\frac{1}{2} \sin \left(\theta\left(1+\frac{1}{2}\right)\right)+\frac{1}{2} \sin \left(\frac{\theta}{2}\right),
+\end{aligned}
+$$
+dividiendo entre $\sin\left(\displaystyle\frac{\theta}{2}\right)$ fecho.
+
+    \end{proof}
 
     \item Sea $|a| < 1$. Probar: $1 - \left| \frac{z + a}{1 + \overline{a}z} \right|$ tiene el mismo signo que $1 - |z|$.
 

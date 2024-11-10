@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.10)  10 NOV 2024 09:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.10)  10 NOV 2024 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,12 +631,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 34.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 62.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
 /enc/dvips/newtx/ntx-ec-tlf.enc}]
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 84.
+(Font)              scaled to size 10.95pt on input line 92.
  [2] (./main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -651,10 +655,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7452 strings out of 476014
- 114645 string characters out of 5792004
+ 7454 strings out of 476014
+ 114675 string characters out of 5792004
  1937187 words of memory out of 5000000
- 29436 multiletter control sequences out of 15000+600000
+ 29438 multiletter control sequences out of 15000+600000
  588643 words of font info for 81 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  80i,8n,93p,419b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -666,7 +670,7 @@ ts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share
 /texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type
 1/public/newpx/zplri.pfb>
-Output written on main.pdf (2 pages, 124880 bytes).
+Output written on main.pdf (2 pages, 125758 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream

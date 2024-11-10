@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{newpxtext,euler}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},
+ left=20mm,
+ top=30mm,
+ }
+\pagestyle{empty}
+
+\title{Taller II}
+
+\author{Bourbaki}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Mostrar que si $e^z = e^w$ entonces existe un entero $k$ tal que $w = z + 2k\pi i$.\\
+
+    \begin{proof}
+    Supongamos que $e^z=e^w$, $z=a+bi$, $w=c+di$, entonces
+
+    $$e^{a}e^{bi}=e^{c}e^{di},$$
+
+    es claro que $|e^z|=|e^w|$ y por tanto $e^a=e^c$, por la inyectividad de la exponencial $a=c$, además $e^{bi}=e^{di}$, esto es
+
+    $$\cos(b)+i\sin(b)=\cos(d)+i\sin(d),$$ 
+
+    como estas ecuaciones determinan un único punto en la circúnferencia, entonces $(d-b)=2\pi k$, $k\in \mathbb{Z}$, por lo tanto
+
+    \begin{align*}
+      w-z&=c+di-a-bi\\
+        &=a-a+i(d-b)\\
+        &=i(2\pi k)
+    ,\end{align*}
+
+con $k\in \mathbb{Z}$
+
+    \end{proof}
+
+    \item Si $\theta$ es real, mostrar que
+    \[
+    \cos \theta = \frac{e^{i \theta} + e^{-i \theta}}{2}, \quad \sin \theta = \frac{e^{i \theta} - e^{-i \theta}}{2i}.
+    \]
+
+    \item Si en las expresiones del ejercicio (2) definimos $\cos z$, $\sin z$ reemplazando $\theta$ por $z$, mostrar que los ceros de $\cos z$ y $\sin z$ coinciden con los ceros de las funciones trigonométricas reales correspondientes.
+
+    \item Probar que para $z \neq 1$, se tiene
+    \[
+    1 + z + z^2 + \dots + z^n = \frac{z^{n+1} - 1}{z - 1}.
+    \]
+
+    \item Tomando la parte real del ejercicio precedente, probar
+    \[
+    1 + \cos \theta + \cos(2\theta) + \dots + \cos(n\theta) = \frac{1}{2} + \frac{\sin\left((n + \frac{1}{2})\theta\right)}{2 \sin\left(\frac{\theta}{2}\right)},
+    \]
+    para $0 < \theta < 2\pi$.
+
+    \item Sea $|a| < 1$. Probar: $1 - \left| \frac{z + a}{1 + \overline{a}z} \right|$ tiene el mismo signo que $1 - |z|$.
+
+    \item Identifique las siguientes regiones:
+    \begin{enumerate}
+        \item $|z - i| \leq 1$.
+        \item $|z - 1| > |z - 3|$.
+        \item $\dfrac{1}{z} = \overline{z}$.
+        \item $|z^2 - 1| < 1$.
+        \item $\left| \dfrac{z - 1}{z + 1} \right| = 1$.
+        \item $|z|^2 = \operatorname{Im}(z)$.
+    \end{enumerate}
+
+    \item \textbf{Definición 1}: Un conjunto se dice conexo si dados dos puntos diferentes en el conjunto, estos se pueden unir por una poligonal (formada por un número finito de segmentos rectos) contenida en el conjunto. Si además el conjunto es abierto, se le llama entonces \textit{Dominio}.
+
+    \textbf{Definición 2}: Un punto $w \in S \subset \mathbb{C}$, se dice es de acumulación si todo $D(w; r) \setminus \{w\}$, $r > 0$ contiene al menos un punto de $S$ (en particular, contiene infinitos puntos de $S$). Clasifique los conjuntos siguientes según sean abiertos, cerrados, acotados, conexos, dominios; encontrar además sus puntos de acumulación y de adherencia.
+    \begin{enumerate}
+        \item $|z - 1| < 1$.
+        \item $|\operatorname{Im}(z)| < 3$.
+        \item $|z + i| + |z - i| = 1$.
+        \item $0 < |z| < 2$.
+        \item $0 < \arg(z) < \frac{\pi}{6}$.
+        \item $\operatorname{Re}(z^2) \geq 0$.
+        \item $\operatorname{Re}(z - i \overline{z}) \geq 0$.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

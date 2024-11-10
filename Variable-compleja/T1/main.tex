@@ -204,8 +204,31 @@ $$\Re(z)=\Re\left(\frac{a-bi-1}{(a-1)^2+b^2}\right)=\frac{a-1}{(a-1)^2+b^2}=\fra
 \end{enumerate}
 
 $$
-z_{k}=i \tan \frac{(2 k+1) \pi}{4 n} n \in \mathbb{Z}^{+}, \quad k=0,1,2, \ldots
+z_{k}=i \tan \frac{(2 k+1) \pi}{4 n}, n \in \mathbb{Z}^{+}, \quad k=0,1,2, \ldots
 $$
+
+Note que podemos escribir la ecuación de la forma
+
+$$\left(\frac{1+z}{1-z}\right)^{2n}=-1=e^{i\pi}$$
+
+tomando $w=\dfrac{1+z}{1-z}$, vemos que $w-zw=1+z$, entonces $w-1=z(1+w)$, esto es
+
+\begin{align*}
+   z&=\frac{w-1}{w+1}\\
+   &=\frac{w-1}{w+1}\frac{\overline{w}+1}{\overline{w}+1}\\
+   &=\frac{w\overline{w}+w-\overline{w}
+     -1}{w \overline{w}+w+\overline{w}+1}
+ .\end{align*} 
+
+Es claro que $|w|=1$, entonces
+
+\begin{align*}
+  z=\frac{w-\overline{w}}{2+w+\overline{w}}\frac{2iIm(w)}{2(1+\Re(w))}=\frac{iIm(w)}{1+\Re(w)}
+.\end{align*}
+
+Note que $w_k=exp\left(i \displaystyle\frac{\pi(2k+1)}{2n}\right)$, $k=0,1,\ldots$, entonces:
+
+$$z_k=i\frac{\sin(\theta_k)}{1+cos(\theta_k)}=i\tan\left(\frac{\theta_k}{2}\right)=i\tan\left(\frac{\pi(2k+1)}{4n}\right)$$
 
 \begin{enumerate}
   \setcounter{enumi}{9}

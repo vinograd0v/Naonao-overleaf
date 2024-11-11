@@ -96,9 +96,9 @@ con $k\in \mathbb{Z}$
     \textcolor{red}{En este punto voy a usar exp para denotar la exponencial porque si no se vería horrible}
 
     \begin{proof}
-    Note que si tomamos $|z|=1$, entonces $z=exp(i\theta)$, de esto se sigue que
+    Note que si tomamos $|z|=1$, evidentemente $z\neq 1$, entonces $z=exp(i\theta)$, de esto se sigue que
 
-    $$\Re\left(\sum_{k=0}^{n} z^k\right)=\sum_{k=0}^{n} \Re(z^k)=\sum_{k=0}^{n}cos(kn)$$
+    $$\Re\left(\sum_{k=0}^{n} z^k\right)=\sum_{k=0}^{n} \Re(z^k)=\sum_{k=0}^{n}cos(k\\theta)$$
 
     por el punto anterior también tenemos que
 
@@ -125,16 +125,91 @@ dividiendo entre $\sin\left(\displaystyle\frac{\theta}{2}\right)$ fecho.
 
     \end{proof}
 
-    \item Sea $|a| < 1$. Probar: $1 - \left| \frac{z + a}{1 + \overline{a}z} \right|$ tiene el mismo signo que $1 - |z|$.
+    \item Sea $|a| < 1$. Probar: $1 - \left| \dfrac{z + a}{1 + \overline{a}z} \right|$ tiene el mismo signo que $1 - |z|$.
+
+    \begin{proof}
+    Las cuentas de la tricotomía las irá a hacer su puta madre, eso sin pérdida de generalidad pille este caso y los demás son análogos:
+
+    $$
+\begin{aligned}
+& 0<|z+a|^2-|1+\bar{a} z|^2 \\
+&=(z+a)(\bar{z}+\bar{a})-(1+\bar{a} z)(1+a \bar{z}) \\
+&=|z|^2+|a|^2+2 \Re(a \bar{z})-1-|a z|^2-2 \Re(\bar{a} z) \\
+&=|z|^2-1-|a z|^2+|a|^2 \\
+&=|z|^2\left(1-|a|^2\right)-1+|a|^2 \\
+&=\left(|z|^2-1\right)\left(1-|a|^2\right) \\
+&=\left(|z|-1\right)(|z|+1)\left(1-|a|^2\right),
+\end{aligned}
+$$
+
+como $(1-|a|^2)>0$ fecho.
+
+    \end{proof}
 
     \item Identifique las siguientes regiones:
     \begin{enumerate}
         \item $|z - i| \leq 1$.
-        \item $|z - 1| > |z - 3|$.
-        \item $\dfrac{1}{z} = \overline{z}$.
-        \item $|z^2 - 1| < 1$.
-        \item $\left| \dfrac{z - 1}{z + 1} \right| = 1$.
-        \item $|z|^2 = \operatorname{Im}(z)$.
+
+        \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.8]{R1.eps}
+         \end{figure} 
+
+         En este caso es claro que eso era  una bola.
+
+        \item $|z - 1| > |z - 3|$.\\
+
+        Para este caso primero debemos hacer unas cuentas, note que se puede reescribir la desigualdad como $(z-1)(z-1)>(z-3)(z-3)$, haciendo cositas se llega a que
+
+        $$|z|^2-2 \Re(z)+1^2>|z|^2-6 \Re(z)+9 $$
+
+        de esto se sigue que la región es el semiplano $\Re(z)>2$
+
+         \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.8]{R2.eps}
+         \end{figure} 
+
+        \item $\dfrac{1}{z} = \overline{z}$.\\
+
+        Este se hizo en clase, usted llega y dice $z \overline{z}=1=|z|$ y fecho, eso le da el círculo unitario\\
+
+         \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.8]{R3.eps}
+         \end{figure}
+
+        \item $|z^2 - 1| < 1$.\\
+
+        Esta es coya porque toca saber parametrizar una vaina que no me acuerdo cómo se llama pero el Sergio me dijo el nombre xd
+
+
+         \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.8]{R4.eps}
+         \end{figure}
+
+        \item $\left| \dfrac{z - 1}{z + 1} \right| = 1$.\\
+
+        Este caso es fácil porque uno llega y se da cuenta que $|z-1|=|z-(-1)|$, esto dice que la distancia al $1$ y al $-1$ debe ser igual, eso solo nos deja el caso $\Re(z)=0$, los complejos en esa recta vertical por simetría.\\
+
+        \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.8]{R5.eps}
+         \end{figure}
+
+        Ahí medio se ve la verdad... Además imaginese que eso va de $-\infty$ a $\infty$ porque no supe programar eso.
+        \item $|z|^2 = \operatorname{Im}(z)$.\\
+
+        Esta anda  coya y toca  preguntarle a Cesar, en especial porque no sabemos cómo dibujar eso. Con Sergio hicimos esto, sea $z=a+bi$, entonces nos queda
+
+        $$|z|^2 =a^2+b^2=b.$$
+
+        Si usted usa la chicharronera le queda que
+
+        $$ b =\frac{1 \pm \sqrt{2-4 a^2}}{2},$$
+
+        y ahí ya se putea la cosa
     \end{enumerate}
 
     \item \textbf{Definición 1}: Un conjunto se dice conexo si dados dos puntos diferentes en el conjunto, estos se pueden unir por una poligonal (formada por un número finito de segmentos rectos) contenida en el conjunto. Si además el conjunto es abierto, se le llama entonces \textit{Dominio}.
@@ -142,11 +217,29 @@ dividiendo entre $\sin\left(\displaystyle\frac{\theta}{2}\right)$ fecho.
     \textbf{Definición 2}: Un punto $w \in S \subset \mathbb{C}$, se dice es de acumulación si todo $D(w; r) \setminus \{w\}$, $r > 0$ contiene al menos un punto de $S$ (en particular, contiene infinitos puntos de $S$). Clasifique los conjuntos siguientes según sean abiertos, cerrados, acotados, conexos, dominios; encontrar además sus puntos de acumulación y de adherencia.
     \begin{enumerate}
         \item $|z - 1| < 1$.
+
+        
+
         \item $|\operatorname{Im}(z)| < 3$.
+        
+
+
         \item $|z + i| + |z - i| = 1$.
+
+
+
         \item $0 < |z| < 2$.
+        
+
+
         \item $0 < \arg(z) < \frac{\pi}{6}$.
+        
+
+
         \item $\operatorname{Re}(z^2) \geq 0$.
+        
+
+
         \item $\operatorname{Re}(z - i \overline{z}) \geq 0$.
     \end{enumerate}
 \end{enumerate}

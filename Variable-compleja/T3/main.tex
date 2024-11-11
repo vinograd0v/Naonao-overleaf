@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{newpxtext,euler}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},
+ left=20mm,
+ top=30mm,
+ }
+\pagestyle{empty}
+
+\title{Taller II}
+
+\author{Bourbaki}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{enumerate}
+    \item Demuestre que \( A \subset \mathbb{C} \) es compacto si y solo si es acotado y cerrado.
+
+    \item Sea \( K \subset \mathbb{C} \) compacto. Sean \( K_1 \supseteq K_2 \supseteq K_3 \supseteq \cdots \) una sucesión de subconjuntos de \( K \) no vacíos, tales que \( K_n \supseteq K_{n+1} \). Demostrar que la intersección de todos los \( K_n, n = 1, 2, 3, \ldots \) es no vacía.
+
+    \item (*) Encontrar la imagen de las regiones:
+    \[
+    1 < | \operatorname{Im}(z) | \leq 2
+    \]
+    \[
+    |z| < 1
+    \]
+    bajo las aplicaciones:
+    \begin{enumerate}
+        \item \( f(z) = z^2 \)
+        \item \( f(z) = \dfrac{2z + i}{z + 1} \)
+    \end{enumerate}
+
+    \item (*) Sea \( f(z) = \dfrac{z - i}{z + i} \), hallar la imagen por \( f \) de:
+    \begin{enumerate}
+        \item El semiplano superior.
+        \item La semirecta \( it; t \geq 0 \).
+        \item La recta \( it; t \in \mathbb{R} \).
+        \item \( |z - 1| = 1 \).
+        \item \( |z| = 2; \operatorname{Im}(z) \geq 0 \).
+    \end{enumerate}
+
+    \item Sea \( A = \{ z \in \mathbb{C} : -\infty < \operatorname{Im}(z) \leq \alpha \} \). Si \( f(z) = e^z \), hallar \( f(A) \).
+
+    \item Sea \( A = \{ z \in \mathbb{C} : |\operatorname{Re}(z)| < \frac{\pi}{2}, \operatorname{Im}(z) > 0 \} \). Si \( f(z) = \sin(z) \), hallar \( f(A) \).
+
+    \item Determine completamente la proyección estereográfica (que lleva la esfera de Riemann en el plano complejo). Es decir, hallar explícitamente \( T \) y \( T^{-1} \).
+
+    \item Demostrar que la proyección estereográfica preserva círculos. La imagen directa o inversa de una circunferencia es una circunferencia.
+\end{enumerate}
+
+\end{document}

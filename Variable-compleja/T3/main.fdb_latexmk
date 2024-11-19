@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1732024974.73495 "main.tex" "main.pdf" "main" 1732024975.8165 0
+["pdflatex"] 1732025540.62069 "main.tex" "main.pdf" "main" 1732025541.84619 0
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1727349926 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1727349926 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -172,8 +172,8 @@
   "P3-1.eps" 1731978713.83076 31333 a0903da171ff95395dbdb1fe204b112a ""
   "P3-2.eps" 1731979809.89904 118680 4085276c74be8c901bc6a41048e97e39 ""
   "S1.eps" 1731981275.84723 88131 989b64db8ed16fdd387d930bf5b57b36 ""
-  "main.aux" 1732024975.61139 194 9335a9ca55a386f3840326f93434c5bf "pdflatex"
-  "main.tex" 1732024974.52472 12081 5162e8137687fcaedb0a3a341a66f38c ""
+  "main.aux" 1732025541.64397 194 9335a9ca55a386f3840326f93434c5bf "pdflatex"
+  "main.tex" 1732025540.39062 12082 3a735da54cb116f4d4c9cd74a8708b8d ""
   (generated)
   "main.aux"
   "main.log"

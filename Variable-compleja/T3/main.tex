@@ -32,7 +32,14 @@
     \item Demuestre que \( A \subset \mathbb{C} \) es compacto si y solo si es acotado y cerrado.
 
     \begin{proof}
-    xd
+    Supongamos que $A$ es compacto, si $A$ no es acotado entonces para todo $n\in \mathbb{N}$, existe $z_n\in A$ tal que $|z_n|>n$, por tanto $\{z_n\}$ no tiene punto de acumulación ya que... suponga que $z_0$ es un punto de acumulación, sea $m>2|z_0|$, es claro que $|z_0|>0$ ya que en caso contrario $z_0=0$, así pues $|z_n-z_0|=|z_n|>n$ y por lo tanto $z_0$ no sería punto de acumulación. En este caso $|z_m-z_0|\geq |z_m|-|z_0|>2|z_0|-|z_0|=|z_0|$, contradice que ese coso es punto límite. Entonces es acotado.\\
+
+    Sea $z_0\in \overline{A}$, dado $n$, existe $z_n\in A$ tal que $|z_n-z_0|<\dfrac{1}{n}$, así $\{z_n\}$ converge a $z_0$. Como $A$ es compacto existe una subsucesión convergente en A, es claro que este límite debe ser $z_0$, así $z_0\in A$, con lo cual $A$ es cerrado.\\
+
+    El recíproco tengo pereza
+
+
+
     \end{proof}
 
     \item Sea \( K \subset \mathbb{C} \) compacto. Sean \( K_1 \supseteq K_2 \supseteq K_3 \supseteq \cdots \) una sucesión de subconjuntos de \( K \) no vacíos, tales que \( K_n \supseteq K_{n+1} \). Demostrar que la intersección de todos los \( K_n, n = 1, 2, 3, \ldots \) es no vacía.\\

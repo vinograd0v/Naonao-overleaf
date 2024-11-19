@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.10)  18 NOV 2024 20:58
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.18)  18 NOV 2024 17:23
->>>>>>> 2ca328c7edfc6b7ee866b86420fcc4855590d920
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.10)  18 NOV 2024 21:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,7 +627,17 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/up' will be
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 35.
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
@@ -643,13 +649,17 @@ Package epstopdf Info: Source file: <P3-1.eps>
 (epstopdf)                    size: 12256 bytes
 (epstopdf)             Command: <repstopdf --outfile=P3-1-eps-converted-to.pdf 
 P3-1.eps>
-(epstopdf)             \includegraphics on input line 47.
+(epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 <P3-1-eps-converted-to.pdf, id=1, 260.975pt x 258.9675pt>
 File: P3-1-eps-converted-to.pdf Graphic file (type pdf)
 <use P3-1-eps-converted-to.pdf>
-Package pdftex.def Info: P3-1-eps-converted-to.pdf  used on input line 47.
+Package pdftex.def Info: P3-1-eps-converted-to.pdf  used on input line 54.
 (pdftex.def)             Requested size: 208.78027pt x 207.17426pt.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
+/enc/dvips/newtx/ntx-ec-tlf.enc}]
 Package epstopdf Info: Source file: <P3-2.eps>
 (epstopdf)                    date: 2024-11-18 20:30:09
 (epstopdf)                    size: 118680 bytes
@@ -658,21 +668,19 @@ Package epstopdf Info: Source file: <P3-2.eps>
 (epstopdf)                    size: 26661 bytes
 (epstopdf)             Command: <repstopdf --outfile=P3-2-eps-converted-to.pdf 
 P3-2.eps>
-(epstopdf)             \includegraphics on input line 54.
+(epstopdf)             \includegraphics on input line 61.
 Package epstopdf Info: Output file is already uptodate.
-<P3-2-eps-converted-to.pdf, id=2, 260.975pt x 252.945pt>
+<P3-2-eps-converted-to.pdf, id=15, 260.975pt x 252.945pt>
 File: P3-2-eps-converted-to.pdf Graphic file (type pdf)
 <use P3-2-eps-converted-to.pdf>
-Package pdftex.def Info: P3-2-eps-converted-to.pdf  used on input line 54.
+Package pdftex.def Info: P3-2-eps-converted-to.pdf  used on input line 61.
 (pdftex.def)             Requested size: 208.78027pt x 202.35626pt.
-[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
-/enc/dvips/newtx/ntx-ec-tlf.enc} <./P3-1-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
+[2 <./P3-1-eps-converted-to.pdf> <./P3-2-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <S1.eps>
 (epstopdf)                    date: 2024-11-18 20:54:35
 (epstopdf)                    size: 88131 bytes
@@ -681,19 +689,19 @@ Package epstopdf Info: Source file: <S1.eps>
 (epstopdf)                    size: 18858 bytes
 (epstopdf)             Command: <repstopdf --outfile=S1-eps-converted-to.pdf S1
 .eps>
-(epstopdf)             \includegraphics on input line 75.
+(epstopdf)             \includegraphics on input line 82.
 Package epstopdf Info: Output file is already uptodate.
-<S1-eps-converted-to.pdf, id=28, 255.95625pt x 250.9375pt>
+<S1-eps-converted-to.pdf, id=41, 255.95625pt x 250.9375pt>
 File: S1-eps-converted-to.pdf Graphic file (type pdf)
 <use S1-eps-converted-to.pdf>
-Package pdftex.def Info: S1-eps-converted-to.pdf  used on input line 75.
+Package pdftex.def Info: S1-eps-converted-to.pdf  used on input line 82.
 (pdftex.def)             Requested size: 220.12198pt x 215.80586pt.
-[2 <./P3-2-eps-converted-to.pdf> <./S1-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-[3] (./main.aux
+[3 <./S1-eps-converted-to.pdf>] (./main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -707,13 +715,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7464 strings out of 476014
- 115087 string characters out of 5792004
- 1932187 words of memory out of 5000000
- 29449 multiletter control sequences out of 15000+600000
+ 7467 strings out of 476014
+ 115137 string characters out of 5792004
+ 1934187 words of memory out of 5000000
+ 29452 multiletter control sequences out of 15000+600000
  585820 words of font info for 80 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 80i,7n,93p,323b,435s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,7n,93p,554b,435s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/pu
@@ -722,7 +730,7 @@ ts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eu
 sm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist
 /fonts/type1/public/newpx/zplri.pfb>
-Output written on main.pdf (3 pages, 147366 bytes).
+Output written on main.pdf (3 pages, 149088 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream

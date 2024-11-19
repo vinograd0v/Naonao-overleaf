@@ -67,11 +67,31 @@ con $k\in \mathbb{Z}$
     \item Si en las expresiones del ejercicio (2) definimos $\cos z$, $\sin z$ reemplazando $\theta$ por $z$, mostrar que los ceros de $\cos z$ y $\sin z$ coinciden con los ceros de las funciones trigonométricas reales correspondientes.
 
     \begin{proof}
-    Reemplazando $z$ en las ecuaciones anteriores obtenemos que
+    Escribimos $z=a+bi$ e igualamos a 0, así, para el seno tenemos:
+    \begin{align*}
+    \sin{z}=\dfrac{e^{iz}-e^{-iz}}{2i}&=0\\
+    e^{i(a+bi)}-e^{-i(a+bi)}&=0\\
+    e^{-b+ai}-e^{b-ai}&=0\\ 
+    e^{-b+ai}=e^{b-ai}\\ 
+    e^{-b}e^{ai}&=e^{b}e^{-ai}\\ 
+    e^{2ai}&=e^{2b}
+    \end{align*}
+    
+    Como $|e^{2ai}|=|e^2b|=1$ y además $2b$ es un número real, tenemos que $e^2b=1$ y por la inyectividad de la exponencial en los reales, $b=0$, luego resolvemos la ecuación
+    \[
+    e^{2ai}=1
+    \]
+    Es decir \[
+    e^{ai}=\pm 1
+    \]
+    Si hace las cuentas va a ver que los ceros de esa vaina son el conjunto $A=\{\theta\in\mathbb{R}: \theta=k\pi, k\in\mathbb{Z}\}$.
 
-    $$\frac{e^{iz}+e^{-iz}}{2}=\Re(e^{iz})=\Re(\cos(z)+i\sin(z))=cos(z)$$
+    Para el coseno la cuenta es basicamente la misma pero la ecuación al final es
+    \[
+    e^{2ai}=-e^{2b}
+    \]
+    Y pues resolviendo de la misma manera se llega a que los ceros son el conjunto $B=\{\theta\in\mathbb{R}:\theta=\frac{\pi}{2}+k\pi, k\in\mathbb{Z}\}$
 
-    análogamente $\displaystyle\frac{e^{iz}-e^{-iz}}{2i}=\sin(z)$, luego los ceros coinciden en ambas expreciones \textcolor{red}{depronto estoy  tirando burradas xd}
     \end{proof}
 
     \item Probar que para $z \neq 1$, se tiene

@@ -31,25 +31,58 @@
 \begin{enumerate}
     \item Demuestre que \( A \subset \mathbb{C} \) es compacto si y solo si es acotado y cerrado.
 
+    \begin{proof}
+    xd
+    \end{proof}
 
+    \item Sea \( K \subset \mathbb{C} \) compacto. Sean \( K_1 \supseteq K_2 \supseteq K_3 \supseteq \cdots \) una sucesión de subconjuntos de \( K \) no vacíos, tales que \( K_n \supseteq K_{n+1} \). Demostrar que la intersección de todos los \( K_n, n = 1, 2, 3, \ldots \) es no vacía.\\
 
+    Pues lo que pasa es que eso siempre es  fácil allí porque usted llega y coge el conjunto $\left(0,\dfrac{1}{n}\right)$ $n\in \mathbb{N}$, note que ese conjunto está contenido en $[0,1]$ que es compacto, y pues si usted considera la intersección de esos coyos, eso le da vacío siono?
 
-    \item Sea \( K \subset \mathbb{C} \) compacto. Sean \( K_1 \supseteq K_2 \supseteq K_3 \supseteq \cdots \) una sucesión de subconjuntos de \( K \) no vacíos, tales que \( K_n \supseteq K_{n+1} \). Demostrar que la intersección de todos los \( K_n, n = 1, 2, 3, \ldots \) es no vacía.
+    \item Encontrar la imagen de las regiones:
+    \[1 < | \operatorname{Im}(z) | \leq 2\]
 
-    \item (*) Encontrar la imagen de las regiones:
-    \[
-    1 < | \operatorname{Im}(z) | \leq 2
-    \]
-    \[
-    |z| < 1
-    \]
+    \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{P3-1.eps}
+    \end{figure}
+
+    \[|z| < 1\]
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{P3-2.eps}
+    \end{figure}
+
     bajo las aplicaciones:
     \begin{enumerate}
-        \item \( f(z) = z^2 \)
-        \item \( f(z) = \dfrac{2z + i}{z + 1} \)
+        \item \( f(z) = z^2 \)\\
+
+        Sea $z=x+yi$, entonces $z^2=x^2-y^2+2xyi$, sean $u(x,y)=x^2-y^2$ y $v(x,y)=2xy$ las funciones parte real e imaginaria, esto es
+
+        $$x=\frac{v}{2y}$$ 
+
+        reemplazando en la ecuación de arriba se obtiene que 
+
+        $$u=\frac{v^2}{4y^2}-y^2$$
+
+        si uno reemplaza en $-2$ y $-1$ obtiene las ecuaciones de dos parábolas, pero pues usted tiene que girar la cabeza  para verlo bien
+
+        $$u=\frac{v^2}{16}-4\quad u=\frac{v^2}{4}-1$$
+
+       \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.86]{S1.eps}
+        \end{figure}     
+
+        Para el caso $|z|<1$ nos deja la misma bola porque dado $z=re^{i\theta}$ entonces $z^2=r^2e^{i2\theta}$ por lo que nos queda la misma circunferencia, dado que si $0\leq r<1$ entonces $0\leq r^2<1$
+        \item \( f(z) = \dfrac{2z + i}{z + 1} \)\\
+
+        \textcolor{red}{Esto lo irá a hacer su madre y con su madre me refiero al Santiago xd.}
+
     \end{enumerate}
 
-    \item (*) Sea \( f(z) = \dfrac{z - i}{z + i} \), hallar la imagen por \( f \) de:
+    \item  Sea \( f(z) = \dfrac{z - i}{z + i} \), hallar la imagen por \( f \) de:
     \begin{enumerate}
         \item El semiplano superior.
         \item La semirecta \( it; t \geq 0 \).

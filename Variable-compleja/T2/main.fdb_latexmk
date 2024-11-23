@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1732374183.7895 "main.tex" "main.pdf" "main" 1732374184.622 0
+["pdflatex"] 1732380091.88783 "main.tex" "main.pdf" "main" 1732380092.7659 0
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1727349926 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1727349926 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -32,6 +32,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm" 1727349926 12212 23628103ecb97b5e11ff6b34661881c2 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1727349926 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1727349926 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1727349926 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb" 1727349926 12536 a46bc0672764104789d46e9c8de8f188 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1727349926 21098 d4aee7c0aac232caac5688b586b9363c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb" 1727349926 22644 de44b1031364c5f57164f2249f1302c5 ""
@@ -102,13 +103,18 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731173219.34369 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731245461 7135102 1a0620fdd9788b285a1563c042c3b90f ""
+  "Graphics/8b.eps" 1732376857.90471 26941 0e62fff37f63135cb7943589648c947b ""
+  "Graphics/8e.eps" 1732378863.30534 90348 f84a7baa9411964dedb2a1d7eb9fb4a3 ""
+  "Graphics/8f.eps" 1732379464.94134 126766 4bec2c63fa9847947ec9015aae87d0a1 ""
   "Graphics/R1.eps" 1731334884.88759 69526 f765f678960eb396f4bfe4c5f8e333f8 ""
   "Graphics/R2.eps" 1731335035.43582 72079 cae5c600de5389868f715e5e87175998 ""
   "Graphics/R3.eps" 1731336027.56836 26587 9c68795fe56efcbbf553ebae2d6d9a9b ""
   "Graphics/R4.eps" 1731336261.82708 70250 24050b5dc04b8b93c2bd1ab1911c1156 ""
   "Graphics/R5.eps" 1731336765.1697 10426 93b8e50d6df05d566238dafd9b9f276f ""
-  "main.aux" 1732374184.4884 194 6a459dd8203b4fced2db9de66c7d2e2f "pdflatex"
-  "main.tex" 1732374179.55835 10057 a5d87f144cbf52a2c65c58c0c0337982 ""
+  "Graphics/R6.eps" 1732374955.53317 27130 db9bd0ce9278a2ae5db711a10fdf8c71 ""
+  "Graphics/último.eps" 1732380043.18019 65000 4a7c55105c49abedb3f925c1c73b616f ""
+  "main.aux" 1732380092.61732 194 4fa92ad2112e1d05fbe4fb363ba994fe "pdflatex"
+  "main.tex" 1732380091.59398 12590 3bac2702a18dcc295cded4de240435a9 ""
   (generated)
   "main.aux"
   "main.log"

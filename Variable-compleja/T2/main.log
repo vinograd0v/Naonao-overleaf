@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.10)  23 NOV 2024 10:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.10)  23 NOV 2024 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -659,7 +659,7 @@ File: Graphics/R1-eps-converted-to.pdf Graphic file (type pdf)
 <use Graphics/R1-eps-converted-to.pdf>
 Package pdftex.def Info: Graphics/R1-eps-converted-to.pdf  used on input line 1
 75.
-(pdftex.def)             Requested size: 207.97728pt x 193.52325pt.
+(pdftex.def)             Requested size: 220.9766pt x 205.61916pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
@@ -680,7 +680,7 @@ File: Graphics/R2-eps-converted-to.pdf Graphic file (type pdf)
 <use Graphics/R2-eps-converted-to.pdf>
 Package pdftex.def Info: Graphics/R2-eps-converted-to.pdf  used on input line 1
 90.
-(pdftex.def)             Requested size: 207.97728pt x 200.75026pt.
+(pdftex.def)             Requested size: 220.9766pt x 213.29787pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
@@ -691,6 +691,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
+[4 <./Graphics/R1-eps-converted-to.pdf> <./Graphics/R2-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Graphics/R3.eps>
 (epstopdf)                    date: 2024-11-11 09:40:27
 (epstopdf)                    size: 26587 bytes
@@ -701,13 +702,12 @@ Package epstopdf Info: Source file: <Graphics/R3.eps>
 to.pdf Graphics/R3.eps>
 (epstopdf)             \includegraphics on input line 199.
 Package epstopdf Info: Output file is already uptodate.
-<Graphics/R3-eps-converted-to.pdf, id=23, 259.97125pt x 244.915pt>
+<Graphics/R3-eps-converted-to.pdf, id=51, 259.97125pt x 244.915pt>
 File: Graphics/R3-eps-converted-to.pdf Graphic file (type pdf)
 <use Graphics/R3-eps-converted-to.pdf>
 Package pdftex.def Info: Graphics/R3-eps-converted-to.pdf  used on input line 1
 99.
 (pdftex.def)             Requested size: 207.97728pt x 195.93225pt.
-[4 <./Graphics/R1-eps-converted-to.pdf> <./Graphics/R2-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Graphics/R4.eps>
 (epstopdf)                    date: 2024-11-11 09:44:21
 (epstopdf)                    size: 70250 bytes
@@ -725,11 +725,12 @@ Package pdftex.def Info: Graphics/R4-eps-converted-to.pdf  used on input line 2
 20.
 (pdftex.def)             Requested size: 207.97728pt x 193.52325pt.
 
+[5 <./Graphics/R3-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
-[5 <./Graphics/R3-eps-converted-to.pdf> <./Graphics/R4-eps-converted-to.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
@@ -744,15 +745,104 @@ Package epstopdf Info: Source file: <Graphics/R5.eps>
 to.pdf Graphics/R5.eps>
 (epstopdf)             \includegraphics on input line 229.
 Package epstopdf Info: Output file is already uptodate.
-<Graphics/R5-eps-converted-to.pdf, id=76, 259.97125pt x 255.95625pt>
+<Graphics/R5-eps-converted-to.pdf, id=66, 259.97125pt x 255.95625pt>
 File: Graphics/R5-eps-converted-to.pdf Graphic file (type pdf)
 <use Graphics/R5-eps-converted-to.pdf>
 Package pdftex.def Info: Graphics/R5-eps-converted-to.pdf  used on input line 2
 29.
 (pdftex.def)             Requested size: 207.97728pt x 204.76526pt.
+Package epstopdf Info: Source file: <Graphics/R6.eps>
+(epstopdf)                    date: 2024-11-23 10:15:55
+(epstopdf)                    size: 27130 bytes
+(epstopdf)             Output file: <Graphics/R6-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-11-23 10:16:07
+(epstopdf)                    size: 11392 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphics/R6-eps-converted-
+to.pdf Graphics/R6.eps>
+(epstopdf)             \includegraphics on input line 238.
+Package epstopdf Info: Output file is already uptodate.
+<Graphics/R6-eps-converted-to.pdf, id=67, 259.97125pt x 250.9375pt>
+File: Graphics/R6-eps-converted-to.pdf Graphic file (type pdf)
+<use Graphics/R6-eps-converted-to.pdf>
+Package pdftex.def Info: Graphics/R6-eps-converted-to.pdf  used on input line 2
+38.
+(pdftex.def)             Requested size: 220.9766pt x 213.29787pt.
+[6 <./Graphics/R4-eps-converted-to.pdf> <./Graphics/R5-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 239.
-[6 <./Graphics/R5-eps-converted-to.pdf>] (./main.aux
+(Font)              scaled to size 10.95pt on input line 242.
+Package epstopdf Info: Source file: <Graphics/8b.eps>
+(epstopdf)                    date: 2024-11-23 10:47:37
+(epstopdf)                    size: 26941 bytes
+(epstopdf)             Output file: <Graphics/8b-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-11-23 10:47:54
+(epstopdf)                    size: 11341 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphics/8b-eps-converted-
+to.pdf Graphics/8b.eps>
+(epstopdf)             \includegraphics on input line 255.
+Package epstopdf Info: Output file is already uptodate.
+<Graphics/8b-eps-converted-to.pdf, id=91, 239.89626pt x 231.86626pt>
+File: Graphics/8b-eps-converted-to.pdf Graphic file (type pdf)
+<use Graphics/8b-eps-converted-to.pdf>
+Package pdftex.def Info: Graphics/8b-eps-converted-to.pdf  used on input line 2
+55.
+(pdftex.def)             Requested size: 203.91277pt x 197.08723pt.
+
+[7 <./Graphics/R6-eps-converted-to.pdf> <./Graphics/8b-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+Package epstopdf Info: Source file: <Graphics/8e.eps>
+(epstopdf)                    date: 2024-11-23 11:21:03
+(epstopdf)                    size: 90348 bytes
+(epstopdf)             Output file: <Graphics/8e-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-11-23 11:21:07
+(epstopdf)                    size: 50250 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphics/8e-eps-converted-
+to.pdf Graphics/8e.eps>
+(epstopdf)             \includegraphics on input line 273.
+Package epstopdf Info: Output file is already uptodate.
+<Graphics/8e-eps-converted-to.pdf, id=122, 260.975pt x 249.93375pt>
+File: Graphics/8e-eps-converted-to.pdf Graphic file (type pdf)
+<use Graphics/8e-eps-converted-to.pdf>
+Package pdftex.def Info: Graphics/8e-eps-converted-to.pdf  used on input line 2
+73.
+(pdftex.def)             Requested size: 221.82979pt x 212.44469pt.
+Package epstopdf Info: Source file: <Graphics/8f.eps>
+(epstopdf)                    date: 2024-11-23 11:31:04
+(epstopdf)                    size: 126766 bytes
+(epstopdf)             Output file: <Graphics/8f-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-11-23 11:33:39
+(epstopdf)                    size: 62325 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphics/8f-eps-converted-
+to.pdf Graphics/8f.eps>
+(epstopdf)             \includegraphics on input line 281.
+Package epstopdf Info: Output file is already uptodate.
+<Graphics/8f-eps-converted-to.pdf, id=123, 260.975pt x 245.91875pt>
+File: Graphics/8f-eps-converted-to.pdf Graphic file (type pdf)
+<use Graphics/8f-eps-converted-to.pdf>
+Package pdftex.def Info: Graphics/8f-eps-converted-to.pdf  used on input line 2
+81.
+(pdftex.def)             Requested size: 221.82979pt x 209.0319pt.
+[8 <./Graphics/8e-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Graphics/último.eps>
+(epstopdf)                    date: 2024-11-23 11:40:43
+(epstopdf)                    size: 65000 bytes
+(epstopdf)             Output file: <Graphics/último-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-11-23 11:41:04
+(epstopdf)                    size: 35293 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphics/último-eps-conve
+rted-to.pdf Graphics/último.eps>
+(epstopdf)             \includegraphics on input line 290.
+Package epstopdf Info: Output file is already uptodate.
+<Graphics/último-eps-converted-to.pdf, id=208, 259.97125pt x 241.90375pt>
+File: Graphics/último-eps-converted-to.pdf Graphic file (type pdf)
+<use Graphics/último-eps-converted-to.pdf>
+Package pdftex.def Info: Graphics/último-eps-converted-to.pdf  used on input l
+ine 290.
+(pdftex.def)             Requested size: 220.9766pt x 205.61916pt.
+ [9 <./Graphics/8f-eps-converted-to.pdf> <./Graphics/último-eps-converted-to.p
+df>] (./main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -766,26 +856,26 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7499 strings out of 476014
- 116112 string characters out of 5792004
+ 7535 strings out of 476014
+ 117387 string characters out of 5792004
  1943187 words of memory out of 5000000
- 29483 multiletter control sequences out of 15000+600000
+ 29519 multiletter control sequences out of 15000+600000
  588643 words of font info for 81 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 80i,10n,93p,448b,435s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,10n,93p,663b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eu
-sm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist
-/fonts/type1/public/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/ne
-wpx/zplri.pfb>
-Output written on main.pdf (6 pages, 193525 bytes).
+ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/e
+uler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/newpx/zplr.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on main.pdf (9 pages, 368046 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 449 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

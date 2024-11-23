@@ -172,7 +172,7 @@ como $(1-|a|^2)>0$ fecho.
 
         \begin{figure}[H]
          \centering
-         \includegraphics[scale=0.8]{Graphics/R1.eps}
+         \includegraphics[scale=0.85]{Graphics/R1.eps}
          \end{figure} 
 
          En este caso es claro que eso era  una bola.
@@ -187,7 +187,7 @@ como $(1-|a|^2)>0$ fecho.
 
          \begin{figure}[H]
          \centering
-         \includegraphics[scale=0.8]{Graphics/R2.eps}
+         \includegraphics[scale=0.85]{Graphics/R2.eps}
          \end{figure} 
 
         \item $\dfrac{1}{z} = \overline{z}$.\\
@@ -233,7 +233,10 @@ como $(1-|a|^2)>0$ fecho.
         \item $|z|^2 = \operatorname{Im}(z)$.\\
         Aquí de nuevo usamos forma polar y la ecuación nos queda $r^2=r\sin{\theta}$, o de la misma forma $r=\sin{\theta}$, por lo tanto si usted vio cálculo integral, se acordará de que esa curva es una circunferencia centrada en $(0,\frac{1}{2})$ y de radio $\frac{1}{2}$; note que al cancelar $r$ asumimos que $r\neq 0$ pero pues la norma de 0 es igual a la parte imaginaria de 0 así que no importa, por lo tanto fecho.
 
-        \textcolor{red}{La gráfica la irá a subir Mateo pq yo no sé como hacer esoxd}
+         \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.85]{Graphics/R6.eps}
+         \end{figure}
     \end{enumerate}
 
     \item \textbf{Definición 1}: Un conjunto se dice conexo si dados dos puntos diferentes en el conjunto, estos se pueden unir por una poligonal (formada por un número finito de segmentos rectos) contenida en el conjunto. Si además el conjunto es abierto, se le llama entonces \textit{Dominio}.
@@ -242,30 +245,54 @@ como $(1-|a|^2)>0$ fecho.
     \begin{enumerate}
         \item $|z - 1| < 1$.
 
-        
+        Esto es una bola centrada en 1 y de radio 1, evidentemente es acotada y abierta, sus puntos de acumulación son $|z-1|\leq 1$ porque la adherencia contiene todos sus puntos límite, la adherencia es justamente eso, la bola cerrada, para la conexidad note que dados $z_1,z_2$ en la bola $|z_2-z_1|\leq|z_2-1|+|1-z_1|<2$ y el vector $z_2-z_1$ une $z_1$ y $z_2$ y pues está en la bola porque la norma es menor que 2.
 
         \item $|\operatorname{Im}(z)| < 3$.
         
 
+ \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.85]{Graphics/8b.eps}
+         \end{figure}
 
-        \item $|z + i| + |z - i| = 1$.
+Evidentemente no es acotado, es abierto porque el complemento es cerrado. la adherencia es $|Im(z)|\leq 3$, esos también son los puntos de acumulación, para la conexidad note que dados dos puntos ahí, digamos $z_1$ y $z_2$, basta controlar que $|b_1-b_2|<6$ y esto es evidente porque $b_1,b_2\in (-3,3)$
 
-
+        \item $|z + i| + |z - i| = 1$.\\
+Note que $1=|z+i|+|i-z|\geq |2i|=2$ y eso es re falso entonces no toca hacer nada.
 
         \item $0 < |z| < 2$.
         
+Eso es una cochina bola otra vez, entonces pa qué, usted solo quitele el centro, eso sigue siendo abierto y pues el los puntos de acumulación sí contienen al centro pues porque tan guevón.
 
+        \item $0 < \arg(z) < \frac{\pi}{6}$.\\
 
-        \item $0 < \arg(z) < \frac{\pi}{6}$.
+        Este es coyo
         
+ \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.85]{Graphics/8e.eps}
+         \end{figure}
 
-
+la gráfica se ve medio fea por wolfram, le dió amsiedad y me da pereza tirar un ParametricPlot, para ver que eso es abierto usted agarra una bolita centrada en un punto $z$ siono?, y coge de $r=\min\{d(z,y=\frac{\sqrt{3} }{3}),d(z,y=0)\}$,  usted dirá, pero por qué hptas???, pues pana usted necesita un radio que no se salga de esas rectas la bola y pues literalmente en la ecuación punto pendiente usted se da cuenta que la pendiente de ese ángulo es la tangente de $\frac{\pi}{6}$ y acabó. Todo lo otro es trivial excepto la conexidad porque esa definición es una granputamierda pero usted llega y hace cuentas y eso sale.
         \item $\operatorname{Re}(z^2) \geq 0$.
-        
+
+ \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.85]{Graphics/8f.eps}
+         \end{figure}
 
 
-        \item $\operatorname{Re}(z - i \overline{z}) \geq 0$.
+Esto el único chiste que tiene es la conexidad, note que el coso de arriba es conexo, usted sabe de topología que si la intersección es no vacía usted puede unir conexos y le da conexo siono?, pues haga el dibujo, trace un camino al 0 desde un punto de arriba, y luego conecte con lo que le de la gana xd.
+        \item $\operatorname{Re}(z - iz) \geq 0$.
+
+         \begin{figure}[H]
+         \centering
+         \includegraphics[scale=0.85]{Graphics/último.eps}
+         \end{figure}
+    
+na que pereza la verdad esto, pero que no digan que no lo intenté.
     \end{enumerate}
+
 \end{enumerate}
 
 \end{document}

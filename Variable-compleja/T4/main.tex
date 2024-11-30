@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsthm}
+\usepackage{newpxtext,euler}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},
+ left=20mm,
+ top=30mm,
+ }
+\pagestyle{empty}
+
+\title{Taller IV}
+
+\author{Bourbaki}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item Siendo $a$, $b$, $c$, $z_0$ constantes complejas, demostrar:
+    \[
+    \lim_{z \to z_0} c = c; \quad \lim_{z \to z_0} (a z + b) = a z_0 + b; \quad \lim_{z \to z_0} (z^2 + c) = z_0^2 + c
+    \]
+    \[
+    \lim_{z \to z_0} \operatorname{Re}(z) = \operatorname{Re}(z_0); \quad \lim_{z \to z_0} \overline{z} = \overline{z_0}; \quad \lim_{z \to 0} \frac{\overline{z}^2}{z} = 0
+    \]
+
+\textbf{Solucao:} $\lim_{z \to z_0} c = c$, note que dado $\epsilon>0$, tomando $\delta=$lo que le de la gana
+
+$$|f(z)-f(z_0)|=|c-c|=0<\epsilon$$
+
+$\lim_{z\to z_0}(az+b)=az_0+b$, eso es trivial allí. Dado $\epsilon>0$, sea $\delta=\frac{\epsilon}{|a|}$, note que si $|z-z_0|<\delta$ entonces
+
+\begin{align*}
+  |f(z)-f(z_0)|=|az+b-az_0-b|=|a||z-z_0|<|a|\delta=\epsilon
+.\end{align*}
+
+Luego viene uno que usted tiene que hacer cositas pero pues no deja de ser una maricada, $\lim_{z\to z_0}(z^2+c)=z_0^2+c$. Usted primero agarre $\delta_1\leq 1$, note que si
+
+$$|z|-|z_0|\leq|z-z_0|<\delta\leq1$$
+
+entonces 
+
+$$|z+z_0|\leq|z|+|z_0|<1+2|z_0|$$
+
+entonces ponga $\delta_2=\frac{\epsilon}{1+2|z_0|}$ y su delta es $\delta=\min\{\delta_1,\delta_2\}$, y eso le sirve para todo epsilon porque pille:
+
+$$|f(z)-f(z_0)|=|z^2-z_0^2|=|z-z_0||z+z_0|<\epsilon$$
+
+y por eso es que uno debe parar bolas en diferencial.\\
+
+$\lim_{z\to z_0}\Re(z)=\Re(z_0)$, sea $\delta=\sqrt{\epsilon}$, note que para todo $\epsilon>0$
+
+$$|\Re(z)-\Re(z_0)|=|\Re(z-z_0)|\leq|z-z_0|^2<\delta^2=\epsilon$$\\
+
+$\lim_{z \to z_0} \overline{z}=\overline{z_0}$, sea $\delta=\epsilon$, para todo $\epsilon>0$, tenemos que:
+
+$$|\overline{z}-\overline{z_0}|=|\overline{z-z_0}|=|z-z_0|<\epsilon.$$
+
+Para el último tome $\delta=\epsilon$, note que para todo $\epsilon>0$ tenemos que
+
+$$\left|\frac{\overline{z}^2}{z} \right|=\frac{|\overline{z}||\overline{z}|}{|z|}=|\overline{z}|=|z|\leq\epsilon.$$
+
+    \item Calcular:
+    \[
+    \lim_{z \to \infty} \frac{4z^2}{(z - 1)^2}; \quad \lim_{z \to 1} \frac{1}{(z - 1)^3}; \quad \lim_{z \to \infty} \frac{z^2 + 1}{z - 1}
+    \]
+
+    Ahí dice calcular, entonces eso da 4, infinito y el otro también, si no me cree pues hagalo ud
+
+    \item Demostrar que si $f$ es continua y no nula en un punto $z_0$, entonces $f(z) \neq 0$ para todo $z$ en alguna vecindad de $z_0$ $(V_{z_0})$.
+
+\begin{proof}
+Suponga que no, ahí van a pasar cosas, lo que pasa allí es que existe $z\in B(z_0,\delta)$ tal que $f(z)=0$ tome $\epsilon=|f(z)|$, como en esa bola la función es continua entonces
+
+$$|f(z)-f(z_0)|=|f(z)|<\epsilon=|f(z)|$$
+si pilla que le contradice cosas?
+\end{proof}
+
+    \item Sea $A \subset \mathbb{C}$ un conjunto compacto. Mostrar que si $f$ es una función continua definida sobre $A$, entonces $f(A)$ es compacto.
+
+\begin{proof}
+Sea $\{z_n\}$ una sucesión en $A$, como $A$ es compacto entonces tiene una subsucesión convergente, digamos $\{z_{k}\}$ que converge a $z$, esto que dado $\delta>0$, existe un $K$ tal que si $k>K$ entonces $|z_{k}-z|<\delta$, por la continuidad $|f(z_k)-f(z)|<\epsilon$ para todo $\epsilon>0$. Acabó porque eso le dice que allá la sucesión $f(z_k)$ converge.
+\end{proof}
+
+    \item Sea $A \subset \mathbb{C}$ un conjunto compacto, y $f: A \to \mathbb{R}$ una función continua. Demostrar que $f$ tiene un máximo sobre $A$.
+
+    \textcolor{red}{luego sigo, el deber me llama}
+
+    \item Sea $A \subset \mathbb{C}$ un conjunto compacto, y $f: A \to \mathbb{C}$ una función continua. Demostrar que $f$ es uniformemente continua.
+\end{enumerate}
+\end{document}

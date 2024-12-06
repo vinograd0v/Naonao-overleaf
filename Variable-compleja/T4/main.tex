@@ -96,9 +96,30 @@ Sea $\{z_n\}$ una sucesión en $A$, como $A$ es compacto entonces tiene una subs
 \end{proof}
 
     \item Sea $A \subset \mathbb{C}$ un conjunto compacto, y $f: A \to \mathbb{R}$ una función continua. Demostrar que $f$ tiene un máximo sobre $A$.
-
-    \textcolor{red}{luego sigo, el deber me llama}
-
+    \begin{proof}
+    Facilito, como $f$ es contínua y $A$ es compacto, $f[A]$ es compacto en $\mathbb{R}$, y como en $\mathbb{R}$ todo conjunto compacto es cerrado y acotado, pues por la completez, $f[A]$ tiene supremo, además $\sup\{f[A]\}\in f[A]$ pues $f[A]$ es cerrado, en otras palabras, $f[A]$ tiene máximo.
+    \end{proof}
     \item Sea $A \subset \mathbb{C}$ un conjunto compacto, y $f: A \to \mathbb{C}$ una función continua. Demostrar que $f$ es uniformemente continua.
+    \begin{proof}
+    Suponga que no, luego existe $\epsilon>0$ tal que si $\delta_n=\dfrac{1}{n}, n\in\mathbb{N}$ existen $z_n,w_n\in A$ tales que $|z_n-w_n|<\dfrac{1}{n}$  pero $|f(z_n)-f(w_n)|>\epsilon$.
+
+    Como $A$ es compacto y $\{z_n\}\subseteq A$, existe una subsucesión $\{z_i\}_{i\in I}$ con $I\subseteq\mathbb{N}$ tal que dado $\epsilon$, existe $N \in I$ tal que si $i > N$ entonces $|z_i-z|<\dfrac{\epsilon}{3}$ para algún $z\in A$. 
+
+    Ya que a cada $z_n$ le corresponde un $w_n$, tenemos la subsucesión $\{w_i\}_{i\in I} \subseteq A$ y de nuevo por la compacidad de $A$, obtenemos una subsucesión $\{w_j\}_{j\in J}$ con $J\subseteq I$ de manera que existe $M \in J$ tal que si $j > M$ entonces $|w_j-w|<\dfrac{\epsilon}{3}$. También tenemos que existe $L\in J$ tal que si $j>L$, entonces $\dfrac{1}{j}<\dfrac{\epsilon}{3}$.
+
+    Aplicando desigualdad triangular dos veces y tomando $K=\max\{N,M,L\}$, tenemos que si $j>0$, entonces:
+    \[
+    |z-w|\leq |z-z_j|+|z_j - w_j|+|w_j - w| \leq \dfrac{\epsilon}{3}+\dfrac{\epsilon}{3}+\dfrac{\epsilon}{3}=\epsilon.
+    \]
+    Así, tenemos que $z=w$.
+
+    Como $f$ es contínua, tenemos que si $j>K$, $|f(z_j)-f(z)|<\dfrac{\epsilon}{2}$ y $|f(w_j)-f(w)|<\dfrac{\epsilon}{2}$, en conclusión:
+    \[
+    |f(z_j)-f(w_j)|\leq|f(z_j) - f(z)|+|f(z)-f(w)|+ |f(w)-f(w_j)|=|f(z_j) - f(z)|+|f(w)-f(w_j)|< \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2}=\epsilon
+    \]
+    Lo cual contradice que $|f(z_n)-f(z_w)|>\epsilon$.
+
+    \end{proof}
+    Esta prueba es una porquería pero así tocaba hacerla entonces bueno, fecho.
 \end{enumerate}
 \end{document}

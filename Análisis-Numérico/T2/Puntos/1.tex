@@ -4,8 +4,63 @@
 Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
 
 \begin{enumerate}
-    \item[(a)] $\|A\|_2 = \|A^T\|_2 \leq \|A\|_F = \|A^T\|_F,$
-    \item[(b)] $\|A\|_\infty \leq \sqrt{n} \|A\|_2,$
-    \item[(c)] $\|A\|_2 \leq \sqrt{m} \|A\|_\infty,$
+    \item[(a)] $\|A\|_2 = \|A^T\|_2 \leq \|A\|_F = \|A^T\|_F$
+
+    Para mostrar que $\|A\|_2 = \|A^T\|_2$ veremos que todo valor propio no nulo de $A^TA$ lo es también de $AA^T$: Sea $v$ un vector propio de $A^TA$ y $\lambda$ el valor propio de $A^TA$ asociado a $v$, entonces
+    \begin{align*}
+    AA^T(Av) &= A(A^TAv) \\ 
+        & = A(\lambda v) \\ 
+        & = \lambda (Av) 
+    \end{align*}
+    De esto se sigue que $\lambda$ es un valor propio de $AA^T$ asociado al vector propio $Av$. De manera análoga, se concluye que si $w$ es un vector propio de $AA^T$, con $\gamma$ el valor propio de $AA^T$ asociado a $w$, entonces $\gamma$ es un valor propio de $AA^T$ asociado al vector propio $A^Tw$.
+
+    Para ver que $\|A\|_F = \|A^T\|_F$ basta notar que
+    \[
+    \|A\|_F^2=\sum_{i=1}^{m} \sum_{j=1}^{n} |a_{ij}|^2 = \sum_{j=1}^{n} \sum_{i=1}^m |a_{ij}|^2=\sum_{j=1}^{n} \sum_{i=1}^m |a_{ji}|^2=\|A^T\|_F^2
+    \]
+
+    Por último, note que las componentes de la diagonal de $A^TA$ son de la forma $u_{jj}=\sum_{i=1}^m a_{ij}^2$, por lo tanto la traza de $A^TA$ es
+    \[
+    \sum_{j=1}^n\sum_{i=1}^{m}|a_{ij}|^2=\|A\|_F^2
+    \]
+    y ya que la traza de una matriz es igual a la suma de sus valores propios, y como $A^TA$ es semidefinida positiva, obtenemos que: 
+    \begin{align*}
+    \lambda_{max}(A^TA)&\leq \text{tr}(A^TA) \\
+    \sqrt{\lambda_{max}(A^TA)} & \leq \sqrt{\text{tr}(A^TA)}\\ 
+    \|A\|_2\ & \leq \|A\|_F
+    \end{align*}
+    \item[(b)] $\|A\|_\infty \leq \sqrt{n} \|A\|_2$
+
+    Primero note que $\|Ae_j\|_2^2=\sum_{i=1}^m |a_{ij}|^2\leq \|A\|_2^2$, por lo tanto, $\sum_{j=1}^n \|Ae_j\|_2^2\leq n\|A\|_2^2$. Ahora, usando la desigualdad de Cauchy-Schwartz obtenemos el siguiente resultado:
+    \begin{align*}
+    \|A\|_\infty^{2} & =\left(\max_{1\leq i \leq m}{\sum_{j=1}^n|a_{ij}|}\right)^2\\ 
+        &\leq \max_{1\leq i \leq m}{\sum_{j=1}^n|a_{ij}|^2}\\   
+        &\leq \sum_{i=1}^m\sum_{j=1}^{n}|a_{ij}|^2\\ 
+        &= \sum_{j=1}^n\sum_{i=1}^{m}|a_{ij}|^2\\
+        &= \sum_{j=1}^n \|Ae_j\|_2^2\\
+        &\leq n\|A\|_2^2
+    \end{align*}
+    Tomando raíz cuadrada llegamos a que $\|A\|_\infty \leq \sqrt{n}\|A\|_2$.
+
+    \item[(c)] $\|A\|_2 \leq \sqrt{m} \|A\|_\infty$
+
+    Note que
+    \begin{align*}
+    \|Ax\|_2^2 &= \sum_{j=1}^m\left|\sum_{i=1}^n a_{ij}x_{j}\right|^2\\ 
+    &\leq \sum_{j=1}^m\left(\left|\max_{1\leq i \leq m}{\sum_{j=1}^n a_{ij}x_{j}}\right|^2\right)\\ 
+    &= m\left|\max_{1\leq i \leq m}{\sum_{j=1}^n a_{ij}x_{j}}\right|^2\\ 
+    &= m\|Ax\|_\infty^2
+    \end{align*}
+    Tomando raíz cuadrada se obtiene que $\|Ax\|_2\leq \|Ax\|_\infty$ y por lo tanto $\|A\|_2 \leq \|A\|_\infty$
     \item[(d)] $\|A\|_2 \leq \sqrt{\|A\|_1 \|A\|_\infty}.$
+
+    Tenemos que $\|Ax\|_\infty = \max_{1 \leq i \leq n}{\left|\sum_{j=1}^{n}a_{ij}x_j\right|}$ y también que $\|Ax\|_1 = \sum_{i=1}^m\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|$. De esta manera
+    \begin{align*}
+    \|Ax\|_2^2 & = \sum_{i=1}^m\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|^2 \\ 
+    & = \sum_{i=1}^m\left(\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|\right) \\ 
+    &\leq \left(\sum_{i=1}^m\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|\right)\max_{1\leq i \leq m}{\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|} \\ 
+    & = \|Ax\|_1 \|Ax\|_\infty
+    \end{align*}
+
+    Así, $\|Ax\|_2\leq \sqrt{\|Ax\|_1 \|Ax\|_\infty}$, en consecuencia $\|A\|_2 \leq \sqrt{\|A\|_1 \|A\|_\infty}$
 \end{enumerate}

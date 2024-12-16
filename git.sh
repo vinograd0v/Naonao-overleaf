@@ -21,7 +21,7 @@ git status
 read -p "Ya está actualizado el repo, vas a hacer cambios? (S/n): " confirm_after_pull
 if [[ "$confirm_after_pull" == "s" || "$confirm_after_pull" == "S" ]]; then
     git add .
-    read -p "Commit del cambio que vas a subir... " merge_message
+    read -p "Commit del cambio que vas a subir: " merge_message
     git commit -m "$merge_message"
 fi
 

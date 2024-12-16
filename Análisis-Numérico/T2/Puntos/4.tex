@@ -50,7 +50,33 @@ donde $(H_n)_k$ denota la $k-$ésima fila de la matriz $(H_n)$, que es lo mismo 
 
     \end{proof}
 
-    \item[(b)] Muestre que $H_n$ es simétrica y definida positiva.
+    \item[(b)] Muestre que $H_n$ es simétrica y definida positiva.\\
+
+    \begin{proof}
+    Note que la simetría es inmediata de  que
+
+    $$(H_n)_{i,j}=\frac{1}{i+j+1}=\frac{1}{j+i+1}=(H_n)_{j,i}.$$
+
+    Para ver que la matriz es definida positiva note que
+    $$
+\begin{aligned}
+x^T H_n x & =\left(x_1, \ldots, x_n\right)\left(\begin{array}{ccc}
+1 & \cdots & \dfrac{1}{n+2} \\
+\vdots & \ddots & \vdots \\
+\dfrac{1}{n+2} & \cdots & \dfrac{1}{2 n+1}
+\end{array}\right)\left(\begin{array}{c}
+x_1 \\
+\vdots \\
+x_n
+\end{array}\right) \\
+& =\sum_{i=0}^n \sum_{j=0}^n \frac{x_j x_i}{i+j+1} \\
+& =\sum_{i=0}^n \sum_{j=0}^n x_j x_i \int_0^1 t^i t^j d t \\
+& =\int_0^1 \sum_{i=0}^n x_i t^i \sum_{j=0}^n x_j t^j d t \\
+& =\left\|\sum_{j=0}^{n} x_jt^j\right\|_{L^2}^2>0
+\end{aligned}
+$$
+    \end{proof}
+
     \item[(c)] Solucione el sistema $H_n x = b$, donde $b$ tiene componentes $b_i = 1 / (n + i - 1)$, para $i = 1, \ldots, n$. Para esto, use las factorizaciones LU ($[L, U] = \text{lu}(H)$) y Cholesky ($L = \text{chol}(H)$). Luego resuelva los dos sistemas triangulares.
     \item[(d)] Para ambos métodos, ¿qué tan precisas son las soluciones numéricas $\hat{x}_{\text{approx}}$? Tabule los errores de la solución:
     \[

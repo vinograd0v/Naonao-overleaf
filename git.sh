@@ -12,11 +12,11 @@ else
 fi
 
 # Paso 2: Hacer pull para fusionar cambios remotos
-echo "Haciendo git pull para actualizar cambios del repositorio remoto..."
-git pull
+echo "Haciendo git pull para actualizar cambios del repositorio ..."
+git pull --rebase
 
 # Paso 3: Confirmar cambios resultantes después del pull
-echo "Mostrando estado después del pull..."
+echo "Estado:"
 git status
 read -p "¿Quieres confirmar los cambios después de la fusión? (s/n): " confirm_after_pull
 if [[ "$confirm_after_pull" == "s" || "$confirm_after_pull" == "S" ]]; then

@@ -1,0 +1,60 @@
+% Tcolorboxes
+
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=1em}
+
+\newcommand{\sqed}{\hfill\includegraphics[height=2ex]{sancoya.png}}
+
+\theoremstyle{definition}
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false,leftline=false, topline=false, bottomline=false,
+        linecolor=black, backgroundcolor=black!2!white,
+    }
+]{thmbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=0pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=black, backgroundcolor=black!2!white,
+    },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=0pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=black, backgroundcolor=black!2!white,
+    },
+    qed=\sqed
+]{sancoya}
+
+
+\declaretheorem[style=thmbox, name=Definición]{definition}
+\declaretheorem[style=thmbox, numbered=no, name=Ejemplo]{eg}
+\declaretheorem[style=sancoya, numbered=no, name=Demostración]{sproof}
+\declaretheorem[style=thmbox, name=Proposición]{prop}
+\declaretheorem[style=thmbox, name=Teorema, numbered=no]{theorem}
+\declaretheorem[style=thmbox, name=Lema]{lemma}
+\declaretheorem[style=thmbox, numbered=no, name=Corolario]{corollary}
+\declaretheorem[style=thmbox, name=Solución, numbered=no]{solution}
+
+
+\declaretheorem[style=thmproofbox, name=Demostración]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+
+\declaretheorem[style=thmbox, numbered=no, name=Nota]{note}
+\declaretheorem[style=thmbox, numbered=no, ]{temp}
+
+

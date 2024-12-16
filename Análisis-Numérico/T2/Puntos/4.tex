@@ -1,0 +1,27 @@
+%!TEX root = ../main.tex
+
+\subsection*{Ejercicio 4.}
+Al aproximar una función continua $f : [0, 1] \to \mathbb{R}$ mediante un polinomio $p(t) = a_n t^n + \cdots + a_1 t + a_0$, el error de aproximación $E$ se mide en la norma $L^2$, es decir:
+\[
+E^2 := \|p - f\|_{L^2}^2 = \int_0^1 [p(t) - f(t)]^2 \, dt.
+\]
+
+\begin{enumerate}
+    \item[(a)] Muestre que la minimización del error $E = E(a_0, \ldots, a_n)$ conduce a un sistema de ecuaciones lineales $H_n a = b$, donde:
+    \[
+    b = [b_0, \ldots, b_n]^T \in \mathbb{R}^{n+1}, \quad b_i = \int_0^1 f(t)t^i \, dt, \quad i = 0, \ldots, n,
+    \]
+    y $H_n$ es la matriz de Hilbert de orden $n$, definida como:
+    \[
+    (H_n)_{i,j} = \frac{1}{i + j + 1}, \quad i, j = 0, \ldots, n.
+    \]
+    El vector $a$ representa los coeficientes del polinomio $p$.
+    \item[(b)] Muestre que $H_n$ es simétrica y definida positiva.
+    \item[(c)] Solucione el sistema $H_n x = b$, donde $b$ tiene componentes $b_i = 1 / (n + i - 1)$, para $i = 1, \ldots, n$. Para esto, use las factorizaciones LU ($[L, U] = \text{lu}(H)$) y Cholesky ($L = \text{chol}(H)$). Luego resuelva los dos sistemas triangulares.
+    \item[(d)] Para ambos métodos, ¿qué tan precisas son las soluciones numéricas $\hat{x}_{\text{approx}}$? Tabule los errores de la solución:
+    \[
+    e(n) = \|\hat{x}_{\text{approx}} - x_{\text{exact}}\|
+    \]
+    como una función de $n = 2, \ldots, 15$. Note que $x_{\text{exact}} = (0, \ldots, 1)^T$. Puede graficar los errores en función de $n$ utilizando la función \texttt{semilogy} de Matlab. Explique en detalle los resultados.
+\end{enumerate}
+

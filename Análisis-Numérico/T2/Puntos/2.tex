@@ -1,0 +1,9 @@
+%!TEX root = ../main.tex
+
+\subsection*{Ejercicio 2.}
+Sea $\| \cdot \|$ una norma en $\mathbb{R}^n$ y $A$ una matriz invertible de tamaño $n \times n$. Pruebe que:\\
+
+Si $Ax = b$, $(A + \delta A)(x + \delta x) = b + \delta b$ y $\|A^{-1}\| \|\delta A\| < 1$, entonces $A + \delta A$ es invertible y se cumple que:
+\[
+\frac{\|\delta x\|}{\|x\|} \leq \frac{\text{cond}(A)}{1 - \|A^{-1}\| \|\delta A\|} \left( \frac{\|\delta A\|}{\|A\|} + \frac{\|\delta b\|}{\|b\|} \right).
+\]

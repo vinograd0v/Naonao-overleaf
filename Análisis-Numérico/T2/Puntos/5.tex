@@ -1,0 +1,19 @@
+%!TEX root = ../main.tex
+
+\subsection*{Ejercicio 5.}
+\begin{enumerate}
+    \item[(a)] Simplifique el algoritmo de eliminación de Gauss para resolver un sistema lineal $Ax = b$ donde $A$ es una matriz tridiagonal.
+    \item[(b)] Considere la ecuación de Poisson con término fuente $f$ en el intervalo $(0, 1)$:
+    \[
+    -T''(x) = f(x), \quad x \in (0, 1),
+    \]
+    con condiciones de frontera $T(0) = T(1) = 0$. Aproximando la segunda derivada por diferencias finitas:
+    \[
+    T''(x) \approx \frac{T(x-h) - 2T(x) + T(x+h)}{h^2},
+    \]
+    y discretizando en $x_i = i h$, $i = 0, 1, \ldots, n$, con $n = 1/h$, obtenemos el sistema:
+    \[
+    -T_{i-1} + 2T_i - T_{i+1} = h^2 f(x_i), \quad i = 1, \ldots, n-1.
+    \]
+    Escriba este sistema en la forma $A T = f$, donde $A$ es una matriz tridiagonal. Resuelva el sistema para $n = 1000$ y $f(x) = \sin(2\pi x)$. Compare su solución con $T(x) = \sin(2\pi x) / (4\pi^2)$.
+\end{enumerate}

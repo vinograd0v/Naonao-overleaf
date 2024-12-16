@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.15)  16 DEC 2024 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.15)  16 DEC 2024 13:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1296,8 +1296,8 @@ Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)                    date: 2024-12-16 14:27:44
 (epstopdf)                    size: 150466 bytes
 (epstopdf)             Output file: <logo-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 12:53:10
-(epstopdf)                    size: 15220 bytes
+(epstopdf)                    date: 2024-12-16 13:33:55
+(epstopdf)                    size: 15219 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf 
 logo.eps>
 (epstopdf)             \includegraphics on input line 70.
@@ -1305,7 +1305,7 @@ runsystem(repstopdf --outfile=logo-eps-converted-to.pdf logo.eps)...executed sa
 fely (allowed).
 
 Package epstopdf Info: Result file: <logo-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 12:53:13
+(epstopdf)                    date: 2024-12-16 13:34:22
 (epstopdf)                    size: 15220 bytes.
 <logo-eps-converted-to.pdf, id=41, 400.49625pt x 176.66pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
@@ -1418,15 +1418,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 56.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 83.
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-85.
+89.
 (/usr/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 85.
-) (./Puntos/5.tex [3])
-[4] (./main.aux
+(Font)              scaled to size 12.0pt on input line 89.
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 89.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/up' will be
+(Font)              scaled to size 10.95pt on input line 91.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/up' will be
+(Font)              scaled to size 12.0pt on input line 121.
+ [3] [4]) (./Puntos/5.tex)
+[5] (./main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1436,13 +1445,13 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26766 strings out of 476014
- 552553 string characters out of 5792004
- 1946187 words of memory out of 5000000
- 48301 multiletter control sequences out of 15000+600000
- 613751 words of font info for 82 fonts, out of 8000000 for 9000
+ 27618 strings out of 476014
+ 561388 string characters out of 5792004
+ 2112187 words of memory out of 5000000
+ 49153 multiletter control sequences out of 15000+600000
+ 616218 words of font info for 92 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 93i,16n,99p,498b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,16n,99p,813b,2048s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1455,10 +1464,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts
 yre/qhvr.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/
 share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts
 /type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (4 pages, 196796 bytes).
+Output written on main.pdf (5 pages, 207118 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

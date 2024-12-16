@@ -77,7 +77,65 @@ x_n
 $$
     \end{proof}
 
-    \item[(c)] Solucione el sistema $H_n x = b$, donde $b$ tiene componentes $b_i = 1 / (n + i - 1)$, para $i = 1, \ldots, n$. Para esto, use las factorizaciones LU ($[L, U] = \text{lu}(H)$) y Cholesky ($L = \text{chol}(H)$). Luego resuelva los dos sistemas triangulares.
+    \item[(c)] Solucione el sistema $H_n x = b$, donde $b$ tiene componentes $b_i = 1 / (n + i +1)$, para $i = 0, \ldots, n$. Para esto, use las factorizaciones LU ($[L, U] = \text{lu}(H)$) y Cholesky ($L = \text{chol}(H)$). Luego resuelva los dos sistemas triangulares.
+
+    \begin{solution}
+    El teorema de Stone-Weierstrass nos dice que los polinomios son densos en las funciones continuas, esto nos da que la aproximación que nos piden es posible, al truncar el número de coeficientes del polinomio vimos que el problema de optimizarlos se reduce a resolver el sistema $H_nx=b$, esto podemos programarlo en Matlab, Python, etc. Para este caso nosotros hemos hecho el trabajo en ambos lenguajes con el propósito de comparar resultados, antes de presentar los códigos en Matlab observemos que
+
+    $$b_i=\dfrac{1}{n+i+1}=\int_0^1f(t)t^i dt,$$
+
+    y por lo tanto $f(t)=t^n$, en efecto estamos aproximando el polinomio $t^n$ por polinomios, así pues, esperaríamos una solución numérica del estilo $a=(0,\ldots,1)^T$. Para el caso de la factorización $LU$ implementamos
+
+    \begin{lstlisting}
+    n = 10; 
+    H = hilb(n); %Genera la matriz de Hilbert de orden n
+    b = zeros(n, 1); %Crea un vector con n ceros 
+    for i = 1:n
+        b(i) = 1 / (i + n - 1); %Cambia  las entradas por las del ejercicio
+    end
+    [L, U] = lu(H);
+
+    %Solucionamos los sistemas
+
+    y = L \ b;
+    a_LU = U \ y;
+
+    disp(a_LU')
+    \end{lstlisting}
+
+    En el caso de la factorización de Cholesky
+
+    \begin{lstlisting}
+    n = 10; 
+    H = hilb(n); 
+    b = zeros(n, 1); 
+    for i = 1:n
+        b(i) = 1 / (i + n - 1); 
+    end
+    L = chol(H); 
+    y = L' \ b;
+    a_LU = L \ y;
+    disp(a_LU')
+    \end{lstlisting}
+
+    En ambos casos tomamos un tamaño $n=10$ para probar el algoritmo, en donde la factorización $LU$ nos arrojó el resultado $x=(0,0,0,0,0,0,0,0,0,1)^T$ y la factorización de Cholesky nos dió el resultado 
+
+   \[x=
+\begin{bmatrix}
+4.4438 \times e^{-11} \\
+-3.8598 \times e^{-9} \\
+8.2505 \times e^{-8} \\
+-7.5194 \times e^{-7} \\
+3.5931 \times e^{-6} \\
+-9.8904 \times e^{-6} \\
+1.6243 \times e^{-5} \\
+-1.5708 \times e^{-5} \\
+8.2514 \times e^{-6} \\
+1
+\end{bmatrix}
+\]
+    \end{solution}
+
     \item[(d)] Para ambos métodos, ¿qué tan precisas son las soluciones numéricas $\hat{x}_{\text{approx}}$? Tabule los errores de la solución:
     \[
     e(n) = \|\hat{x}_{\text{approx}} - x_{\text{exact}}\|

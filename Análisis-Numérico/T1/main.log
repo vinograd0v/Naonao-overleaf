@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.15)  16 DEC 2024 10:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.15)  16 DEC 2024 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1208,35 +1208,35 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 71.
+ 72.
 
 (/usr/share/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 71.
+(Font)              scaled to size 12.0pt on input line 72.
  (./main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Info: Redefining \. on input line 71.
-LaTeX Info: Redefining \% on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1269,72 +1269,72 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 )
 \c@mv@tabular=\count408
 \c@mv@boldtabular=\count409
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 71.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 72.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 71.
+(Font)              `operators' in the math version `normal' on input line 72.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/ntxtlf/m/up on input line 71.
+(Font)                  OT1/cmr/m/n --> T1/ntxtlf/m/up on input line 72.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 71.
+(Font)              `operators' in the math version `bold' on input line 72.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/m/up on input line 71.
+(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/m/up on input line 72.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `tabular' on input line 71.
+(Font)              `operators' in the math version `tabular' on input line 72.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `tabular'
-(Font)                  OT1/cmr/m/n --> T1/ntxtlf/m/up on input line 71.
+(Font)                  OT1/cmr/m/n --> T1/ntxtlf/m/up on input line 72.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `operators' in the math version `boldtabular' on input line
- 71.
+ 72.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `boldtabular
 '
-(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/m/up on input line 71.
+(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/m/up on input line 72.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  T1/ntxtlf/m/up --> T1/ntxtlf/b/up on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 71.
+(Font)                  T1/ntxtlf/m/up --> T1/ntxtlf/b/up on input line 72.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 71.
+(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 71.
+(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `tabular'
-(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 71.
+(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `boldtabular
 '
-(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 71.
+(Font)                  OT1/cmr/bx/n --> T1/ntxtlf/b/up on input line 72.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/qhv/m/up on input line 71.
+(Font)                  OT1/cmss/m/n --> T1/qhv/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/qhv/m/up on input line 71.
+(Font)                  OT1/cmss/bx/n --> T1/qhv/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `tabular'
-(Font)                  OT1/cmss/m/n --> T1/qhv/m/up on input line 71.
+(Font)                  OT1/cmss/m/n --> T1/qhv/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `boldtabular
 '
-(Font)                  OT1/cmss/bx/n --> T1/qhv/m/up on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 71.
+(Font)                  OT1/cmss/bx/n --> T1/qhv/m/up on input line 72.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/ntxtlf/m/it on input line 71.
+(Font)                  OT1/cmr/m/it --> T1/ntxtlf/m/it on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/ntxtlf/m/it on input line 71.
+(Font)                  OT1/cmr/bx/it --> T1/ntxtlf/m/it on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `tabular'
-(Font)                  OT1/cmr/m/it --> T1/ntxtlf/m/it on input line 71.
+(Font)                  OT1/cmr/m/it --> T1/ntxtlf/m/it on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `boldtabular
 '
-(Font)                  OT1/cmr/bx/it --> T1/ntxtlf/m/it on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 71.
+(Font)                  OT1/cmr/bx/it --> T1/ntxtlf/m/it on input line 72.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 71.
+(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 71.
+(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `tabular'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 71.
+(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `boldtabular
 '
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 71.
+(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/qhv/m/up --> T1/qhv/b/up on input line 71.
+(Font)                  T1/qhv/m/up --> T1/qhv/b/up on input line 72.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/ntxtlf/m/it --> T1/ntxtlf/b/it on input line 71.
+(Font)                  T1/ntxtlf/m/it --> T1/ntxtlf/b/it on input line 72.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1374,98 +1374,98 @@ Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)                    date: 2024-12-16 14:27:44
 (epstopdf)                    size: 150466 bytes
 (epstopdf)             Output file: <logo-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:01
+(epstopdf)                    date: 2024-12-16 13:20:48
 (epstopdf)                    size: 15220 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf 
 logo.eps>
-(epstopdf)             \includegraphics on input line 77.
+(epstopdf)             \includegraphics on input line 78.
 runsystem(repstopdf --outfile=logo-eps-converted-to.pdf logo.eps)...executed sa
 fely (allowed).
 
 Package epstopdf Info: Result file: <logo-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:20
+(epstopdf)                    date: 2024-12-16 13:21:02
 (epstopdf)                    size: 15220 bytes.
 <logo-eps-converted-to.pdf, id=41, 400.49625pt x 176.66pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
-Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 77.
+Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 78.
 (pdftex.def)             Requested size: 124.15254pt x 54.76402pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 78.
+(Font)              scaled to size 14.4pt on input line 79.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 78.
-LaTeX Font Info:    Trying to load font information for T1+qhv on input line 78
+(Font)              scaled to size 14.4pt on input line 79.
+LaTeX Font Info:    Trying to load font information for T1+qhv on input line 79
 .
 (/usr/share/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 6.0pt on input line 79.
+(Font)              scaled to size 6.0pt on input line 80.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 80.
+(Font)              scaled to size 12.0pt on input line 81.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--83
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--83
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--83
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
 
  []
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 86.
+(Font)              scaled to size 10.95pt on input line 87.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 95.
+(Font)              scaled to size 17.28pt on input line 96.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 95.
+(Font)              scaled to size 17.28pt on input line 96.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 97.
+(Font)              scaled to size 14.4pt on input line 98.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/up' will be
-(Font)              scaled to size 8.0pt on input line 98.
+(Font)              scaled to size 8.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/up' will be
-(Font)              scaled to size 6.0pt on input line 98.
-LaTeX Font Info:    Trying to load font information for U+eur on input line 98.
+(Font)              scaled to size 6.0pt on input line 99.
+LaTeX Font Info:    Trying to load font information for U+eur on input line 99.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/ueur.fd
 File: ueur.fd 2013/01/14 v3.01 Euler Roman
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 98
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 99
 .
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 98.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 99.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-LaTeX Font Info:    Trying to load font information for U+eus on input line 98.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 99.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-LaTeX Font Info:    Trying to load font information for U+euex on input line 98
+LaTeX Font Info:    Trying to load font information for U+euex on input line 99
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/ueuex.fd
@@ -1473,18 +1473,18 @@ File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 104.
+(mdframed)              on input line 105.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 104.
+(Font)              scaled to size 12.0pt on input line 105.
 
-Overfull \hbox (16.44888pt too wide) detected at line 120
+Overfull \hbox (16.44888pt too wide) detected at line 121
 [] \OMS/cmsy/m/n/12 ^^Y \U/eur/m/n/12 ^^AT[] \U/euf/m/n/12 + \U/eur/m/n/12 ^^Ak
  []
  []
 
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 128.
+(mdframed)              on input line 129.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
@@ -1493,201 +1493,201 @@ x-ec-tlf-pc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/
 share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./logo-eps-converted-to
 .pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 135.
+e 136.
  (/usr/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 135.
+(Font)              scaled to size 12.0pt on input line 136.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 137.
+(mdframed)              on input line 138.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 149.
+(mdframed)              on input line 150.
  [2{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 213.
+(mdframed)              on input line 214.
  [3]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 217.
+(Font)              scaled to size 8.0pt on input line 218.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 217.
+(Font)              scaled to size 6.0pt on input line 218.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 221.
+(mdframed)              on input line 222.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 233.
+(mdframed)              on input line 234.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 286.
+(mdframed)              on input line 287.
  [4] [5]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 302.
+(mdframed)              on input line 303.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 310.
+(mdframed)              on input line 311.
  [6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 319.
+(mdframed)              on input line 320.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 338.
+(mdframed)              on input line 339.
 <sancoya.png, id=74, 562.1pt x 289.08pt>
 File: sancoya.png Graphic file (type png)
 <use sancoya.png>
-Package pdftex.def Info: sancoya.png  used on input line 371.
+Package pdftex.def Info: sancoya.png  used on input line 372.
 (pdftex.def)             Requested size: 20.99635pt x 10.79999pt.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 371.
+(mdframed)              on input line 372.
  [7]
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 371.
+(mdframed)              on input line 372.
  [8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 384.
+(mdframed)              on input line 385.
 Package epstopdf Info: Source file: <Gráficas/AN-T1-P4A.eps>
 (epstopdf)                    date: 2024-12-16 14:27:44
 (epstopdf)                    size: 25882 bytes
 (epstopdf)             Output file: <Gráficas/AN-T1-P4A-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:02
+(epstopdf)                    date: 2024-12-16 13:20:49
 (epstopdf)                    size: 12348 bytes
 (epstopdf)             Command: <repstopdf --outfile=Gráficas/AN-T1-P4A-eps-co
 nverted-to.pdf Gráficas/AN-T1-P4A.eps>
-(epstopdf)             \includegraphics on input line 389.
+(epstopdf)             \includegraphics on input line 390.
 runsystem(repstopdf --outfile=Gráficas/AN-T1-P4A-eps-converted-to.pdf Gráfica
 s/AN-T1-P4A.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <Gráficas/AN-T1-P4A-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:21
-(epstopdf)                    size: 12346 bytes.
+(epstopdf)                    date: 2024-12-16 13:21:03
+(epstopdf)                    size: 12348 bytes.
 <Gráficas/AN-T1-P4A-eps-converted-to.pdf, id=85, 462.72874pt x 347.2975pt>
 File: Gráficas/AN-T1-P4A-eps-converted-to.pdf Graphic file (type pdf)
 <use Gráficas/AN-T1-P4A-eps-converted-to.pdf>
 Package pdftex.def Info: Gráficas/AN-T1-P4A-eps-converted-to.pdf  used on inpu
-t line 389.
+t line 390.
 (pdftex.def)             Requested size: 325.74161pt x 244.4844pt.
  [9 <./sancoya.png> <./Gráficas/AN-T1-P4A-eps-converted-to.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 405.
+(mdframed)              on input line 406.
 Package epstopdf Info: Source file: <Gráficas/AN-T1-P4B.eps>
 (epstopdf)                    date: 2024-12-16 14:27:44
 (epstopdf)                    size: 25159 bytes
 (epstopdf)             Output file: <Gráficas/AN-T1-P4B-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:02
+(epstopdf)                    date: 2024-12-16 13:20:50
 (epstopdf)                    size: 11933 bytes
 (epstopdf)             Command: <repstopdf --outfile=Gráficas/AN-T1-P4B-eps-co
 nverted-to.pdf Gráficas/AN-T1-P4B.eps>
-(epstopdf)             \includegraphics on input line 409.
+(epstopdf)             \includegraphics on input line 410.
 runsystem(repstopdf --outfile=Gráficas/AN-T1-P4B-eps-converted-to.pdf Gráfica
 s/AN-T1-P4B.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <Gráficas/AN-T1-P4B-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:22
+(epstopdf)                    date: 2024-12-16 13:21:04
 (epstopdf)                    size: 11933 bytes.
 <Gráficas/AN-T1-P4B-eps-converted-to.pdf, id=123, 462.72874pt x 347.2975pt>
 File: Gráficas/AN-T1-P4B-eps-converted-to.pdf Graphic file (type pdf)
 <use Gráficas/AN-T1-P4B-eps-converted-to.pdf>
 Package pdftex.def Info: Gráficas/AN-T1-P4B-eps-converted-to.pdf  used on inpu
-t line 409.
+t line 410.
 (pdftex.def)             Requested size: 325.74161pt x 244.4844pt.
  [10 <./Gráficas/AN-T1-P4B-eps-converted-to.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 432.
+(mdframed)              on input line 433.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 469.
+(mdframed)              on input line 470.
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
 
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-473.
+474.
 (/usr/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 473.
+(Font)              scaled to size 12.0pt on input line 474.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 473.
+(Font)              scaled to size 10.95pt on input line 474.
 Package epstopdf Info: Source file: <Gráficas/P5-1.eps>
 (epstopdf)                    date: 2024-12-16 14:27:44
 (epstopdf)                    size: 40536 bytes
 (epstopdf)             Output file: <Gráficas/P5-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:03
+(epstopdf)                    date: 2024-12-16 13:20:50
 (epstopdf)                    size: 9098 bytes
 (epstopdf)             Command: <repstopdf --outfile=Gráficas/P5-1-eps-convert
 ed-to.pdf Gráficas/P5-1.eps>
-(epstopdf)             \includegraphics on input line 493.
+(epstopdf)             \includegraphics on input line 494.
 runsystem(repstopdf --outfile=Gráficas/P5-1-eps-converted-to.pdf Gráficas/P5-
 1.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <Gráficas/P5-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:22
+(epstopdf)                    date: 2024-12-16 13:21:04
 (epstopdf)                    size: 9098 bytes.
 <Gráficas/P5-1-eps-converted-to.pdf, id=158, 421.575pt x 316.18124pt>
 File: Gráficas/P5-1-eps-converted-to.pdf Graphic file (type pdf)
 <use Gráficas/P5-1-eps-converted-to.pdf>
 Package pdftex.def Info: Gráficas/P5-1-eps-converted-to.pdf  used on input lin
-e 493.
+e 494.
 (pdftex.def)             Requested size: 325.74161pt x 244.30942pt.
  [11]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 508.
+(mdframed)              on input line 509.
  [12 <./Gráficas/P5-1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Gráficas/P5-2.eps>
 (epstopdf)                    date: 2024-12-16 14:27:44
 (epstopdf)                    size: 30628 bytes
 (epstopdf)             Output file: <Gráficas/P5-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:04
+(epstopdf)                    date: 2024-12-16 13:20:51
 (epstopdf)                    size: 8738 bytes
 (epstopdf)             Command: <repstopdf --outfile=Gráficas/P5-2-eps-convert
 ed-to.pdf Gráficas/P5-2.eps>
-(epstopdf)             \includegraphics on input line 544.
+(epstopdf)             \includegraphics on input line 545.
 runsystem(repstopdf --outfile=Gráficas/P5-2-eps-converted-to.pdf Gráficas/P5-
 2.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <Gráficas/P5-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-12-16 10:10:23
+(epstopdf)                    date: 2024-12-16 13:21:05
 (epstopdf)                    size: 8738 bytes.
 <Gráficas/P5-2-eps-converted-to.pdf, id=173, 421.575pt x 316.18124pt>
 File: Gráficas/P5-2-eps-converted-to.pdf Graphic file (type pdf)
 <use Gráficas/P5-2-eps-converted-to.pdf>
 Package pdftex.def Info: Gráficas/P5-2-eps-converted-to.pdf  used on input lin
-e 544.
+e 545.
 (pdftex.def)             Requested size: 314.39998pt x 235.80377pt.
  [13]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 555.
+(mdframed)              on input line 556.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 559.
+(mdframed)              on input line 560.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 565.
+(mdframed)              on input line 566.
  [14 <./Gráficas/P5-2-eps-converted-to.pdf>]
-Package mdframed Info: Not enough space on this page on input line 569.
+Package mdframed Info: Not enough space on this page on input line 570.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 572.
+(mdframed)              on input line 573.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 580.
+(mdframed)              on input line 581.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 586.
+(mdframed)              on input line 587.
 
 [15] (./main.aux
 LaTeX Info: Redefining \. on input line 9.
@@ -1705,7 +1705,7 @@ Here is how much of TeX's memory you used:
  49833 multiletter control sequences out of 15000+600000
  614943 words of font info for 87 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 93i,16n,99p,894b,2004s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,16n,99p,894b,2000s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1718,7 +1718,7 @@ blic/tex-gyre/qhvr.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.
 pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/tex
 mf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/newtx/ztmr.pfb>
-Output written on main.pdf (15 pages, 375683 bytes).
+Output written on main.pdf (15 pages, 375581 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  123 compressed objects within 2 object streams

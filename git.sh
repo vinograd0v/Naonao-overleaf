@@ -21,12 +21,12 @@ git status
 read -p "Ya está actualizado el repo, vas a hacer cambios? (S/n): " confirm_after_pull
 if [[ "$confirm_after_pull" == "s" || "$confirm_after_pull" == "S" ]]; then
     git add .
-    read -p "Describe los cambios resultantes de la fusión (si aplica): " merge_message
+    read -p "Commit del cambio que vas a subir... " merge_message
     git commit -m "$merge_message"
 fi
 
 # Paso 4: Hacer push para subir los cambios al repositorio remoto
-read -p "¿Quieres hacer git push para subir los cambios al repositorio remoto? (s/n): " confirm_push
+read -p "Confirmar el push que vas a hacer (S/n): " confirm_push
 if [[ "$confirm_push" == "s" || "$confirm_push" == "S" ]]; then
     echo "Haciendo git push..."
     git push

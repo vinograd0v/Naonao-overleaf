@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.18)  16 DEC 2024 17:16
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.15)  16 DEC 2024 13:34
+>>>>>>> 18ba1a9c535267e0a84368535676e0bd3e56622d
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1506,6 +1510,7 @@ Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)                    date: 2024-12-16 10:20:07
 (epstopdf)                    size: 150466 bytes
 (epstopdf)             Output file: <logo-eps-converted-to.pdf>
+<<<<<<< HEAD
 (epstopdf)                    date: 2024-12-16 10:20:07
 (epstopdf)                    size: 15221 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=logo-eps-converted-t
@@ -1513,6 +1518,20 @@ o.pdf logo.eps>
 (epstopdf)             \includegraphics on input line 70.
 Package epstopdf Info: Output file is already uptodate.
 <logo-eps-converted-to.pdf, id=40, 400.49625pt x 176.66pt>
+=======
+(epstopdf)                    date: 2024-12-16 13:33:55
+(epstopdf)                    size: 15219 bytes
+(epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf 
+logo.eps>
+(epstopdf)             \includegraphics on input line 70.
+runsystem(repstopdf --outfile=logo-eps-converted-to.pdf logo.eps)...executed sa
+fely (allowed).
+
+Package epstopdf Info: Result file: <logo-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-12-16 13:34:22
+(epstopdf)                    size: 15220 bytes.
+<logo-eps-converted-to.pdf, id=41, 400.49625pt x 176.66pt>
+>>>>>>> 18ba1a9c535267e0a84368535676e0bd3e56622d
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
 Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 70.
@@ -1624,6 +1643,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
+<<<<<<< HEAD
 ) (Puntos/3.tex) (Puntos/4.tex
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
 25.
@@ -1639,6 +1659,57 @@ LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 [3]) (Puntos/5.tex)
 
 [4] (main.aux
+=======
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 8.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 8.
+) (./Puntos/3.tex) (./Puntos/4.tex [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
+/enc/dvips/tex-gyre/q-ec-sc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/newtx/nt
+x-ec-tlf-pc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/
+share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./logo-eps-converted-to
+.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 21.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 21.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 51.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 56.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 83.
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
+89.
+(/usr/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 89.
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 89.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/up' will be
+(Font)              scaled to size 10.95pt on input line 91.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/up' will be
+(Font)              scaled to size 12.0pt on input line 121.
+ [3] [4]) (./Puntos/5.tex)
+[5] (./main.aux
+>>>>>>> 18ba1a9c535267e0a84368535676e0bd3e56622d
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -1648,6 +1719,7 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  26642 strings out of 473682
  565812 string characters out of 5713943
  998062 words of memory out of 5000000
@@ -1676,6 +1748,31 @@ KTeX/fonts/type1/public/newtx/ztmr.pfb>
 Output written on main.pdf (4 pages, 199755 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
+=======
+ 27618 strings out of 476014
+ 561388 string characters out of 5792004
+ 2112187 words of memory out of 5000000
+ 49153 multiletter control sequences out of 15000+600000
+ 616218 words of font info for 92 fonts, out of 8000000 for 9000
+ 40 hyphenation exceptions out of 8191
+ 93i,16n,99p,813b,2048s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/e
+uler/euex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts
+/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf-dist/fonts/type1/public/tex-g
+yre/qhvr.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/
+share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts
+/type1/public/newtx/ztmr.pfb>
+Output written on main.pdf (5 pages, 207118 bytes).
+PDF statistics:
+ 142 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+>>>>>>> 18ba1a9c535267e0a84368535676e0bd3e56622d
  0 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

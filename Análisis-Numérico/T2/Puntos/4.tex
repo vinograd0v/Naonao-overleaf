@@ -15,7 +15,12 @@ E^2 := \|p - f\|_{L^2}^2 = \int_0^1 [p(t) - f(t)]^2 \, dt.
     \[
     (H_n)_{i,j} = \frac{1}{i + j + 1}, \quad i, j = 0, \ldots, n.
     \]
-    El vector $a$ representa los coeficientes del polinomio $p$.
+    El vector $a$ representa los coeficientes del polinomio $p$.\\
+
+    \begin{proof}
+    xd
+    \end{proof}
+
     \item[(b)] Muestre que $H_n$ es simétrica y definida positiva.
     \item[(c)] Solucione el sistema $H_n x = b$, donde $b$ tiene componentes $b_i = 1 / (n + i - 1)$, para $i = 1, \ldots, n$. Para esto, use las factorizaciones LU ($[L, U] = \text{lu}(H)$) y Cholesky ($L = \text{chol}(H)$). Luego resuelva los dos sistemas triangulares.
     \item[(d)] Para ambos métodos, ¿qué tan precisas son las soluciones numéricas $\hat{x}_{\text{approx}}$? Tabule los errores de la solución:

@@ -18,7 +18,36 @@ E^2 := \|p - f\|_{L^2}^2 = \int_0^1 [p(t) - f(t)]^2 \, dt.
     El vector $a$ representa los coeficientes del polinomio $p$.\\
 
     \begin{proof}
-    xd
+    Sea $p(t)=\displaystyle\sum_{j=0}^{n} a_jt^j$, note que 
+
+    \begin{align*}
+        E^2(a_0,\ldots,a_n)&=\int_0^1\left(p(t)-f(t)\right)^2dt\\
+        &=\int_0^1\left(\sum_{j=0}^{n} a_jt^j-f(t)\right)^2dt\\
+        &=\int_0^1\left(\sum_{j=0}^{n} a_jt^j\right)^2dt-2\int_0^1f(t)\sum_{j=0}^{n} a_jt^j dt+\|f\|_{L^2}^2
+    .\end{align*}
+
+    Note que esta función depende de los coneficientes, por lo tanto para minimizar el error podemos derivar parcialmente con respecto a $a_k$, $0\leq k\leq n$ e igualar a 0. Derivando obtenemos que
+
+    \begin{align*}
+        \frac{\partial E^2}{\partial a_k}=2\int_0^1\left(\sum_{j=0}^{n} a_jt^{k+j}\right)dt-2\int_0^1f(t)t^kdt=0 
+    ,\end{align*}
+    
+    despejando de esta ecuación obtenemos que
+
+    $$\int_0^1\sum_{j=0}^{n} a_jt^{j+k}dt=\sum_{j=0}^{n} a_j\int_0^1t^{j+k}dt=\int_0^1f(t)t^k dt,$$
+
+    más aún, como $\displaystyle\int_0^1t^{k+j}dt=\frac{1}{k+j+1}=(H_n)_{k,j}$, obtenemos
+
+    $$\sum_{j=0}^{n} a_j(H_n)_{k,j}=(H_n)_k\begin{pmatrix}
+           a_{1} \\
+           a_{2} \\
+           \vdots \\
+           a_{n}
+         \end{pmatrix}=\int_0^1f(t)t^kdt=b_k,$$
+
+donde $(H_n)_k$ denota la $k-$ésima fila de la matriz $(H_n)$, que es lo mismo que $H_n a=b$.
+
+
     \end{proof}
 
     \item[(b)] Muestre que $H_n$ es simétrica y definida positiva.

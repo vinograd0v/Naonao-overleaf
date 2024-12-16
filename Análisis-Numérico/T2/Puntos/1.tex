@@ -5,7 +5,7 @@ Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
 
 \begin{enumerate}
     \item[(a)] $\|A\|_2 = \|A^T\|_2 \leq \|A\|_F = \|A^T\|_F$
-
+    \begin{proof}
     Para mostrar que $\|A\|_2 = \|A^T\|_2$ veremos que todo valor propio no nulo de $A^TA$ lo es también de $AA^T$: Sea $v$ un vector propio de $A^TA$ y $\lambda$ el valor propio de $A^TA$ asociado a $v$, entonces
     \begin{align*}
     AA^T(Av) &= A(A^TAv) \\ 
@@ -29,8 +29,9 @@ Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
     \sqrt{\lambda_{max}(A^TA)} & \leq \sqrt{\text{tr}(A^TA)}\\ 
     \|A\|_2\ & \leq \|A\|_F
     \end{align*}
+    \end{proof}
     \item[(b)] $\|A\|_\infty \leq \sqrt{n} \|A\|_2$
-
+    \begin{proof}
     Primero note que $\|Ae_j\|_2^2=\sum_{i=1}^m |a_{ij}|^2\leq \|A\|_2^2$, por lo tanto, $\sum_{j=1}^n \|Ae_j\|_2^2\leq n\|A\|_2^2$. Ahora, usando la desigualdad de Cauchy-Schwartz obtenemos el siguiente resultado:
     \begin{align*}
     \|A\|_\infty^{2} & =\left(\max_{1\leq i \leq m}{\sum_{j=1}^n|a_{ij}|}\right)^2\\ 
@@ -41,9 +42,9 @@ Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
         &\leq n\|A\|_2^2
     \end{align*}
     Tomando raíz cuadrada llegamos a que $\|A\|_\infty \leq \sqrt{n}\|A\|_2$.
-
+    \end{proof}
     \item[(c)] $\|A\|_2 \leq \sqrt{m} \|A\|_\infty$
-
+    \begin{proof}
     Note que
     \begin{align*}
     \|Ax\|_2^2 &= \sum_{j=1}^m\left|\sum_{i=1}^n a_{ij}x_{j}\right|^2\\ 
@@ -52,8 +53,9 @@ Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
     &= m\|Ax\|_\infty^2
     \end{align*}
     Tomando raíz cuadrada se obtiene que $\|Ax\|_2\leq \|Ax\|_\infty$ y por lo tanto $\|A\|_2 \leq \|A\|_\infty$
+    \end{proof}
     \item[(d)] $\|A\|_2 \leq \sqrt{\|A\|_1 \|A\|_\infty}.$
-
+    \begin{proof}
     Tenemos que $\|Ax\|_\infty = \max_{1 \leq i \leq n}{\left|\sum_{j=1}^{n}a_{ij}x_j\right|}$ y también que $\|Ax\|_1 = \sum_{i=1}^m\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|$. De esta manera
     \begin{align*}
     \|Ax\|_2^2 & = \sum_{i=1}^m\left|\sum_{j=1}^{n}a_{ij}x_{j}\right|^2 \\ 
@@ -63,4 +65,5 @@ Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
     \end{align*}
 
     Así, $\|Ax\|_2\leq \sqrt{\|Ax\|_1 \|Ax\|_\infty}$, en consecuencia $\|A\|_2 \leq \sqrt{\|A\|_1 \|A\|_\infty}$
+    \end{proof}
 \end{enumerate}

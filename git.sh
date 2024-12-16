@@ -18,8 +18,7 @@ git pull --rebase
 # Paso 3: Confirmar cambios resultantes después del pull
 echo "Estado del repo:"
 git status
-confirm_after_pull="S"
-
+read -p "Ya está actualizado el repo, vas a hacer cambios? (S/n): " confirm_after_pull
 if [[ "$confirm_after_pull" == "s" || "$confirm_after_pull" == "S" ]]; then
     git add .
     read -p "Describe los cambios resultantes de la fusión (si aplica): " merge_message

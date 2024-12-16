@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "¿Quieres añadir y confirmar tus cambios locales? (s/n): " confirm_local_changes
+confirm_local_changes="S"
 if [[ "$confirm_local_changes" == "s" || "$confirm_local_changes" == "S" ]]; then
     git add .
 

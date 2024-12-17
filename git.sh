@@ -13,7 +13,7 @@ fi
 
 # Paso 2: Hacer pull para fusionar cambios remotos
 echo "Haciendo git pull para actualizar cambios del repositorio remoto en el local..."
-git pull --rebase
+git pull
 
 # Paso 3: Confirmar cambios resultantes después del pull
 echo "Estado del repo:"

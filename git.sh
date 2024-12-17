@@ -6,7 +6,7 @@ git commit -m "$commit_message"
 echo "Cambios locales añadidos y confirmados."
 
 echo "Haciendo git pull para actualizar cambios del repositorio remoto en el local..."
-git pull --rebase
+git pull
 
 read -p "Vas a hacer un push? (S/n): " confirm_push
 if [[ "$confirm_push" == "s" || "$confirm_push" == "S" ]]; then

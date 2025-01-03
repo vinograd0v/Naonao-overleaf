@@ -9,5 +9,46 @@ Si $Ax = b$, $(A + \delta A)(x + \delta x) = b + \delta b$ y $\|A^{-1}\| \|\delt
 \]
 
 \begin{sproof}
-    aaaaaa
+    Primero  mostremos que $A+\delta A$ es invertible. Notemos que como $A$ es invertible tenemos
+
+     $$A+\delta A=A(I-(-A^{-1}\delta A)).$$
+
+     Luuego por hipotesis y usando que la norma matricial es submultiplicativa tenemos que
+     $$\|-A^{-1}\delta A\|\leq\|A^{-1}\|\|\delta A\|<1.$$
+     Por lo que $I+A^{-1}\delta A$ es invertible por el teorema de la serie de Neumann. Asi $A+\delta A$ es invertible, pues es el producto de dos matrices invertibles.\\
+
+     Ahora probemos la desigualdad. Como por hipotesis $Ax=b$, notemos que 
+     \begin{align*}
+     (A+\delta A)(x+\delta x)&=Ax+A\delta x+\delta Ax+\delta A\delta x\\
+     &=b+A\delta x+\delta Ax+\delta A\delta x.
+     \end{align*}
+
+     Reemplazando en la hipotesis tenemos que
+     $$b+A\delta x+\delta Ax+\delta A\delta x=b+\delta b,$$
+     luego
+     $$A\delta x=\delta b-\delta Ax-\delta A\delta x,$$
+     y como $A$ es invertible
+     $$\delta x=A^{-1}\delta b-A^{-1}\delta Ax-A^{-1}\delta A\delta x.$$
+     Si tomamos la norma en $\mathbb{R}^n$ en ambos lados, por la desigualdad triangular y el hecho de que la norma matricial inducida es compatible y submultiplicativa tenemos que
+     \begin{align*}
+     \|\delta x\|&=\|A^{-1}\delta b-A^{-1}\delta Ax-A^{-1}\delta A\delta x\|\\
+     &\leq \|A^{-1}\delta b\|+\|A^{-1}\delta Ax\|+\|A^{-1}\delta A\delta x\|\\
+     &\leq \|A^{-1}\|\|\delta b\|+\|A^{-1}\|\|\delta A\|\|x\|+\|A^{-1}\|\|\delta A\|\|\delta x\|.
+     \end{align*}
+     Luego restando el ultimo sumando y factorizando $\|\delta x\|$ tenemos
+     $$\|\delta x\|(1-\|A^{-1}\|\|\delta A\|)\leq \|A^{-1}\|\|\delta b\|+\|A^{-1}\|\|\delta A\|\|x\|. $$
+     Como $A$ es invertible, es distinta de 0, luego $\|A\|>0$, asi tenemos que por la definicion del numero de condicion $\|A^{-1}\|=\dfrac{cond(A)}{\|A\|}.$ Ademas tenemos que $\|b\|=\|Ax\|\leq\|A\|\|x\|,$ por tanto $\dfrac{1}{\|A\|\|x\|}\leq\dfrac{1}{\|b\|}.$ Con todo esto notemos que para el lado derecho de la desigualdad tenemos que
+     \begin{align*}
+       \|A^{-1}\|\|\delta b\|+\|A^{-1}\|\|\delta A\|\|x\|&=\dfrac{cond(A)}{\|A\|\|x\|}\|\delta b\|\|x\|+\dfrac{cond(A)}{\|A\|}\|\delta A\|\|x\|\\
+       &\leq\dfrac{cond(A)}{\|b\|}\|\delta b\|\|x\|+\dfrac{cond(A)}{\|A\|}\|\delta A\|\|x\|\\
+       &=cond(A)\|x\|\left(\dfrac{\|\delta A\|}{\|A\|}+\dfrac{\|\delta b\|}{\|b\|}\right).
+     \end{align*}
+     Por lo tanto tenemos que
+     $$\|\delta x\|(1-\|A^{-1}\|\|\delta A\|)\leq cond(A)\|x\|\left(\dfrac{\|\delta A\|}{\|A\|}+\dfrac{\|\delta b\|}{\|b\|}\right).$$
+     Como por hipotesis $0<1-\|A^{-1}\|\|\delta A\|$, podemos dividir y mantener la desigualdad, asi dividiento tambien por $\|x\|$ concluimos que
+     $$\frac{\|\delta x\|}{\|x\|} \leq \frac{\text{cond}(A)}{1 - \|A^{-1}\| \|\delta A\|} \left( \frac{\|\delta A\|}{\|A\|} + \frac{\|\delta b\|}{\|b\|} \right).$$ 
+    
+
+
+
 \end{sproof}

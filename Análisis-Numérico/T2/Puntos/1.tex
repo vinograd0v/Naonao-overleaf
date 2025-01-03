@@ -49,8 +49,8 @@ Sea $A \in \mathbb{R}^{m \times n}$. Entonces se satisface:
     \begin{proof}
     Note que
     \begin{align*}
-    \|Ax\|_2^2 &= \sum_{j=1}^m\left|\sum_{i=1}^n a_{ij}x_{j}\right|^2\\ 
-    &\leq \sum_{j=1}^m\left(\left|\max_{1\leq i \leq m}{\sum_{j=1}^n a_{ij}x_{j}}\right|^2\right)\\ 
+    \|Ax\|_2^2 &= \sum_{i=1}^m\left|\sum_{j=1}^n a_{ij}x_{j}\right|^2\\ 
+    &\leq \sum_{i=1}^m\left(\left|\max_{1\leq i \leq m}{\sum_{j=1}^n a_{ij}x_{j}}\right|^2\right)\\ 
     &= m\left|\max_{1\leq i \leq m}{\sum_{j=1}^n a_{ij}x_{j}}\right|^2\\ 
     &= m\|Ax\|_\infty^2
     \end{align*}

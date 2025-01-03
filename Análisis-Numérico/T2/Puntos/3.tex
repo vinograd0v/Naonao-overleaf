@@ -12,6 +12,95 @@ a & a + \delta
 $a > 0$ fijo, $\delta > 0$ variable.
 
 \begin{enumerate}
-    \item[(a)] Obtenga el número de condición de $A$. Para valores de $\delta$ muy pequeños o muy grandes, ¿podemos afirmar que el sistema $Ax = b$ está mal condicionado? Justifique su respuesta.
-    \item[(b)] ¿Existe algún valor de $\delta$ que haga óptimo el número de condición de $A$? ¿Cuál es este número de condición?
+    \item[(a)] Obtenga el número de condición de $A$. Para valores de $\delta$ muy pequeños o muy grandes, ¿podemos afirmar que el sistema $Ax = b$ está mal condicionado? Justifique su respuesta.\\ 
+
+    \begin{solution}
+    Calcularemos $\mathcal{K}_\infty(A)$, para esto, primero calculamos las normas de $A$ y $A^{-1}$:
+    \[
+    \|A\|_\infty=\max{\{|a|+|a|,|a|+|a+\delta|\}}= 2a + \delta
+    \]
+    Tenemos que $\det{(A)}=a(a+\delta)-a^2=a\delta$, por lo tanto
+    \[
+    A^{-1}=\frac{1}{a\delta}\begin{pmatrix}
+        a + \delta & -a \\ 
+        -a & a
+    \end{pmatrix}
+    \]
+    Así 
+    \[
+    \|A^{-1}\|_{\infty}=\frac{1}{a\delta}\max{\{|a+\delta|+|a|,|-a|+|a|\}}=\frac{2a+\delta}{a\delta}=\frac{2}{\delta}+\frac{1}{a}
+    \]
+
+    De esta manera, el número de condición de $A$ es:
+
+    \[
+    \mathcal{K}_{\infty}(A)=\|A\|_\infty \|A^{-1}\|_\infty=(2a+\delta)\left(\frac{2}{\delta}+\frac{1}{a}\right)=\frac{4a}{\delta} + \frac{\delta}{a} + 4
+    \]
+    Si consideramos $\mathcal{K}$ como una función de $\delta$, podemos ver que:
+    \begin{align*}
+    \lim_{\delta\rightarrow 0} K_{\infty}(\delta)= \lim_{\delta\rightarrow 0} & \frac{4a}{\delta} + \frac{\delta}{a}+4=\infty\\
+    \intertext{ y además}
+    \lim_{\delta\rightarrow \infty} K_{\infty}(\delta)= \lim_{\delta\rightarrow \infty} & \frac{4a}{\delta} + \frac{\delta}{a}+4=\infty
+    \end{align*}
+
+    Con lo cual podemos concluir que para valores muy pequeños o muy grandes de $\delta$ el problema está mal condicionado. Otra forma de analizando es ver que si $\delta$ es muy pequeño, $a + \delta$ es muy cercano a $a$, con lo cual la matriz A está muy cerca de la matriz:
+    \[
+    \begin{pmatrix}
+    a & a \\ 
+    a & a
+    \end{pmatrix}
+    \] 
+    La cual es no invertible.
+
+    Para ver qué sucede cuando $\delta$ es muy grande, usaremos que $\mathcal{K}(A)=\mathcal{K}(A^{-1})$. Note que
+    \[
+    A^{-1}=\begin{pmatrix}
+    \dfrac{1}{\delta} + \dfrac{1}{a} & -\dfrac{1}{\delta}
+    \vspace{0.3 cm}\\  -\dfrac{1}{\delta} & \dfrac{1}{\delta} 
+    \end{pmatrix}
+    \]
+    Así, cuando $\delta$ es muy grande, la matriz $A^{-1}$ está muy cerca de la matriz:
+    \[
+    \begin{pmatrix}
+    \dfrac{1}{a} & \hspace{0.2 cm}  0 \vspace{0.3 cm} \\ 
+    0 & \hspace{0.2 cm} 0
+    \end{pmatrix}
+    \]
+    La cual tampoco es invertible.
+    \end{solution}
+    \item[(b)] ¿Existe algún valor de $\delta$ que haga óptimo el número de condición de $A$? ¿Cuál es este número de condición?\\ 
+
+    \begin{solution}
+    En el numeral anterior obtuvimos que $K_{\infty}=\dfrac{4a}{\delta} + \dfrac{\delta}{a}+ 4$, el cual, al ser considerado como función en términos de $\delta$ es una función diferenciable, por lo tanto solo necesitamos encontrar sus puntos críticos (si los tiene) y analizar el signo de la derivada al rededor de ellos. Al derivar obtenemos que
+    \[
+    \mathcal{K}_{\infty}^{\prime}(\delta)=\frac{1}{a}-\frac{4a}{\delta^{2}}
+    \]
+    Igualando a 0 y multiplicando por el común denominador, llegamos a:
+    \[
+    4a^2=\delta^2
+    \]
+    Como $a$ y $\delta$ son positivos, el punto crítico de $\mathcal{K}_{\infty}(\delta)$ es $\delta=2a$. Ahora veamos el signo de $\mathcal{K}_{\infty}$ al rededor de $2a$:
+
+    Si $0 < \delta < 2a$, entonces
+    \begin{align*}
+      \delta^2 &< 4a^2 \\
+      \frac{1}{\delta^2} &> \frac{1}{4a^2} \\ 
+      \frac{4a}{\delta^2} & > \frac{1}{a} \\    
+      0 & > \frac{1}{a}-\frac{4a}{\delta^2} = \mathcal{K}_{\infty}^{\prime}(\delta)
+      \end{align*}  
+
+    Ahora, si $\delta > 2a$, entonces
+    \begin{align*}
+      \delta^2 &> 4a^2 \\
+      \frac{1}{\delta^2} &< \frac{1}{4a^2} \\ 
+      \frac{4a}{\delta^2} & < \frac{1}{a} \\    
+      0 & < \frac{1}{a}-\frac{4a}{\delta^2} = \mathcal{K}_{\infty}^{\prime}(\delta)
+      \end{align*}
+
+    Así, concluimos que $\mathcal{K}_{\infty}$ es decreciente en el intervalo $(0,2a)$ y creciente en $(2a,\infty)$, por lo tanto $\mathcal{K_\infty}$ alcanza un mínimo en $\delta = 2a$, es decir, $2a$ es el valor que hace óptimo el número de condición de A.
+    Este número de condición es: 
+    \[
+    \frac{4a}{2a}+\frac{2a}{a}+4=2+2+4=8
+    \]
+    \end{solution}
 \end{enumerate}

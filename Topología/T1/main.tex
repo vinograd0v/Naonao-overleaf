@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{newpxtext,euler}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{picinpar}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},
+ left=20mm,
+ top=30mm,
+ }
+\pagestyle{empty}
+\begin{document}
+\setlength{\parindent}{0cm}
+\hoffset-0.46cm
+\voffset-1.46cm
+\begin{window}[0,l,{\includegraphics[scale=0.31]{Graphics/logo.eps}},]
+\large\scshape \hspace{1.4cm}\textsf{Universidad Nacional de Colombia} \\
+\textcolor{white}{\tiny.}  \large \hspace{2.4cm} \textsf{Facultad de Ciencias} \\
+\textcolor{white}{\tiny.}   \normalsize\hspace{2.8cm}\textsf{Topología General}\\
+\end{window}
+\vspace{0.6cm}
+\small
+\textsf{Mateo Andrés Manosalva Amaris\\
+Sergio Alejandro Bello Torres} 
+\normalsize
+\dotfill
+\vspace{0.7cm}
+
+
+\begin{enumerate}
+    \item ¿Cuáles son las componentes y las componentes camino de $\mathbb{R}_{\ell}$? ¿Cuáles son los mapas continuos $f: \mathbb{R} \to \mathbb{R}_{\ell}$?
+
+    \item 
+    \begin{enumerate}
+        \item ¿Cuáles son las componentes y las componentes camino de $\mathbb{R}^\omega$ (en la topología producto)?
+        \item Considera $\mathbb{R}^\omega$ con la topología uniforme. Demuestra que $\mathbf{x}$ y $\mathbf{y}$ están en la misma componente de $\mathbb{R}^\omega$ si y sólo si la sucesión
+        $$
+        \mathbf{x} - \mathbf{y} = \left(x_1 - y_1, x_2 - y_2, \ldots \right)
+        $$
+        es acotada. \textbf{[Sugerencia: Basta considerar el caso donde $\mathbf{y} = \mathbf{0}$.]}
+        \item Da a $\mathbb{R}^\omega$ la topología caja. Demuestra que $\mathbf{x}$ y $\mathbf{y}$ están en la misma componente de $\mathbb{R}^\omega$ si y sólo si la sucesión $\mathbf{x} - \mathbf{y}$ es "eventualmente cero". \textbf{[Sugerencia: Si $\mathbf{x} - \mathbf{y}$ no es eventualmente cero, muestra que existe un homeomorfismo $h$ de $\mathbb{R}^\omega$ en sí mismo tal que $h(\mathbf{x})$ es acotado y $h(\mathbf{y})$ no es acotado.]}
+    \end{enumerate}
+
+    \item Demuestra que el cuadrado ordenado es localmente conexo pero no localmente conexo por caminos. ¿Cuáles son las componentes camino de este espacio?
+
+    \item Sea $X$ un espacio localmente conexo por caminos. Demuestra que todo conjunto abierto conexo de $X$ es conexo por caminos.
+
+    \item Sea $X$ el conjunto de puntos racionales del intervalo $[0,1] \times \{0\}$ de $\mathbb{R}^2$. Sea $T$ la unión de todos los segmentos de línea que unen el punto $p = (0,1)$ con los puntos de $X$.
+    \begin{enumerate}
+        \item Demuestra que $T$ es conexo por caminos, pero es localmente conexo solo en el punto $p$.
+        \item Encuentra un subconjunto de $\mathbb{R}^2$ que sea conexo por caminos, pero no sea localmente conexo en ninguno de sus puntos.
+    \end{enumerate}
+
+    \item Se dice que un espacio $X$ es débilmente localmente conexo en un punto $\mathbf{x}$ si, para cada vecindad $U$ de $\mathbf{x}$, existe un subespacio conexo de $X$ contenido en $U$ que contiene una vecindad de $\mathbf{x}$. Demuestra que si $X$ es débilmente localmente conexo en cada uno de sus puntos, entonces $X$ es localmente conexo. \textbf{[Sugerencia: Muestra que las componentes de los conjuntos abiertos son abiertas.]} 
+
+
+    \item Considere la ``escoba infinita'' \( X \) representada en la Figura 25.1. Demuestre que \( X \) no es localmente conexo en \( p \), pero es débilmente localmente conexo en \( p \).
+
+\textbf{Sugerencia:} Cualquier vecindad conexa de \( p \) debe contener todos los puntos \( a_i \).
+
+    \item Sea $p: X \to Y$ una aplicación cociente. Demuestra que si $X$ es localmente conexo, entonces $Y$ es localmente conexo. \textbf{[Sugerencia: Si $C$ es una componente del conjunto abierto $U$ de $Y$, demuestra que $p^{-1}(C)$ es una unión de componentes de $p^{-1}(U)$.]}
+
+    \item Sea $G$ un grupo topológico y sea $C$ la componente de $G$ que contiene al elemento identidad $e$. Demuestra que $C$ es un subgrupo normal de $G$. \textbf{[Sugerencia: Si $x \in G$, entonces $xC$ es la componente de $G$ que contiene a $x$.]}
+
+    \item Sea $X$ un espacio topológico. Definimos $x \sim y$ si no existe una separación $X = A \cup B$ de $X$ en conjuntos abiertos disjuntos tal que $x \in A$ y $y \in B$.
+    \begin{enumerate}
+        \item Demuestra que esta relación es una relación de equivalencia. Las clases de equivalencia se llaman \textbf{quasicomponentes} de $X$.
+        \item Demuestra que cada componente de $X$ está contenida en una quasicomponente de $X$, y que las componentes y las quasicomponentes de $X$ son iguales si $X$ es localmente conexo.
+        \item Sea $K = \{1/n \mid n \in \mathbb{Z}_+\}$ y sea $-K = \{-1/n \mid n \in \mathbb{Z}_+\}$. Determina las componentes, las componentes camino y las quasicomponentes de los siguientes subespacios de $\mathbb{R}^2$:
+        $$
+        \begin{aligned}
+        & A=(K \times[0,1]) \cup\{0 \times 0\} \cup\{0 \times 1\}, \\
+        & B=A \cup([0,1] \times\{0\}), \\
+        & C=(K \times[0,1]) \cup(-K \times[-1,0]) \cup([0,1] \times-K) \cup([-1,0] \times K).
+        \end{aligned}
+        $$
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}

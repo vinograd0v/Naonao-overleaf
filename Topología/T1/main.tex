@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{geometry}
-\usepackage{newpxtext,euler}
+\usepackage{newpxtext}
 \usepackage{xcolor}
 \usepackage{geometry}
 \usepackage{picinpar}
@@ -36,20 +36,71 @@ Sergio Alejandro Bello Torres}
 
 
 \begin{enumerate}
-    \item Sean $\mathcal{T}$ y $\mathcal{T}'$ dos topologías sobre $X$. Si $\mathcal{T}' \supset \mathcal{T}$, ¿qué implica la conexidad de $X$ en una topología sobre la otra?
+    \item Sean $\tau$ y $\tau'$ dos topologías sobre $X$. Si $\tau' \supset \tau$, ¿qué implica la conexidad de $X$ en una topología sobre la otra?\\
+
+    \textbf{Solución:} Note que si $X$ es conexo en la topología $\tau^{\prime}$, entonces en la topología $\tau$ también lo es. Supongamos que no, entonces existen dos abiertos disjuntos $A$ y $B$ tales que $X=A\cup B$, como $\tau\subset \tau^{\prime}$ entonces $A,B\in \tau^{\prime}$, luego $X$ no sería conexo.\\
+
+    La contrarrecíproca nos dice que si $X$ es disconexo en $\tau$ entonces es disconexo en $\tau^{\prime}$, sin embargo que $X$ sea conexo en $\tau$ no implica conexidad  en la topología $\tau^{\prime}$. Por ejemplo, considere los espacios topológicos $(\mathbb{R},\tau)$, $(\mathbb{R},\tau_{\ell})$, con $\tau$ la topología usual, es claro que $\tau\subset \tau_{\ell}$. Sabemos que $\mathbb{R}$ es conexo en la topología usual, pero $\mathbb{R}_{\ell}$ no lo es. La prueba de esto se encuentra en el ejercicio 7.
     
     \item Sea $\{A_n\}$ una secuencia de subespacios conexos de $X$, tal que $A_n \cap A_{n+1} \neq \emptyset$ para todo $n$. Demuestra que $\bigcup A_n$ es conexo.
+
+    \begin{proof}
+        Supongamos que no, esto es
+
+        $$\bigcup_{n}A_n=B\cup C 
+            $$
+
+        con $B\cap C=\emptyset$ y $B,C\neq \emptyset$. Tomemos $A_1\subset B$, en efecto
+        
+        $$I:=\{ i\in\mathbb{N}: A_i\subset C\}\neq \emptyset,$$
+
+        de lo contrario $C=\emptyset$ y esto no es posible. El principio del buen orden garantiza que $I$ tiene un elemento mínimo, digamos $k$, esto nos da que $A_{k-1}\subset B$, así $A_k\cap A_{k-1}=\emptyset$, una contradicción. 
+    \end{proof}
     
     \item Sea $\{A_\alpha\}$ una colección de subespacios conexos de $X$; sea $A$ un subespacio conexo de $X$. Muestra que si $A \cap A_\alpha \neq \emptyset$ para todo $\alpha$, entonces $A \cup \big(\bigcup A_\alpha\big)$ es conexo.
+
+    \begin{proof}
+        Note que $$A\cup \bigcup_{\alpha}A_{\alpha}=\bigcup_{\alpha}(A\cup A_{\alpha})$$
+
+        y como $A\subset \displaystyle \bigcap_{\alpha}(A\cup A_{\alpha}) 
+            $, y $A\neq \emptyset$, entonces por el punto anterior se concluye lo deseado.
+    \end{proof}
     
     \item Demuestra que si $X$ es un conjunto infinito, entonces es conexo en la topología del complemento finito.
+
+    \begin{proof}
+        Suponga que no, entonces $X=A\cup B$ con $A,B$ abiertos disjuntos, como $A$ y $B$ son disjuntos tenemos que $B=A^{c}$, entonces $B$ es finito ya que $A\in \tau$, como $B\in \tau$ y $A=B^{c}$, se sigue que $A$ es finito, lo que contradice que $X$ es infinito.
+    \end{proof}
     
-    \item Un espacio es \textit{totalmente disconexo} si sus únicos subespacios conexos son conjuntos de un solo punto. Muestra que si $X$ tiene la topología discreta, entonces $X$ es totalmente desconexo. ¿Es cierto el recíproco?
+    \item Un espacio es \textit{totalmente disconexo} si sus únicos subespacios conexos son conjuntos de un solo punto. Muestra que si $X$ tiene la topología discreta, entonces $X$ es totalmente disconexo. ¿Es cierto el recíproco?
+
+    \begin{proof}
+        En efecto $A=\{x\}_{x\in X}$ es conexo ya que no pueden haber dos abiertos disjuntos no vacíos cuya unión sea $\{x\}$. Si $|A|>2$, note que 
+
+        $$A=\bigcup_{x\in A}\{x\}
+            $$
+
+        y por tanto $A$ no es conexo, ya que los singletones son abiertos disjuntos en la topología discreta.\\
+    \end{proof}
     
-    \item Sea $A \subset X$. Muestra que si $C$ es un subespacio conexo de $X$ que intersecta tanto $A$ como $X - A$, entonces $C$ intersecta $\mathrm{Bd} A$.
+    El recíproco no es cierto, pero tengo pereza de escribir esa porquería de contraejemplo 
+
+    \item Sea $A \subset X$. Muestra que si $C$ es un subespacio conexo de $X$ que intersecta tanto $A$ como $X - A$, entonces $C$ intersecta $\partial A$.
+
+    \begin{proof}
+        Suponga que $C\cap \partial A=\emptyset$, como $\overline{A}=\mathring{A}\cup \partial A$ entonces $C\cap A\subset \mathring{A}$, análogamente $\overline{X-A}=\mathring{(X-A)}\cup \partial (X-A)$  y $C\cap (X-A)\subset \mathring{(X-A)}$, además
+
+        $$C=(C\cap A) \cup (C\cap (X-A))\subset \mathring{(X-A)}\cup \mathring{A},$$
+
+        como $C$ es conexo, entonces $C$ cae enteramente en $\mathring{(X-A)}$ o en $\mathring{A}$, esto contradice que $C\cap (X-A)$ y $C\cap A$.
+    \end{proof}
     
-    \item ¿Es el espacio $\mathbb{R}_\ell$ conexo? Justifica tu respuesta.
+    \item ¿Es el espacio $\mathbb{R}_\ell$ conexo? Justifica tu respuesta.\\
     
+    \textbf{Falso,} en efecto 
+
+    $$\mathbb{R}_{\ell}=(-\infty,0)\cup [0,\infty)$$
+     y esta es una disconexión.
     \item Determina si $\mathbb{R}^\omega$ es conexo en la topología uniforme.
     
     \item Sea $A$ un subconjunto propio de $X$, y sea $B$ un subconjunto propio de $Y$. Si $X$ e $Y$ son conexos, muestra que

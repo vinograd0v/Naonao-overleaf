@@ -10,6 +10,9 @@
 \usepackage{xcolor}
 \usepackage{geometry}
 \usepackage{picinpar}
+\usepackage{accents}
+\newcommand{\interior}[1]{\accentset{\smash{\raisebox{-0.12ex}{$\scriptstyle\circ$}}}{#1}\rule{0pt}{2.3ex}}
+\fboxrule0.0001pt \fboxsep0pt
  \geometry{
  a4paper,
  total={170mm,245mm},
@@ -96,11 +99,11 @@ y la topología usual  no es la misma topología discreta xd.
     \item Sea $A \subset X$. Muestra que si $C$ es un subespacio conexo de $X$ que intersecta tanto $A$ como $X - A$, entonces $C$ intersecta $\partial A$.
 
     \begin{proof}
-        Suponga que $C\cap \partial A=\emptyset$, como $\overline{A}=\mathring{A}\cup \partial A$ entonces $C\cap A\subset \mathring{A}$, análogamente $\overline{X-A}=\mathring{(X-A)}\cup \partial (X-A)$  y $C\cap (X-A)\subset \mathring{(X-A)}$, además
+        Suponga que $C\cap \partial A=\emptyset$, como $\overline{A}=\interior{A}\cup \partial A$ entonces $C\cap A\subset \interior{A}$, análogamente $\overline{X-A}=\interior{(X-A)}\cup \partial (X-A)$  y $C\cap (X-A)\subset \interior{(X-A)}$, además
 
-        $$C=(C\cap A) \cup (C\cap (X-A))\subset \mathring{(X-A)}\cup \mathring{A},$$
+        $$C=(C\cap A) \cup (C\cap (X-A))\subset \interior{(X-A)}\cup \interior{A},$$
 
-        como $C$ es conexo, entonces $C$ cae enteramente en $\mathring{(X-A)}$ o en $\mathring{A}$, esto contradice que $C\cap (X-A)$ y $C\cap A$.
+        como $C$ es conexo, entonces $C$ cae enteramente en $\interior{(X-A)}$ o en $\interior{A}$, esto contradice que $C\cap (X-A)$ y $C\cap A$.
     \end{proof}
     
     \item ¿Es el espacio $\mathbb{R}_\ell$ conexo? Justifica tu respuesta.\\

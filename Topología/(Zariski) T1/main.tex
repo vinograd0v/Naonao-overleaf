@@ -43,9 +43,9 @@ Sergio Alejandro Bello Torres}
 
     \textbf{Solución:} Note que si $X$ es conexo en la topología $\tau^{\prime}$, entonces en la topología $\tau$ también lo es. Supongamos que no, entonces existen dos abiertos disjuntos $A$ y $B$ tales que $X=A\cup B$, como $\tau\subset \tau^{\prime}$ entonces $A,B\in \tau^{\prime}$, luego $X$ no sería conexo.\\
 
-    La contrarrecíproca nos dice que si $X$ es disconexo en $\tau$ entonces es disconexo en $\tau^{\prime}$, sin embargo que $X$ sea conexo en $\tau$ no implica conexidad  en la topología $\tau^{\prime}$. Por ejemplo, considere los espacios topológicos $(\mathbb{R},\tau)$, $(\mathbb{R},\tau_{\ell})$, con $\tau$ la topología usual, es claro que $\tau\subset \tau_{\ell}$. Sabemos que $\mathbb{R}$ es conexo en la topología usual, pero $\mathbb{R}_{\ell}$ no lo es. La prueba de esto se encuentra en el ejercicio 7.
+    La contrarrecíproca nos dice que si $X$ es disconexo en $\tau$ entonces es disconexo en $\tau^{\prime}$, sin embargo que $X$ sea conexo en $\tau$ no implica conexidad  en la topología $\tau^{\prime}$. Por ejemplo, considere los espacios topológicos $(\mathbb{R},\tau)$, $(\mathbb{R},\tau_{\ell})$, con $\tau$ la topología usual y $\tau_{\ell}$ la topología del límite inferior, es claro que $\tau\subset \tau_{\ell}$. Sabemos que $\mathbb{R}$ es conexo en la topología usual, pero $\mathbb{R}_{\ell}$ no lo es. La prueba de esto se encuentra en el ejercicio 7.
     
-    \item Sea $\{A_n\}$ una secuencia de subespacios conexos de $X$, tal que $A_n \cap A_{n+1} \neq \emptyset$ para todo $n$. Demuestra que $\bigcup A_n$ es conexo.
+    \item Sea $\{A_n\}$ una sucesión de subespacios conexos de $X$, tal que $A_n \cap A_{n+1} \neq \emptyset$ para todo $n$. Demuestra que $\bigcup A_n$ es conexo.
 
     \begin{proof}
         Supongamos que no, esto es
@@ -66,7 +66,7 @@ Sergio Alejandro Bello Torres}
         Note que $$A\cup \bigcup_{\alpha}A_{\alpha}=\bigcup_{\alpha}(A\cup A_{\alpha})$$
 
         y como $A\subset \displaystyle \bigcap_{\alpha}(A\cup A_{\alpha}) 
-            $, y $A\neq \emptyset$, entonces por el punto anterior se concluye lo deseado.
+            $, y $A\neq \emptyset$, El conjunto $\{A \cup A_{\alpha}\}_{\alpha}$ es una colección de subespacios conexos de X con un punto en común, de donde se conluye lo deseado.
     \end{proof}
     
     \item Demuestra que si $X$ es un conjunto infinito, entonces es conexo en la topología del complemento finito.
@@ -78,7 +78,7 @@ Sergio Alejandro Bello Torres}
     \item Un espacio es \textit{totalmente disconexo} si sus únicos subespacios conexos son conjuntos de un solo punto. Muestra que si $X$ tiene la topología discreta, entonces $X$ es totalmente disconexo. ¿Es cierto el recíproco?
 
     \begin{proof}
-        En efecto $A=\{x\}_{x\in X}$ es conexo ya que no pueden haber dos abiertos disjuntos no vacíos cuya unión sea $\{x\}$. Si $|A|>2$, note que 
+        En efecto $A=\{x\}$ donde ${x\in X}$ es conexo ya que no pueden haber dos abiertos disjuntos no vacíos cuya unión sea $\{x\}$. Si $|A|\geq 2$, note que 
 
         $$A=\bigcup_{x\in A}\{x\}
             $$
@@ -94,7 +94,7 @@ $$
 Y=(Y \cap (-\infty, a)) \cup  (Y \cap (a, +\infty))
 $$
 
-y la topología usual  no es la misma topología discreta.
+y la topología usual  no es la misma topología discreta (los puntos en la topolgía usual de $\mathbb{Q}$ no son abiertos).
 
     \item Sea $A \subset X$. Muestra que si $C$ es un subespacio conexo de $X$ que intersecta tanto $A$ como $X - A$, entonces $C$ intersecta $\partial A$.
 
@@ -103,7 +103,7 @@ y la topología usual  no es la misma topología discreta.
 
         $$C=(C\cap A) \cup (C\cap (X-A))\subset \interior{(X-A)}\cup \interior{A},$$
 
-        como $C$ es conexo, entonces $C$ cae enteramente en $\interior{(X-A)}$ o en $\interior{A}$, esto contradice que $C\cap (X-A)$ y $C\cap A$.
+        como $C$ es conexo, entonces $C$ cae enteramente en $\interior{(X-A)}$ o en $\interior{A}$, esto contradice que $C$ intersecta tanto a $X-A$ como a $A$.
     \end{proof}
     
     \item ¿Es el espacio $\mathbb{R}_\ell$ conexo? Justifica tu respuesta.\\
@@ -118,9 +118,9 @@ y la topología usual  no es la misma topología discreta.
 
 Sean $A$, $B$ $\subset\mathbb{R}^\omega$ los conjuntos de todas las sucesiones acotadas y  no acotadas respectivamente. En efecto $A \cup B = \mathbb{R}^\omega$ y $A \cap B = \emptyset$, nos falta ver que $A$ y $B$ son abiertos y obtenemos una disconexión.\\
 
-Si $a \in A$ y $\varepsilon<1$, en efecto
+Si $a \in A$, es decir, existe $M>0$ tal que $|a_n|<M$ para todo $n \in \mathbb{N}$; y dado $\varepsilon<1$, en efecto
 
-$$B(a,\epsilon):=\{b\in\mathbb{R}^{\omega}:\sup\{|a_n-b_n|:n\in\mathbb{N}\}<\varepsilon\},$$
+$$B(a,\varepsilon):=\{b\in\mathbb{R}^{\omega}:\sup\{|a_n-b_n|:n\in\mathbb{N}\}<\varepsilon\},$$
 
 ya que eliminamos el mínimo entre $|a_n-b_n|$ y 1 presente en la métrica uniforme. Queremos ver que $a$ es punto interior, esto es que dado $b\in B(a,\varepsilon)$, $b\in A$, en efecto
 
@@ -152,7 +152,7 @@ Concluímos en cada caso que $b\in B(a,\varepsilon)$, luego $A$ y $B$ forman una
 
 es conexo ya que tienen el punto $(\tilde{a},\tilde{b})$ en común. Más aún
 
-$$(X\times Y)-(A\times B)=\bigcup_{b\in B^{c}}((\{\tilde{a}\}\times Y)\cup (X\times \{b\})) \bigcup_{a\in A^c}((\{a\}\times Y)\cup(X\times \{\tilde{b}\}) ) 
+$$(X\times Y)-(A\times B)=\left(\bigcup_{b\in Y-B}\big((\{\tilde{a}\}\times Y)\cup (X\times \{b\})\big)\right) \cup \left(\bigcup_{a\in X-A}\big((\{a\}\times Y)\cup(X\times \{\tilde{b}\}) \big)\right) 
 $$
 
 es conexo.
@@ -188,7 +188,9 @@ es un homeomorfismo ya que cada componente es continua y la función es abierta 
 
         \item Demuestra que $X$ es igual a la clausura de $Y$; concluye que $X$ es conexo.
 
-        xd
+    \begin{proof}
+    Sea $\mathbf{x}\in X$ y $\displaystyle{U=\prod_{\alpha\in J}U_{\alpha}}$ una vecindad de $\mathbf{x}$, tenemos entonces que $U_{\alpha} = X_{\alpha}$ para todos salvo finitos índices $\alpha$; de esta manera, existe un elemento $\mathbf{y}\in U$ tal que $y_{\alpha}=a_{\alpha}$ para todos salvo finitos índices $\alpha$. Por lo tanto $U \cap Y \neq \emptyset$. De esta manera $X=\overline{Y}$; y ya que la clausura de un subespacio conexo de $X$ es conexa, tenemos que $X$ es conexo.
+    \end{proof}
     \end{enumerate}
     
     \item Sea $p : X \to Y$ un mapeo cociente. Demuestra que si cada conjunto $p^{-1}(\{y\})$ es conexo, y si $Y$ es conexo, entonces $X$ es conexo.
@@ -198,7 +200,7 @@ es un homeomorfismo ya que cada componente es continua y la función es abierta 
 
   Como $p$ es un mapa cociente, $p(U)$ y $p(V)$ son conjuntos abiertos disjuntos y no vacíos de $Y$, además $p(U) \cup p(V) = Y$ ya que $p$ es sobreyectiva, por lo que $p(U)$ y $p(V)$ son una disconexión de $Y$
 
-    $$p^{-1}(p(U)\cap P(V))=p^{-1}p(U)\cap p^{-1}p(V)=U\cap V=\emptyset,$$
+    $$p^{-1}(p(U)\cap P(V))=p^{-1}(p(U))\cap p^{-1}(p(V))=U\cap V=\emptyset,$$
 
   lo que contradice el hecho de que $Y$ es conexo. 
     \end{proof}
@@ -212,8 +214,7 @@ es un homeomorfismo ya que cada componente es continua y la función es abierta 
 
         $$Y\cup (X-Y)=(Y\cup A)\cup B=X=U\cup V\cup B,$$
 
-
-        y como $B\subset X-Y$, $y\cap B=\emptyset$ y $A\cap B=\emptyset$, se sigue que $(U\cup V)\cap B=\emptyset$ y esta esto nos da una disconexión de $X$, una contradiccón. El caso $Y\cup B$ es análogo.
+        Ya que $U$ y $V$ forman una separación de $Y \cup A$, ningún punto de acumulación de $U$ está en $V$, además, como $A \cup B$ es una separación de $X-Y$ y $U \subset A$, entonces $B$ no contiene ningún punto de acumulación de $U$. Por lo tanto $U$ es un subconjunto propio de $X$ que es abierto y cerrado, de donde se sigue que $X$ no es conexo, llegando a una contradicción. El caso $Y \cup B$ es análogo.  
     \end{proof}
 
 \end{enumerate}

@@ -31,11 +31,39 @@ donde $A$ es una matriz que representa el operador Laplaciano discreto, $u$ es e
 
     realizando esto para $u(x,y+h)$ y $u(x,y-h)$ obtenemos que
 
-    $$\Delta f(x, y) \approx \frac{f(x-h, y)+f(x+h, y)+f(x, y-h)+f(x, y+h)-4 f(x, y)}{h^2}.$$
+    $$\Delta u(x, y) \approx \frac{u(x-h, y)+u(x+h, y)+u(x, y-h)+u(x, y+h)-4 u(x, y)}{h^2}.$$
 
-    Para reconstruir la imágen debemos encontrar $u(x,y)$, la función que nos da la intensidad de cada pixel, esto es resolver la ecuación de  Poisson $\Delta u(x,y)= f(x,y)$ donde $f(x,y)$ es el mapa de bordes. Primero consideremos para el problema una malla regular, tomaremos $h=1$ ya que cada pixel representa un paso, en una  dimensión la matriz que obtenemos es tridiagonal, sin embargo al discretizar la ecuación de Poisson en 2D debemos mover $f$ en coordenadas $x$ y $y$, por lo que es necesario observar un ejemplo de cómo se comportaría esto en un sistema 3x3.\\
+    Para reconstruir la imágen debemos encontrar $u(x,y)$, la función que nos da la intensidad de cada pixel, esto es resolver la ecuación de  Poisson $\Delta u(x,y)= f(x,y)$ donde $f(x,y)$ es el mapa de bordes. Primero consideremos para el problema una malla regular, tomaremos $h=1$ ya que cada pixel representa un paso, en una  dimensión la matriz que obtenemos es tridiagonal, sin embargo al discretizar la ecuación de Poisson en 2D debemos mover $f$ en coordenadas $x$ y $y$, por lo tanto debemos analizarlo con detalle.\\
 
-    Ya que cada fila de la matriz controla un movimiento en dos dimensiones, obtenemos 
+    Como usamos usa malla regular de $n \times n$ (porque el problema es  2D), cada fila de la matriz sería de $n\times n$, obteniendo
+
+    \[
+    \Delta u_{ij} =  u_{i+1, j} + u_{i-1, j} + u_{i, j+1} + u_{i, j-1} - 4 u_{ij} = f_{ij}
+    \]
+
+    donde \(2 \leq i \leq m-1\) y \(2 \leq j \leq n-1\). Esto da lugar a un sistema lineal de dimensión \(n^2 \times  n^2\),  $A u=f$, donde 
+
+    $$
+    A=\left[\begin{array}{ccccccc}
+    D & -I & 0 & 0 & 0 & \cdots & 0 \\
+    -I & D & -I & 0 & 0 & \cdots & 0 \\
+    0 & -I & D & -I & 0 & \cdots & 0 \\
+    \vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+    0 & \cdots & 0 & -I & D & -I & 0 \\
+    0 & \cdots & \cdots & 0 & -I & D & -I \\
+    0 & \cdots & \cdots & \cdots & 0 & -I & D
+    \end{array}\right], \text{ donde }  D=\left[\begin{array}{ccccccc}
+    4 & -1 & 0 & 0 & 0 & \cdots & 0 \\
+    -1 & 4 & -1 & 0 & 0 & \cdots & 0 \\
+    0 & -1 & 4 & -1 & 0 & \cdots & 0 \\
+    \vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+    0 & \cdots & 0 & -1 & 4 & -1 & 0 \\
+    0 & \cdots & \cdots & 0 & -1 & 4 & -1 \\
+    0 & \cdots & \cdots & \cdots & 0 & -1 & 4
+    \end{array}\right],
+    $$
+
+    y como $f$ es una matriz, se debe aplanar como vector columna. Por ejemplo en $3\times 3$
 
     $$
     A=\left[\begin{array}{ccc|ccc|ccc}
@@ -48,32 +76,6 @@ donde $A$ es una matriz que representa el operador Laplaciano discreto, $u$ es e
     \hline 0 & 0 & 0 & -1 & 0 & 0 & 4 & -1 & 0 \\
     0 & 0 & 0 & 0 & -1 & 0 & -1 & 4 & -1 \\
     0 & 0 & 0 & 0 & 0 & -1 & 0 & -1 & 4
-    \end{array}\right]
+    \end{array}\right].
     $$
-De manera general ma matriz que se obtiene es de la forma
 
-$$
-A=\left[\begin{array}{ccccccc}
-D & -I & 0 & 0 & 0 & \cdots & 0 \\
--I & D & -I & 0 & 0 & \cdots & 0 \\
-0 & -I & D & -I & 0 & \cdots & 0 \\
-\vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
-0 & \cdots & 0 & -I & D & -I & 0 \\
-0 & \cdots & \cdots & 0 & -I & D & -I \\
-0 & \cdots & \cdots & \cdots & 0 & -I & D
-\end{array}\right],
-$$
-
-donde 
-
-$$
-D=\left[\begin{array}{ccccccc}
-4 & -1 & 0 & 0 & 0 & \cdots & 0 \\
--1 & 4 & -1 & 0 & 0 & \cdots & 0 \\
-0 & -1 & 4 & -1 & 0 & \cdots & 0 \\
-\vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
-0 & \cdots & 0 & -1 & 4 & -1 & 0 \\
-0 & \cdots & \cdots & 0 & -1 & 4 & -1 \\
-0 & \cdots & \cdots & \cdots & 0 & -1 & 4
-\end{array}\right],
-$$

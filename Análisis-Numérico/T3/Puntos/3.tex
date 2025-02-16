@@ -7,7 +7,51 @@ A = \begin{bmatrix} a & 0 & 0 \\ a\delta & a & 0 \\ 0 & a\delta & a \end{bmatrix
 \]
 \begin{enumerate}
     \item[a)] Obtenga el número de condición de $A$.
+
+    \begin{solution}
+        Primero note que $A$ es invertible ya que
+
+        $$\det A=a\det \begin{pmatrix}
+            a & 0 \\
+            a\delta & a \\
+        \end{pmatrix}=a^3$$
+    entonces como $a\neq 0$, podemos calcular el número de condición $K_{\infty}(A)=\|A\|_{\infty}\|A^{-1}\|_{\infty}$, donde
+
+    $$A^{-1}=\dfrac{1}{a}\left(
+\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ -\delta & 1 & 0 \\
+ \delta^2 & -\delta & 1 \\
+\end{array}
+\right)$$
+Esto nos da que $K_{\infty}(A)=a\|B\|_{\infty}\dfrac{1}{a}\|B^{-1}\|_{\infty}=\|B\|_{\infty}\|B^{-1}\|_{\infty}$, donde $B=\left(
+\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ \delta  & 1 & 0 \\
+ 0 & \delta  & 1 \\
+\end{array}
+\right),$ así
+
+$$K_{\infty}(A)=\left\|\left(
+\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ \delta  & 1 & 0 \\
+ 0 & \delta  & 1 \\
+\end{array}
+\right)\right\|_{\infty}\left\|\left(\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ -\delta & 1 & 0 \\
+ \delta^2 & -\delta & 1 \\
+\end{array}\right)\right\|_{\infty}=(1+\delta)(1+\delta+\delta^2)$$
+
+
+
+    \end{solution}
     \item[b)] Estudie el condicionamiento del sistema $Ax = b$ en función de los valores de $\delta$. Interprete su resultado.
+
+    \begin{solution}
+        En $\delta=0$ el problema se comporta bien, hacemos este  caso ya que aunque $\delta>0$, hay que pensar en valores cercanos a $0$, en estos el problema se comporta bien, note que el conjunto solución de $(1+\delta)(1+\delta+\delta^2)>0$ es justamente $\delta>0$, y esta función es creciente, entonces conforme $\delta$ se vuelve más grande, el número de condición aumenta y nuestro problema se vuelve sencible a errores de redondeo y perturbaciones en los datos.
+    \end{solution}
     \item[c)] Si $a = -1$, $\delta = 0.1$ y se considera $x^* = (1, 9/10, 1)^T$ como solución aproximada del sistema $Ax = b$ (sin obtener la solución exacta), determine un intervalo en el que esté comprendido el error relativo. ¿Es coherente con la respuesta dada en el apartado anterior?
     \item[d)] Si $a = -1$ y $\delta = 0.1$, ¿es convergente el método de Jacobi aplicado a la resolución del sistema $Ax = b$? Realice tres iteraciones a partir de $x_0 = (0, 0, 0)^T$.
 \end{enumerate}

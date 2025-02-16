@@ -45,21 +45,21 @@ donde $A$ es una matriz que representa el operador Laplaciano discreto, $u$ es e
 
     $$
     A=\left[\begin{array}{ccccccc}
-    D & -I & 0 & 0 & 0 & \cdots & 0 \\
-    -I & D & -I & 0 & 0 & \cdots & 0 \\
-    0 & -I & D & -I & 0 & \cdots & 0 \\
+    D & I & 0 & 0 & 0 & \cdots & 0 \\
+    I & D & I & 0 & 0 & \cdots & 0 \\
+    0 & I & D & I & 0 & \cdots & 0 \\
     \vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
-    0 & \cdots & 0 & -I & D & -I & 0 \\
-    0 & \cdots & \cdots & 0 & -I & D & -I \\
-    0 & \cdots & \cdots & \cdots & 0 & -I & D
+    0 & \cdots & 0 & I & D & I & 0 \\
+    0 & \cdots & \cdots & 0 & I & D & I \\
+    0 & \cdots & \cdots & \cdots & 0 & I & D
     \end{array}\right], \text{ donde }  D=\left[\begin{array}{ccccccc}
-    4 & -1 & 0 & 0 & 0 & \cdots & 0 \\
-    -1 & 4 & -1 & 0 & 0 & \cdots & 0 \\
-    0 & -1 & 4 & -1 & 0 & \cdots & 0 \\
+    -4 & 1 & 0 & 0 & 0 & \cdots & 0 \\
+    1 & -4 & 1 & 0 & 0 & \cdots & 0 \\
+    0 & 1 & -4 & 1 & 0 & \cdots & 0 \\
     \vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
-    0 & \cdots & 0 & -1 & 4 & -1 & 0 \\
-    0 & \cdots & \cdots & 0 & -1 & 4 & -1 \\
-    0 & \cdots & \cdots & \cdots & 0 & -1 & 4
+    0 & \cdots & 0 & 1 & -4 & 1 & 0 \\
+    0 & \cdots & \cdots & 0 & 1 & -4 & 1 \\
+    0 & \cdots & \cdots & \cdots & 0 & 1 & -4
     \end{array}\right],
     $$
 
@@ -67,15 +67,46 @@ donde $A$ es una matriz que representa el operador Laplaciano discreto, $u$ es e
 
     $$
     A=\left[\begin{array}{ccc|ccc|ccc}
-    4 & -1 & 0 & -1 & 0 & 0 & 0 & 0 & 0 \\
-    -1 & 4 & -1 & 0 & -1 & 0 & 0 & 0 & 0 \\
-    0 & -1 & 4 & 0 & 0 & -1 & 0 & 0 & 0 \\
-    \hline-1 & 0 & 0 & 4 & -1 & 0 & -1 & 0 & 0 \\
-    0 & -1 & 0 & -1 & 4 & -1 & 0 & -1 & 0 \\
-    0 & 0 & -1 & 0 & -1 & 4 & 0 & 0 & -1 \\
-    \hline 0 & 0 & 0 & -1 & 0 & 0 & 4 & -1 & 0 \\
-    0 & 0 & 0 & 0 & -1 & 0 & -1 & 4 & -1 \\
-    0 & 0 & 0 & 0 & 0 & -1 & 0 & -1 & 4
+    -4 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    1 & -4 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 1 & -4 & 0 & 0 & 1 & 0 & 0 & 0 \\
+    \hline1 & 0 & 0 & -4 & 1 & 0 & 1 & 0 & 0 \\
+    0 & 1 & 0 & 1 & -4 & 1 & 0 & 1 & 0 \\
+    0 & 0 & 1 & 0 & 1 & -4 & 0 & 0 & 1 \\
+    \hline 0 & 0 & 0 & 1 & 0 & 0 & -4 & 1 & 0 \\
+    0 & 0 & 0 & 0 & 1 & 0 & 1 & -4 & 1 \\
+    0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & -4
     \end{array}\right].
     $$
 
+    Ahora debemos resolver los sistemas implementando los métodos de Jacobi,Gauss-Seidel y SOR, esto lo hicimos en Matlab y el código es extenso, por lo que lo adjuntamos en el cuaderno de Jupyter, sin embargo vamos a ver aquí los resultados obtenidos.\\
+
+    Para el método de Jacobi aprovechamos que la inversa de la matriz diagonal es simplemente invertir la diagonal, a saber $1/a_{ii}$, luego el código es bastante eficiente y puede correr 100 iteraciones muy rápido. \\
+
+    En Gauss-Seidel no fue posible implementar el método de manera  matricial, invertir matriz $(D-L)$ es un trabajo costoso teniendo en cuenta que la primera imagen es de $240\times 240$, es decir una matriz de $57600\times 57600$, una sola iteración costaba varios minutos. En vista de esto optamos por implementar el método resolviendo cada ecuación y sin definir la matriz $A$, usando claramente que 
+
+     \[
+    \Delta u_{ij} =  u_{i+1, j} + u_{i-1, j} + u_{i, j+1} + u_{i, j-1} - 4 u_{ij} = f_{ij},
+    \]
+
+    se obtiene una  fórmula eficiente para hace Gauss-Seidel, a saber
+
+    $$u_{i j}^{(k+1)}=\frac{1}{4}\left(\left(u_{i+1, j}^{(k)}+u_{i-1, j}^{(k+1)}+u_{i, j+1}^{(k)}+u_{i, j-1}^{(k+1)}\right)-f_{i j}\right),$$
+
+    esto nos permitió implementar todo de manera  eficiente. Para SOR la idea fue exactamente la misma pero aplicando la relajación 
+
+    $$u_{ij}^{k+1}=(1-\omega )u_{ij}^{k}+\frac{\omega}{4}\left(\left(u_{i+1, j}^{(k)}+u_{i-1, j}^{(k+1)}+u_{i, j+1}^{(k)}+u_{i, j-1}^{(k+1)}\right)-f_{i j}\right),$$
+
+    en este caso tomamos $\omega=1.5$ ya que la idea era acelerar  la convergencia, esto se logra con $1<\omega<2$. Finalmente para la primera imagen, dada por el archivo Bordes1, obtuvimos los siguientes resultados aplicando 100 iteraciones.
+
+    \begin{center}
+        \includegraphics[scale=0.27]{Graficas/Bordes1.jpg}
+    \end{center}
+
+    Para la segunda imagen también aplicamos 100 iteraciones, obtuvimos 
+
+    \begin{center}
+        \includegraphics[scale=0.27]{Graficas/Bordes2.jpg}
+    \end{center}
+
+    Aplicamos 100 iteraciones para que se observara diferencia entre los métodos ya que con muchas iteraciones el problema se estabiliza de manera que no notaremos diferencia entre aplicar un método y otro.

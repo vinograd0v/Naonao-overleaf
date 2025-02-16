@@ -1,0 +1,79 @@
+%!TEX root = ../main.tex
+
+\section*{Ejercicio 6}
+El operador Laplaciano en 2D se define como:
+
+$$
+\nabla^2 u(x, y)=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}
+$$
+
+donde $u(x, y)$ es una función que representa la intensidad de los pixeles de la imagen en el dominio espacial. El operador Laplaciano se utiliza para detectar bordes porque responde a las variaciones de la intensidad de los pixeles en la vecindad de cada punto. En áreas de la imagen donde la intensidad varía rápidamente (bordes), el Laplaciano tiene un valor alto, mientras que en áreas homogéneas (sin bordes) el Laplaciano es cercano a cero. El proceso de detección de bordes implica calcular el Laplaciano de la imagen $u(x, y)$, lo que da como resultado un mapa de bordes.
+
+En este ejercicio estamos interesados en reconstruir la imagen original $u(x, y)$ a partir de los bordes detectados. Para esto debemos resolver la ecuación de Poisson en 2D
+
+$$
+\nabla^2 u(x, y)=f(x, y)
+$$
+
+donde $f(x, y)$ es el mapa de bordes.
+El problema (1) puede ser discretizado en un sistema de ecuaciones lineales de la forma:
+
+$$
+A u=f
+$$
+
+donde $A$ es una matriz que representa el operador Laplaciano discreto, $u$ es el vector que contiene los valores de la imagen original en cada pixel (a reconstruir), y $f$ es el vector que contiene los valores de los bordes detectados.\\
+
+\textbf{Solución.} Lo primero que debemos hacer es  discretizar el laplaciano,  para esto usamos el teorema de Taylor. A saber
+
+    $$u(x+h,y)=u(x,y)+h u_x(x,y)+\frac{h^2\partial^2_{x}u(x,y)}{2}+O(h^3),$$
+    $$u(x-h,y)=u(x,y)-h u_x(x,y)+\frac{h^2\partial^2_x u(x,y)}{2}+O(h^3),$$
+
+    realizando esto para $u(x,y+h)$ y $u(x,y-h)$ obtenemos que
+
+    $$\Delta f(x, y) \approx \frac{f(x-h, y)+f(x+h, y)+f(x, y-h)+f(x, y+h)-4 f(x, y)}{h^2}.$$
+
+    Para reconstruir la imágen debemos encontrar $u(x,y)$, la función que nos da la intensidad de cada pixel, esto es resolver la ecuación de  Poisson $\Delta u(x,y)= f(x,y)$ donde $f(x,y)$ es el mapa de bordes. Primero consideremos para el problema una malla regular, tomaremos $h=1$ ya que cada pixel representa un paso, en una  dimensión la matriz que obtenemos es tridiagonal, sin embargo al discretizar la ecuación de Poisson en 2D debemos mover $f$ en coordenadas $x$ y $y$, por lo que es necesario observar un ejemplo de cómo se comportaría esto en un sistema 3x3.\\
+
+    Ya que cada fila de la matriz controla un movimiento en dos dimensiones, obtenemos 
+
+    $$
+    A=\left[\begin{array}{ccc|ccc|ccc}
+    4 & -1 & 0 & -1 & 0 & 0 & 0 & 0 & 0 \\
+    -1 & 4 & -1 & 0 & -1 & 0 & 0 & 0 & 0 \\
+    0 & -1 & 4 & 0 & 0 & -1 & 0 & 0 & 0 \\
+    \hline-1 & 0 & 0 & 4 & -1 & 0 & -1 & 0 & 0 \\
+    0 & -1 & 0 & -1 & 4 & -1 & 0 & -1 & 0 \\
+    0 & 0 & -1 & 0 & -1 & 4 & 0 & 0 & -1 \\
+    \hline 0 & 0 & 0 & -1 & 0 & 0 & 4 & -1 & 0 \\
+    0 & 0 & 0 & 0 & -1 & 0 & -1 & 4 & -1 \\
+    0 & 0 & 0 & 0 & 0 & -1 & 0 & -1 & 4
+    \end{array}\right]
+    $$
+De manera general ma matriz que se obtiene es de la forma
+
+$$
+A=\left[\begin{array}{ccccccc}
+D & -I & 0 & 0 & 0 & \cdots & 0 \\
+-I & D & -I & 0 & 0 & \cdots & 0 \\
+0 & -I & D & -I & 0 & \cdots & 0 \\
+\vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+0 & \cdots & 0 & -I & D & -I & 0 \\
+0 & \cdots & \cdots & 0 & -I & D & -I \\
+0 & \cdots & \cdots & \cdots & 0 & -I & D
+\end{array}\right],
+$$
+
+donde 
+
+$$
+D=\left[\begin{array}{ccccccc}
+4 & -1 & 0 & 0 & 0 & \cdots & 0 \\
+-1 & 4 & -1 & 0 & 0 & \cdots & 0 \\
+0 & -1 & 4 & -1 & 0 & \cdots & 0 \\
+\vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+0 & \cdots & 0 & -1 & 4 & -1 & 0 \\
+0 & \cdots & \cdots & 0 & -1 & 4 & -1 \\
+0 & \cdots & \cdots & \cdots & 0 & -1 & 4
+\end{array}\right],
+$$

@@ -33,7 +33,7 @@ donde $A$ es una matriz que representa el operador Laplaciano discreto, $u$ es e
 
     $$\Delta u(x, y) \approx \frac{u(x-h, y)+u(x+h, y)+u(x, y-h)+u(x, y+h)-4 u(x, y)}{h^2}.$$
 
-    Para reconstruir la imágen debemos encontrar $u(x,y)$, la función que nos da la intensidad de cada pixel, esto es resolver la ecuación de  Poisson $\Delta u(x,y)= f(x,y)$ donde $f(x,y)$ es el mapa de bordes. Primero consideremos para el problema una malla regular, tomaremos $h=1$ ya que cada pixel representa un paso, en una  dimensión la matriz que obtenemos es tridiagonal, sin embargo al discretizar la ecuación de Poisson en 2D debemos mover $f$ en coordenadas $x$ y $y$, por lo tanto debemos analizarlo con detalle.\\
+    Para reconstruir la imagen debemos encontrar $u(x,y)$, la función que nos da la intensidad de cada pixel, esto es resolver la ecuación de  Poisson $\Delta u(x,y)= f(x,y)$ donde $f(x,y)$ es el mapa de bordes. Primero consideremos para el problema una malla regular, tomaremos $h=1$ ya que cada pixel representa un paso, en una  dimensión la matriz que obtenemos es tridiagonal, sin embargo al discretizar la ecuación de Poisson en 2D debemos mover $f$ en coordenadas $x$ y $y$, por lo tanto debemos analizarlo con detalle.\\
 
     Como usamos usa malla regular de $n \times n$ (porque el problema es  2D), cada fila de la matriz sería de $n\times n$, obteniendo
 

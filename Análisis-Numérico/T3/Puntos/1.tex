@@ -7,6 +7,180 @@ A = \begin{bmatrix} 0 & -20 & 14 \\ -3 & 27 & 4 \\ -4 & 11 & 2 \end{bmatrix}
 \]
 \begin{enumerate}
     \item[a)] Aplique las transformaciones de Householder, para calcular $A = QR$.
+    \begin{solution}
+        Veamos $A=(a_1|a_2|a_3)$ donde cada $a_i$ es el vecor columna correspondiente a la matriz del enunciado. Primero tenemos que
+        $$\|a_1\|=\sqrt{0^2+(-3)^2+(-4)^2}=5,$$ 
+        asi para construir nuestro reflector de HouseHolder tomamos
+        $$v_1=a_1-\|a_1\|e_1=\begin{bmatrix}
+            0\\-3\\-4
+        \end{bmatrix}-\begin{bmatrix}
+                5\\ 0\\0
+            \end{bmatrix}=\begin{bmatrix}
+                -5\\-3\\-4
+            \end{bmatrix}.$$
+            Luego tenemos que
+            $$H_1=I_3-2\frac{v_1\cdot v_1^T}{v_1^T\cdot v_1}=\begin{bmatrix}
+                1&0&0\\
+                0&1&0\\
+                0&0&1\\
+            \end{bmatrix}-\frac{2}{50}\begin{bmatrix}
+                25&15&20\\
+                15&9&12\\
+                20&12&16 
+            \end{bmatrix}=\begin{bmatrix}
+                0&-15/25&-20/25\\
+                -15/25&16/25&-12/25\\
+                -20/25&-12/25&9/25
+            \end{bmatrix}.$$
+            Luego haciendo la multiplicacion con $A$ tenemos
+            $$H_1A=\begin{bmatrix}
+                5&-25&-4\\
+                0&24&-34/5\\
+                0&7&-62/5
+            \end{bmatrix}$$
+            Ahora nos concentraremos en el sub-bloque $2\times 2$ de la matriz obtenida, es decir
+            $$\tilde{A}=\begin{bmatrix}
+                24&-34/5\\
+                7&-62/5
+            \end{bmatrix}$$
+            Reallizando el proceso previo, si $\tilde{A}=(\tilde{a}_1|\tilde{a}_2),$ tenemos que
+            $$\|\tilde{a}_1\|=\sqrt{24^2+7^2}=25,$$
+            de esta manera
+            $$v_2=\tilde{a}_1-\|\tilde{a}_1\|e_1=\begin{bmatrix}
+                24\\
+                7
+            \end{bmatrix}-\begin{bmatrix}
+                25\\
+                0
+            \end{bmatrix}=\begin{bmatrix}
+                -1\\
+                7
+            \end{bmatrix}$$
+            Si hacemos el reflector de HouseHolder para $\tilde{A}$ obtenemos
+            $$\tilde{H}_2=I_2-2\frac{v_2\cdot v_2^T}{v_2^T\cdot v_2}=\begin{bmatrix}
+                1&0\\
+                0&1\\
+            \end{bmatrix}-\frac{2}{50}\begin{bmatrix}
+                1 & -7\\
+                -7 & 49\\
+            \end{bmatrix}=\begin{bmatrix}
+                24/25&7/25\\
+                7/25&-24/25
+            \end{bmatrix}$$
+            De esta manera el reflector para $A$ es
+            $$H_2=\begin{bmatrix}
+                1&0&0\\
+                0&24/25&7/25\\
+                0&7/25&-24/25
+            \end{bmatrix}$$
+            De esta manera tenemos que
+            $$H_2H_1A=\begin{bmatrix}
+                5& -25& -4\\
+                0& 25& -10\\
+                0& 0& 10
+            \end{bmatrix}$$
+            Note que esta matriz ya es triangular superior por lo que esa sera nuestra $R$, ahora como $H_1$ y $H_2$ son ortogonales y simetricos tenemos que:
+            $$A=H_1^TH_2^TR=H_1H_2R,$$
+            asi si realizamos la multiplicacion
+            $$Q=H_1H_2=\begin{bmatrix}
+                0&-20/25&15/25\\
+                -15/25&12/25&16/25\\
+                -20/25&-9/25&-12/25
+            \end{bmatrix}.$$
+            Concluyendo asi que la factorizacion $A=QR$ es
+            $$\begin{bmatrix} 0 & -20 & 14 \\ -3 & 27 & 4 \\ -4 & 11 & 2 \end{bmatrix}=\begin{bmatrix}
+                0&-20/25&15/25\\
+                -15/25&12/25&16/25\\
+                -20/25&-9/25&-12/25
+            \end{bmatrix}\begin{bmatrix}
+                5& -25& -4\\
+                0& 25& -10\\
+                0& 0& 10
+            \end{bmatrix}$$
+
+    \end{solution}
     \item[b)] Aplique el método de ortogonalización de Gram-Schmidt, para calcular $A = QR$.
+    \begin{solution}
+        Para este metodo tomamos nuevamente $A=(a_1|a_2|a_3)$, por medio de Gram-Schmidt conseguiremos vecotres ortonormales. Primero 
+        $$q_1=\frac{a_1}{\|a_1\|}=\begin{bmatrix}
+            0\\
+            -3/5\\
+            -4/5
+        \end{bmatrix}$$
+        Luego tomamos
+        $$v_1=a_2-(q_1^Ta_2)q_1=\begin{bmatrix}
+            -20\\
+            27\\
+            11
+        \end{bmatrix}-(-25)\begin{bmatrix}
+            0\\
+            -3/5\\
+            -4/5\\
+        \end{bmatrix}=\begin{bmatrix}
+            -20\\
+            12\\
+            -9\\
+        \end{bmatrix}$$
+        Asi nuestro vector ortonormal es
+        $$q_2=\frac{v_1}{\|v_1\|}=\begin{bmatrix}
+            -20/25\\
+            12/25\\
+            -9/25
+        \end{bmatrix}$$
+        De esta manera para nuestro ultimo vector tenemos 
+        $$v_2=a_3-(q_1^Ta_3)q_1-(q_2^Ta_3)q_2=\begin{bmatrix}
+            14\\
+            4\\
+            2
+        \end{bmatrix}-(-4)\begin{bmatrix}
+            0\\
+            -3/5\\
+            -4/5
+        \end{bmatrix}-(-10)\begin{bmatrix}
+            -20/25\\
+            12/25\\
+            -9/25
+        \end{bmatrix}=\begin{bmatrix}
+            6\\
+             32/5\\
+             -24/5\\
+        \end{bmatrix}$$
+        Asi nuestro ultimo vector es 
+        $$q_3=\frac{v_2}{\|v_2\|}=\frac{1}{10}\begin{bmatrix}
+            6\\
+             32/5\\
+             -24/5\\
+        \end{bmatrix}=\begin{bmatrix}
+            3/5\\
+            16/25\\
+            -12/25
+        \end{bmatrix}$$
+        De esta manera nuestra matriz ortogonal $Q$ es
+        $$Q=(q_1|q_2|q_3)=\begin{bmatrix}
+            0 &-20/25&3/5\\
+            -3/5&12/25&16/25\\
+            -4/5&-9/25&-12/25
+        \end{bmatrix}=\begin{bmatrix}
+                0&-20/25&15/25\\
+                -15/25&12/25&16/25\\
+                -20/25&-9/25&-12/25
+            \end{bmatrix}$$
+        Note que resulto ser la misma $Q$ hallada por medio de HouseHolder, luego natrualmente tenemos que
+        $$R=Q^TA=\begin{bmatrix}
+                5& -25& -4\\
+                0& 25& -10\\
+                0& 0& 10
+            \end{bmatrix}$$
+        Asi la factorizacion $A=QR$ resulta ser la misma que en el punto anterior, es decir
+        $$\begin{bmatrix} 0 & -20 & 14 \\ -3 & 27 & 4 \\ -4 & 11 & 2 \end{bmatrix}=\begin{bmatrix}
+                0&-20/25&15/25\\
+                -15/25&12/25&16/25\\
+                -20/25&-9/25&-12/25
+            \end{bmatrix}\begin{bmatrix}
+                5& -25& -4\\
+                0& 25& -10\\
+                0& 0& 10
+            \end{bmatrix}$$
+    \end{solution}
     \item[c)] Implemente en Matlab los métodos de ortogonalización de Gram-Schmidt y Householder, para calcular $A = QR$, compare los resultados numéricos con los encontrados en las partes (a) y (b).
 \end{enumerate}

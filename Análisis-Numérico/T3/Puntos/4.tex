@@ -2,3 +2,47 @@
 
 \section*{Ejercicio 4}
 Sea $A \in \mathbb{R}^{n \times n}$. Probar que $\lambda = 1$ es un valor propio de la matriz de iteración del método de Jacobi (o Gauss-Seidel) de $A$ si y solo si $A$ no es invertible.
+\begin{sproof}
+    Primero tomemos la matriz $A=D-L-U$, donde $D$ es una matriz diagonal, $L$ es estrictamente triangular inferior y $U$ es estrictamente triangular inferior.
+       Probemos el resultado para el método de Jacobi.
+
+       $(\Rightarrow)$ Recordemos que la matriz de iteración esta dada por 
+       $$T_J=D^{-1}(L+U).$$
+       Si $\lambda=1$ es un valor propio de $T_J$, existe un vector no nulo $v$, tal que
+       $$T_Jv=1\cdot v=v,$$
+       si reemplazamos tenemos que
+       $$D^{-1}(L+U)v=v,$$
+       multiplicando por $D$ a izquierda a ambos lados
+       $$(L+U)v=Dv.$$
+       Pasando a sumar todo al lado derecho y distribuyendo obtenemos
+       $$0=Dv+Lv+Uv.$$
+       Factorizando $v$ a derecha
+       $$0=(D-L-U)v.$$
+       Note que esta ultima linea dice que existe un vector no nulo $v$, que es solución de la ecuación $Ax=0,$ por lo que podemos concluir que $A$ no es invertible.\\
+       $(\Leftarrow)$ Supongamos que $A$ no es invertible, luego existe un vector no nulo $v$, tal que $Av=0$, Si descomponemos $A$ tenemos que
+       $$(D-L-U)v=Dv-Lv-Uv$$
+       Si despejamos para $Dv$
+       \begin{align*}
+           Dv&=Lv+Uv\\
+           &=(L+U)v
+       \end{align*}
+
+       Por ultimo multiplicando por $D^{-1}$, tenemos que
+       $$v=D^{-1}(L+U)v=T_Jv.$$
+       Esto quiere decir que $v$ es un vector propio para $T_J$ con valor propio $1$, así concluimos que la matriz de iteración de Jacobi tiene valor propio $\lambda=1.$
+
+       La prueba para la matriz de iteración de Gauss-Seidel se realiza de manera similar.\\
+       $(\Rightarrow)$ Recordemos que la matriz de iteración para este caso es
+       $$T_{GS}=(D-L)^{-1}U.$$
+       Nuevamente por la definición de valor propio, existe un $v$ no nulo tal que
+       $$(D-L)^{-1}Uv=v.$$
+       Multiplicando por $D-L$ tenemos que
+       $$Uv=(D-L)v,$$
+       Si pasamos a restar y factorizamos $v$ tenemos que
+       $$0=(D-L)v-Uv=(D-L-U)v.$$
+       Así hemos encontrado que $v$, es un vector no nulo que soluciona $Ax=0.$ Concluyendo así que $A$ no es invertible.\\
+       $(\Leftarrow)$ Supongamos que $A$ no es invertible, luego existe $v$ no nulo tal que $Av=0$, así por como descomponemos $A$ se tiene que $Av=(D-L-U)v=(D-L)v-Uv$. Como esta igualado a 0, Sumamos $Uv$ obteniendo así
+       $$(D-L)v=Uv.$$
+       Multiplicando por la inversa de $D-L$ llegamos a que $v=T_{GS}v$, mostrando así que $v$ es un vector propio para $T_{GS},$ con valor propio $\lambda=1.$ Concluyendo así que el hecho es cierto para ambas matrices de iteración.
+       
+\end{sproof}

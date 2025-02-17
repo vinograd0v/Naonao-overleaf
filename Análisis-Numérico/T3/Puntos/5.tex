@@ -38,8 +38,8 @@ A = \begin{bmatrix} 3 & -1 & -1 & 0 & 0 \\ -1 & 4 & 0 & -2 & 0 \\ -1 & 0 & 3 & -
             -2x_2 - x_3  + 5x_4 - x_5 \\ 
             -x_4 + 2x_5\\ 
             \end{bmatrix}\\ 
-            &= 3x_1^2 + 4x_2^2 + 3x_3^2 + 5x_4^2 + 2x_5^2 -2x_1x_2 -2x_1x_3 - 2x_1x_4 -2x_2x_4 -2x_3x_4 - 2x_4x_5\\
-            &= (x_1 - x_2)^2 + (x_1 - x_3)^2 + (x_1 - x_4)^2 + (x_2 - x_4)^2 + (x_3 - x_4)^2 + (x_4 - x_5)^2 + 2x_2^2 + x_3^2 + x_4^2 + x_5^2 \\ 
+            &= 3x_1^2 + 4x_2^2 + 3x_3^2 + 5x_4^2 + 2x_5^2 -2x_1x_2 -2x_1x_3 - 4x_2x_4 -2x_3x_4 - 2x_4x_5\\
+            &= (x_1 - x_2)^2 + (x_1 - x_3)^2 + 2(x_2 - x_4)^2 + (x_3 - x_4)^2 + (x_4 - x_5)^2 + x_1^2 + x_2^2 + x_3^2 + x_4^2 + x_5^2 \\ 
             & > 0
     \end{align*}
     Con esto vemos que $x^TAx > 0$ y por lo tanto $A$ es definida positiva, así, los métodos de sobrerelajación con $\omega \in (0,2)$ y de Gauss-Seidel convergen. 
@@ -50,14 +50,14 @@ A = \begin{bmatrix} 3 & -1 & -1 & 0 & 0 \\ -1 & 4 & 0 & -2 & 0 \\ -1 & 0 & 3 & -
     \item[b)] ¿Cuál es el radio espectral de la matriz $J$ y de la matriz $S$?
 
     \begin{solution}
-        Para esto primero calculamos las matrices $T_J$ y $T_GS$ en Matlab de acuerdo a las fórmulas $T_J=D^{-1}(U+L)$ y $T_GS = (D-L)^{-1}U$ y luego calculamos el radio espectral usando el siguiente código
+        Para esto primero calculamos las matrices $T_J$ y $T_{GS}$ en Matlab de acuerdo a las fórmulas $T_J=D^{-1}(U+L)$ y $T_{GS} = (D-L)^{-1}U$ y luego calculamos el radio espectral usando el siguiente código
         \begin{lstlisting}
     T_J=inv(D)*(L+U); 
     T_GS=inv(D-L)*U;
     p_J=max(abs(eig(T_J))); %radio espectral de T_J
     p_GS = max(abs(eig(T_GS))); %radio espectral de T_GS
         \end{lstlisting}
-        así obtuvimos que $\rho(T_J) = 0.7158$ y $\rho(T_GS) = 0.5123$, observe que $\rho(T_J) < \rho(T_GS)$, lo cual es esperable pues el radio espectral determina la velocidad de convergencia de cada método.
+        así obtuvimos que $\rho(T_J) = 0.7158$ y $\rho(T_{GS}) = 0.5123$, observe que $\rho(T_J) < \rho(T_{GS})$, lo cual es esperable pues el radio espectral determina la velocidad de convergencia de cada método.
     \end{solution}
 
     \item[c)] Aproxime con dos cifras decimales el parámetro de sobrerelajación $\omega^*$.

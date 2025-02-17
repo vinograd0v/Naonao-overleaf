@@ -55,9 +55,9 @@ A = \begin{bmatrix} 3 & -1 & -1 & 0 & 0 \\ -1 & 4 & 0 & -2 & 0 \\ -1 & 0 & 3 & -
     T_J=inv(D)*(L+U); 
     T_GS=inv(D-L)*U;
     p_J=max(abs(eig(T_J))); %radio espectral de T_J
-    p_GS = max(abs(eig(T_GS))); %radio espectral de T_GS
+    p_GS=max(abs(eig(T_GS))); %radio espectral de T_GS
         \end{lstlisting}
-        así obtuvimos que $\rho(T_J) = 0.7158$ y $\rho(T_{GS}) = 0.5123$, observe que $\rho(T_J) < \rho(T_{GS})$, lo cual es esperable pues el radio espectral determina la velocidad de convergencia de cada método.
+        así obtuvimos que $\rho(T_J) = 0.7158$ y $\rho(T_{GS}) = 0.5123$, observe que $\rho(T_{GS}) < \rho(T_{J})$, lo cual es esperable pues el radio espectral determina la velocidad de convergencia de cada método.
     \end{solution}
 
     \item[c)] Aproxime con dos cifras decimales el parámetro de sobrerelajación $\omega^*$.

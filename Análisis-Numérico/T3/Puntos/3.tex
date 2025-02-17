@@ -15,7 +15,7 @@ A = \begin{bmatrix} a & 0 & 0 \\ a\delta & a & 0 \\ 0 & a\delta & a \end{bmatrix
             a & 0 \\
             a\delta & a \\
         \end{pmatrix}=a^3$$
-    entonces como $a\neq 0$, podemos calcular el número de condición $K_{\infty}(A)=\|A\|_{\infty}\|A^{-1}\|_{\infty}$, donde
+    entonces como $a\neq 0$, podemos calcular el número de condición $\kappa_{\infty}(A)=\|A\|_{\infty}\|A^{-1}\|_{\infty}$, donde
 
     $$A^{-1}=\dfrac{1}{a}\left(
 \begin{array}{ccc}
@@ -24,7 +24,7 @@ A = \begin{bmatrix} a & 0 & 0 \\ a\delta & a & 0 \\ 0 & a\delta & a \end{bmatrix
  \delta^2 & -\delta & 1 \\
 \end{array}
 \right)$$
-Esto nos da que $K_{\infty}(A)=a\|B\|_{\infty}\dfrac{1}{a}\|B^{-1}\|_{\infty}=\|B\|_{\infty}\|B^{-1}\|_{\infty}$, donde $B=\left(
+Esto nos da que $\kappa_{\infty}(A)=a\|B\|_{\infty}\dfrac{1}{a}\|B^{-1}\|_{\infty}=\|B\|_{\infty}\|B^{-1}\|_{\infty}$, donde $B=\left(
 \begin{array}{ccc}
  1 & 0 & 0 \\
  \delta  & 1 & 0 \\
@@ -32,7 +32,7 @@ Esto nos da que $K_{\infty}(A)=a\|B\|_{\infty}\dfrac{1}{a}\|B^{-1}\|_{\infty}=\|
 \end{array}
 \right),$ así
 
-$$K_{\infty}(A)=\left\|\left(
+$$\kappa_{\infty}(A)=\left\|\left(
 \begin{array}{ccc}
  1 & 0 & 0 \\
  \delta  & 1 & 0 \\
@@ -50,8 +50,184 @@ $$K_{\infty}(A)=\left\|\left(
     \item[b)] Estudie el condicionamiento del sistema $Ax = b$ en función de los valores de $\delta$. Interprete su resultado.
 
     \begin{solution}
-        En $\delta=0$ el problema se comporta bien, hacemos este  caso ya que aunque $\delta>0$, hay que pensar en valores cercanos a $0$, en estos el problema se comporta bien, note que el conjunto solución de $(1+\delta)(1+\delta+\delta^2)>0$ es justamente $\delta>0$, y esta función es creciente, entonces conforme $\delta$ se vuelve más grande, el número de condición aumenta y nuestro problema se vuelve sencible a errores de redondeo y perturbaciones en los datos.
+        En $\delta=0$ el problema se comporta bien, hacemos este  caso ya que aunque $\delta>0$, hay que pensar en valores cercanos a $0$, en estos el problema se comporta bien, note que el conjunto solución de $(1+\delta)(1+\delta+\delta^2)>0$ es justamente $\delta>0$, y esta función es creciente, entonces conforme $\delta$ se vuelve más grande, el número de condición aumenta y nuestro problema se vuelve sencible a errores de redondeo y perturbaciones en los datos. Más precisamente
+
+        \begin{itemize}
+            \item $\lim_{\delta\to 0} \kappa_{\infty}(A)=1$.\\
+            \item $\lim_{\delta  \to \infty} \kappa_\infty(A)=\infty$ 
+        \end{itemize}
     \end{solution}
     \item[c)] Si $a = -1$, $\delta = 0.1$ y se considera $x^* = (1, 9/10, 1)^T$ como solución aproximada del sistema $Ax = b$ (sin obtener la solución exacta), determine un intervalo en el que esté comprendido el error relativo. ¿Es coherente con la respuesta dada en el apartado anterior?
+
+    \begin{solution}
+        Reemplazando $a=-1, \delta=0.1$ y tomando $x^* = (1, 9/10, 1)^T$ se sigue que
+
+        $$Ax^*=\left(
+\begin{array}{ccc}
+ -1 & 0 & 0 \\
+ -0.1 & -1 & 0 \\
+ 0 & -0.1 & -1 \\
+\end{array}
+\right)\left(
+\begin{array}{c}
+ 1 \\
+ 9/10 \\
+ 1 \\
+\end{array}
+\right)=\left(
+\begin{array}{c}
+ -1 \\
+ -1 \\
+ -1.09 \\
+\end{array}
+\right)\approx \left(
+\begin{array}{c}
+ -1 \\
+ -1.1 \\
+ 0 \\
+\end{array}
+\right).$$
+Para determinar un intervalo del error podemos utilizar la fórmula
+
+$$\frac{1}{\kappa_{\infty}(A)} \frac{\left\|b-b^*\right\|_{\infty}}{\|b\|_\infty} \leq \frac{\left\|x-x^*\right\|}{\|x\|} \leq \kappa_{\infty}(A) \frac{\left\|b-b^*\right\|_{\infty}}{\|b\|_{\infty}},$$
+en efecto $\kappa_{\infty}(A)=(1+0.1) \left(\left(0.1\right)^2+0.1+1\right)\approx1.221$, $\|b\|_{\infty}=1.1$ y $\|b-b^*\|_{\infty}=1.09$. aplicando esto a la fórmula obtenemos
+
+$$\frac{1}{1.211} \frac{1.09}{1.1} \leq \frac{\left\|x-x^*\right\|}{\|x\|} \leq 1.221 \frac{1.09}{1.221},$$
+
+esto es 
+
+\[
+0.818 \le \frac{\|x-x^*\|}{\|x\|} \le 1.09.
+\]
+
+Esto no es incoherente con el punto anterior ya que el punto anterior me dice  que el sistema $Ax=b$ es bien condicionado para $\delta$ pequeño, en este caso $\delta=0.1$, esto no significa que al introducir un $x$ arbitrario el error deba ser pequeño, solo nos da que el sistema se comporta bien ante  perturbaciones en los datos y errores de redondeo, sin embargo si me proporcionan un $x$ erroneo como solución, esto no tiene nada que ver  con lo antes mencionado, el error no necesariamente debe ser pequeño.
+    \end{solution}
+
     \item[d)] Si $a = -1$ y $\delta = 0.1$, ¿es convergente el método de Jacobi aplicado a la resolución del sistema $Ax = b$? Realice tres iteraciones a partir de $x_0 = (0, 0, 0)^T$.
+
+    \begin{solution}
+        Tomando $a$ y $\delta$ como fueron dados en el enunciado tenemos que 
+       $$A=\begin{bmatrix}
+           -1&0&0\\
+           -0.1&-1&0\\
+           0&-0.1&-1
+       \end{bmatrix}=\begin{bmatrix}
+           -1&0&0\\
+           0&-1&0\\
+           0&0&-1
+       \end{bmatrix}-\begin{bmatrix}
+           0&0&0\\
+           0.1&0&0\\
+           0&0.1&0
+       \end{bmatrix}=D-L-U$$
+       Note que tenemos que $D=-I$ y que $U=0$ en este caso, luego la matriz de iteración del método de Jacobi esta dada por
+       $$T_J=D^{-1}(L+U)=\begin{bmatrix}
+           -1&0&0\\
+           0&-1&0\\
+           0&0&-1
+       \end{bmatrix}\begin{bmatrix}
+            0&0&0\\
+           0.1&0&0\\
+           0&0.1&0
+       \end{bmatrix}=\begin{bmatrix}
+           0&0&0\\
+           -0.1&0&0\\
+           0&-0.1&0
+       \end{bmatrix}$$
+       Luego note que $\|T_J\|_\infty=0.1<1$,  esto nos asegura que la sucesión dada por el método converge a la solución del sistema $Ax=b.$
+        Ahora para realizar las tres iteraciones del método, recordemos que la forma matricial del método de Jacobi esta dada por
+        $$x^{(k+1)}=T_Jx^{(k)}+D^{-1}b$$
+        Como $D^{-1}=-I$, tenemos que 
+        $$D^{-1}b=\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}$$
+        Con esta información consideremos la primera iteración
+        $$x^{(1)}=\begin{bmatrix}
+           0&0&0\\
+           -0.1&0&0\\
+           0&-0.1&0
+       \end{bmatrix}\begin{bmatrix}
+           0\\
+           0\\
+           0
+       \end{bmatrix}+\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}=\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}$$
+        Ahora para la segunda iteración tenemos que
+        $$x^{(2)}=\begin{bmatrix}
+           0&0&0\\
+           -0.1&0&0\\
+           0&-0.1&0
+       \end{bmatrix}\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}+\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}=\begin{bmatrix}
+           0\\
+           -0.1\\
+           -0.11\\
+        \end{bmatrix}+\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}=\begin{bmatrix}
+            1\\
+            1\\
+            -0.11
+        \end{bmatrix}$$
+        Para finalizar la tercera iteración esta dada por
+        $$x^{(3)}=\begin{bmatrix}
+           0&0&0\\
+           -0.1&0&0\\
+           0&-0.1&0
+       \end{bmatrix}\begin{bmatrix}
+            1\\
+            1\\
+            -0.11
+        \end{bmatrix}+\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+            \end{bmatrix}=\begin{bmatrix}
+           0\\
+           -0.1\\
+           -0.1\\
+        \end{bmatrix}+\begin{bmatrix}
+            1\\
+            1.1\\
+            0
+        \end{bmatrix}=\begin{bmatrix}
+            1\\
+            1\\
+            -0.1
+        \end{bmatrix}$$
+        En teoría $x^{(3)}$ es una solución aproximada del sistema, pero note que si efectuamos la multiplicación de esta aproximación con $A$ tenemos que
+        $$Ax^{(3)}\begin{bmatrix}
+           -1&0&0\\
+           -0.1&-1&0\\
+           0&-0.1&-1
+       \end{bmatrix}\begin{bmatrix}
+            1\\
+            1\\
+            -0.1
+        \end{bmatrix}=\begin{bmatrix}
+            -1\\
+            -1.1\\
+            0
+        \end{bmatrix}=b.$$
+        Note que justamente $x^{(3)}$ resulto ser no solo una aproximación, sino la solución exacta del sistema, es decir, que en este caso ademas de saber que el método de Jacobi converge, concluimos que convergía en tan solo 3 iteraciones.
+        
+    \end{solution}
 \end{enumerate}

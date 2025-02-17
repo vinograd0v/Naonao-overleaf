@@ -8,9 +8,9 @@ A = \begin{bmatrix} 0 & -20 & 14 \\ -3 & 27 & 4 \\ -4 & 11 & 2 \end{bmatrix}
 \begin{enumerate}
     \item[a)] Aplique las transformaciones de Householder, para calcular $A = QR$.
     \begin{solution}
-        Veamos $A=(a_1|a_2|a_3)$ donde cada $a_i$ es el vecor columna correspondiente a la matriz del enunciado. Primero tenemos que
+        Veamos $A=(a_1|a_2|a_3)$ donde cada $a_i$ es el vector columna correspondiente a la matriz del enunciado. Primero tenemos que
         $$\|a_1\|=\sqrt{0^2+(-3)^2+(-4)^2}=5,$$ 
-        asi para construir nuestro reflector de HouseHolder tomamos
+        asi para construir nuestro reflector de Householder tomamos
         $$v_1=a_1-\|a_1\|e_1=\begin{bmatrix}
             0\\-3\\-4
         \end{bmatrix}-\begin{bmatrix}
@@ -56,7 +56,7 @@ A = \begin{bmatrix} 0 & -20 & 14 \\ -3 & 27 & 4 \\ -4 & 11 & 2 \end{bmatrix}
                 -1\\
                 7
             \end{bmatrix}$$
-            Si hacemos el reflector de HouseHolder para $\tilde{A}$ obtenemos
+            Si hacemos el reflector de Householder para $\tilde{A}$ obtenemos
             $$\tilde{H}_2=I_2-2\frac{v_2\cdot v_2^T}{v_2^T\cdot v_2}=\begin{bmatrix}
                 1&0\\
                 0&1\\
@@ -183,4 +183,8 @@ A = \begin{bmatrix} 0 & -20 & 14 \\ -3 & 27 & 4 \\ -4 & 11 & 2 \end{bmatrix}
             \end{bmatrix}$$
     \end{solution}
     \item[c)] Implemente en Matlab los métodos de ortogonalización de Gram-Schmidt y Householder, para calcular $A = QR$, compare los resultados numéricos con los encontrados en las partes (a) y (b).
+
+    \begin{solution}
+    Al implementar los métodos en Matlab, obtuvimos exactamente los mismos resultados calculados en las partes (a) y (b), por tanto podemos decir que para ésta matriz en específico, ambos métodos resultan estables numéricamente.
+    \end{solution}
 \end{enumerate}

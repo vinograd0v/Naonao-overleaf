@@ -89,15 +89,15 @@ $$\kappa_{\infty}(A)=\left\|\left(
 \right).$$
 Para determinar un intervalo del error podemos utilizar la fórmula
 
-$$\frac{1}{\kappa_{\infty}(A)} \frac{\left\|b-b^*\right\|_{\infty}}{\|b\|_\infty} \leq \frac{\left\|x-x^*\right\|}{\|x\|} \leq \kappa_{\infty}(A) \frac{\left\|b-b^*\right\|_{\infty}}{\|b\|_{\infty}},$$
+$$\frac{1}{\kappa_{\infty}(A)} \frac{\left\|b-b^*\right\|_{\infty}}{\|b\|_\infty} \leq \frac{\left\|x-x^*\right\|_{\infty}}{\|x\|_{\infty}} \leq \kappa_{\infty}(A) \frac{\left\|b-b^*\right\|_{\infty}}{\|b\|_{\infty}},$$
 en efecto $\kappa_{\infty}(A)=(1+0.1) \left(\left(0.1\right)^2+0.1+1\right)\approx1.221$, $\|b\|_{\infty}=1.1$ y $\|b-b^*\|_{\infty}=1.09$. aplicando esto a la fórmula obtenemos
 
-$$\frac{1}{1.211} \frac{1.09}{1.1} \leq \frac{\left\|x-x^*\right\|}{\|x\|} \leq 1.221 \frac{1.09}{1.1},$$
+$$\frac{1}{1.211} \frac{1.09}{1.1} \leq \frac{\left\|x-x^*\right\|_{\infty}}{\|x\|_{\infty}} \leq 1.221 \frac{1.09}{1.1},$$
 
 esto es 
 
 \[
-0.818 \le \frac{\|x-x^*\|}{\|x\|} \le 1.20.
+0.818 \leq \frac{\|x-x^*\|_{\infty}}{\|x\|_{\infty}} \leq 1.20.
 \]
 
 Esto no es incoherente con el punto anterior ya que el punto anterior me dice  que el sistema $Ax=b$ es bien condicionado para $\delta$ pequeño, en este caso $\delta=0.1$, esto no significa que al introducir un $x$ arbitrario el error deba ser pequeño, solo nos da que el sistema se comporta bien ante  perturbaciones en los datos y errores de redondeo, sin embargo si me proporcionan un $x$ erroneo como solución, esto no tiene nada que ver  con lo antes mencionado, el error no necesariamente debe ser pequeño.

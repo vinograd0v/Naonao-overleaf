@@ -1,3 +1,13 @@
 %!TEX root = ../main.tex
 
 \item Sea $X$ un espacio con una base numerable; sea $A$ un subconjunto no numerable de $X$. Demuestra que incontablemente muchos puntos de $A$ son puntos de acumulación de $A$.
+
+\begin{proof}
+    Primero probaremos que el conjunto de puntos de acumulación $A^\prime$ de $A$ es no vacío: Asuma que $A^\prime$ es vacío, luego dado $x \in X$
+    existe una vecindad $V_x$ de $x$ tal que $V_x \cap (A - \{x\}) = \emptyset$, de ésta manera la colección $\{V_a\}_{a \in A}$ es una colección no contable de abiertos disyuntos dos a dos, ya que $X$ es 2-contable, tiene un subconjunto denso contable $E$, luego existe $x_a \in E$ tal que $x_a \in V_a$, pero como los $V_a$ son disyuntos dos a dos, cada $x_a$ debe ser distinto, es decir $E$ es no contable, lo cual contradice que $E$ es contable. Así, $A^\prime \neq \emptyset$.
+    Ahora asuma que $A^\prime$ es contable, ya que $X$ es 2-contable, en particular es 1-contable, luego por cada $y \in A^\prime$ existe una sucesión $\{x_n^{(y)}\}  \subseteq A$ que converge a $y$. De esta manera tenemos que
+    \begin{equation*}
+        B = \bigcup_{y \in A^\prime} \{x_n^{(y)}\} \subseteq A
+    \end{equation*}
+    es contable, pues es unión contable de conjuntos contables, por lo tanto $A - B$ es no contable, lo cual implica que tiene un punto de acumulación.
+\end{proof}

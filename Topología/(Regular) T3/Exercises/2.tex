@@ -1,3 +1,10 @@
 %!TEX root = ../main.tex
 
 \item Demuestra que si $X$ tiene una base numerable $\{B_n\}$, entonces toda base $\mathcal{C}$ de $X$ contiene una base numerable para $X$. \textit{[Sugerencia: Para cada par de índices $n,m$ para los cuales sea posible, elige $C_{n,m} \in \mathcal{C}$ tal que $B_n \subset C_{n,m} \subset B_m$.]}
+
+\begin{proof}
+    Sea $x \in X$, ya que $\mathcal{B}$ es base, existe $m \in \mathbb{N}$ tal que $x \in B_m$, como $\mathcal{C}$ también es base, existe $C$ tal que $x \in C \subseteq B_m$, aplicando nuevamente la definición de base, llegamos a que existe $n$ tal que $x \in B_n \subseteq C \subseteq B_m$, denotemos entonces a este $C$ por $C_{n,m}$, así, para $n, m \in \mathbb{N}$ podemos escoger $C_{n,m}$ de tal manera que $B_n \subseteq C_{n,m} \subseteq B_m$.  
+
+    Veamos que $\mathcal{C}^\prime := \{C_{n,m} \in \mathcal{C} : n,m \in \mathbb{N}, B_n \subseteq C_{n,m} \subseteq B_m\}$ es una base contable para $X$. La primera propiedad se sigue directamente de como construimos $\mathcal{C}^\prime$. Ahora sean $x \in X$, $C_{n_1,m_1}$ y $C_{n_2,m_2}$ tales que $x \in C_{n_1,m_1} \cap C_{n_2,m_2}$, como $C_{n_1,m_1} \cap C_{n_2,m_2}$ es abierto en X, existe $B_{m_3}$ tal que $x \in B_{m_3} \subseteq  C_{n_1,m_1} \cap C_{n_2,m_2}$, siguiendo el razonamiento anterior encontramos $C_{n_3,m_3}$ tal que $x \in B_{n_3} \subseteq C_{n_3,m_3} \subseteq B_{m_3}$ de ésta manera $x \in C_{n_3,m_3} \subseteq  C_{n_1,m_1} \cap C_{n_2,m_2}$, por lo tanto $\mathcal{C}^\prime$ es una base para $X$.
+    
+\end{proof}

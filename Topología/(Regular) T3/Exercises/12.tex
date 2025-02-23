@@ -1,3 +1,11 @@
- \item Sea $f: X \to Y$ una aplicación continua y abierta. Demuestra que si $X$ satisface el primer o segundo axioma de numerabilidad, entonces $f(X)$ satisface el mismo axioma.
+%!TEX root = ../main.tex
 
-  
+\item Sea $f: X \to Y$ una aplicación continua y abierta. Demuestra que si $X$ satisface el primer o segundo axioma de numerabilidad, entonces $f(X)$ satisface el mismo axioma.
+
+\begin{proof}
+  \begin{enumerate}
+  \item[i)] Sea $X$ un espacio 1-contable, luego dado $x \in X$ existe una base contable de vecindades de $x$, $\mathcal{B}_x=\{B_i\}_{i\in \mathbb{N}}$,. Veamos que $\mathcal{V}_{f(x)}=\{f[B_i]\}_{i\in\mathbb{N}}$ es una base contable de vecindades de $f(x)$: ya que $f$ es abierta $f[B_i]$ es abierto en $f(X)$, más aún como $x \in B_i$, $f[B_i]$ es una vecindad de $f(x)$. Ahora, sea $V$ una vecindad de $f(x)$, por continuidad, existe una vecindad $U$ de $x$ tal que $f[U] \subseteq V$, además, existe $i \in \mathbb{N}$ tal que $x \in B_i \subseteq U$, luego $f[B_i] \subseteq f[U] \subseteq V$, es decir $f[B_i] \subseteq V$. De esta manera $\mathcal{V}_{f(x)}$ es una base contable de vecindades de $f(x)$ y así $f(X)$ es 1-contable.\\ 
+  \item [ii)] Sea $X$ un espacio 2-contable, luego tiene una base contable $\mathcal{B} = \{B_i\}_{i \in \mathbb{N}}$. Considere $\mathcal{V} = \{f[B_i]\}_{i\in\mathbb{N}}$ y sea $y \in f(X)$, por definición existe $x \in X$ tal que $y = f(x)$ y como $\mathcal{B}$ es base, existe $B_i$ tal que $x \in B_i$ y por tanto $y \in f[B_i]$. Ahora sean $f[B_{i_1}], f[B_{i_2}] \in \mathcal{V}$, por propiedades de la imagen inversa, tenemos que $f^{-1}[f[B_{i_1}]\cap f[B_{i_2}]]=f^{-1}[f[B_{i_1}]]\cap f^{-1}[f[B_{i_2}]]$, como $B_{i_1}\subseteq f^{-1}[f[B_{i_1}]]$ y $B_{i_2} \subseteq f^{-1}[f[B_{i_2}]]$ tenemos que $B_{i_1} \cap B_{i_2} \subseteq f^{-1}[f[B_{i_1}]\cap f[B_{i_2}]]$ y como $\mathcal{B}$ es base, existe $B_{i_3}$ tal que $B_{i_3} \subseteq B_{i_1} \cap B_{i_2} \subseteq f^{-1}[f[B_{i_1}]\cap f[B_{i_2}]]$, de esta manera $f[B_{i_3}] \subseteq f[B_{i_1}] \cap f[B_{i_2}]$, con lo cual concluimos que $\mathcal{V}$ es base para $f(X)$.
+
+  \end{enumerate}
+\end{proof}

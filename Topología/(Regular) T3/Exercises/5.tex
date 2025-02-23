@@ -2,8 +2,21 @@
 
    \item 
     \begin{enumerate}
-        \item Demuestra que todo espacio métrico con un subconjunto denso numerable tiene una base numerable.
-        \item Demuestra que todo espacio métrico de Lindelöf tiene una base numerable.
+        \item Demuestra que todo espacio métrico con un subconjunto denso contable tiene una base contable.
+
+        \begin{proof}
+           Sea $A\subset X$ tal que $\overline{A}=X$, note que $B=\displaystyle\bigcup_{a\in A}B(a,r)$ tal que $r\in \mathbb{Q}$ es una base contable.
+        \end{proof}
+
+        \item Demuestra que todo espacio métrico de Lindelöf tiene una base contable.
+
+        \begin{proof}
+           Considere el cobrimiento $\mathcal{A}_n=\left\{B\left(x,\frac{1}{n}\right):x\in X\right\}$, como $(X,d)$ es Lindelöf entonces $\mathcal{A}_n$ tiene un subcubrimiento contable, luego
+
+           $$\bigcup_{i=1}^{\infty}\mathcal{A}_i$$
+
+           es un base contable ya que unión contable de contables es contable.
+        \end{proof}
     \end{enumerate}
 
    

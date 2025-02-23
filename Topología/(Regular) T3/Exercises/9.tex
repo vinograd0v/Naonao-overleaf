@@ -1,6 +1,14 @@
 %!TEX root = ../main.tex
 
-\item Sea $A$ un subespacio cerrado de $X$. Demuestra que si $X$ es Lindelöf, entonces $A$ es Lindelöf.  
-    Muestra con un ejemplo que si $X$ tiene un subconjunto denso numerable, $A$ no necesariamente tiene un subconjunto denso numerable.
+\item Sea $A$ un subespacio cerrado de $X$. Demuestre que si $X$ es Lindelöf, entonces $A$ es Lindelöf.  
+Muestre con un ejemplo que si $X$ tiene un subconjunto denso numerable, $A$ no necesariamente tiene un subconjunto denso numerable.
 
-    
+\begin{proof}
+    Sea $\mathcal{C}$ un cubrimiento de $A$, como $A$ es cerrado entonces $\mathcal{C}\cup A^c$ es un cubrimiento  de $X$, como $X$ es Lindelöf entonces tiene un subcubrimiento contable, digamos 
+
+    $$\bigcup_{i=1}^{\infty}C_i\cup A^{C}=X, 
+        $$
+     con $C_i\in \mathcal{C}$, luego $A=\bigcup_{i=1}^{\infty}C_i$
+\end{proof}
+
+El ejemplo en cuestión es el plano de Sorgenfray y esto lo trata más en detalle el libro de Munkres en el ejemplo 4 del capítulo.

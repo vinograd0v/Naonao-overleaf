@@ -1,3 +1,11 @@
 %!TEX root = ../main.tex
 
-\item Demuestra que todo espacio métrico compacto $X$ tiene una base numerable. \textit{[Sugerencia: Sea $\mathcal{A}_n$ un recubrimiento finito de $X$ por bolas de radio $1/n$.]}
+\item Demuestra que todo espacio métrico compacto $X$ tiene una base numerable. \textit{[Sugerencia: Sea $\mathcal{A}_n$ un cubrimiento finito de $X$ por bolas de radio $1/n$.]}
+
+\begin{proof}
+    Dado $n\in \mathbb{N}$, considere el cubrimiento $\mathcal{A}_n$ de las bolas de radio $1/n$, como $X$ es compacto entonces $A_n$ tiene un subcubrimiento finito, digamos $\mathcal{B}_n$, note que
+
+    $$\bigcup_{i=1}^{\infty}\mathcal{B}_i 
+        $$
+    es una base contable ya que dado $x\in B(x,r),$ existe  $n\in \mathbb{N}$ tal que $r>\frac{1}{n}$ para todo $r>0$ por la propiedad arquimediana, luego existe $B_{k_n}\in \bigcup_{i=1}^{\infty}\mathcal{B}_i $ tal que $x\in B_{k_n}\subset B(x,r)$
+\end{proof}

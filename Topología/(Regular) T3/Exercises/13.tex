@@ -1,7 +1,14 @@
-  %!TEX root = ../main.tex
+%!TEX root = ../main.tex
 
-  \item Demuestra que si $X$ tiene un subconjunto denso numerable, entonces toda colección de conjuntos abiertos disjuntos en $X$ es numerable.
+  \item Demuestre que si $X$ tiene un subconjunto denso numerable, entonces toda colección de conjuntos abiertos disjuntos en $X$ es numerable.
 
   \begin{proof}
-      xd
+      Sea $D$ el conjunto denso numerable, dada una colección de conjuntos abiertos disjuntos $\mathcal{C}$, tenemos que para cada $C\in \mathcal{C}$ existe un $x_C\in C\cap D$. Note que la función
+
+      \begin{align*}
+        f : \mathcal{C} &\longrightarrow D \\
+        C &\longmapsto f(C) = x_C
+      \end{align*}
+        
+        es inyectiva ya que si $U,V\in \mathcal{C}$ son tal  que $U\neq V$, entonces $U\cap V=\emptyset$ y por tanto $x_U\neq x_V$. Esto nos da que $|\mathcal{C}|\leq |D|\leq \aleph_0$ 
   \end{proof}

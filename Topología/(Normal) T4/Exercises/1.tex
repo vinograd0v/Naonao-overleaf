@@ -1,3 +1,15 @@
 %!TEX root = ../main.tex
 
-\item Demostrar que toda variedad es regular y, por lo tanto, metrizables. ¿Dónde se utiliza la condición de Hausdorff?
+\item Demostrar que toda variedad es regular y, por lo tanto, metrizables.
+
+\begin{proof}
+    Sea $x \in X$, como $X$ es m-variedad,entonces dada $U$ una vecindad de $x$, tenemos que $U$ es homeomorfo $V\subset \mathbb{R}^m$. Sea $h$ es homeomorfismo, como $\mathbb{R}^m$ es localmente compacto, entonces dada una vecindad $W$ de $h(x)$ existe un $K$ compacto tal que
+
+    $$W_{h(x)}\subset K\subset V\subset \mathbb{R}^m$$
+
+    y como $h$ es homeomorfismo
+
+    $$h^{-1}(W_{h(x)})\subset h^{-1}(K)\subset U$$
+
+    con $h^{-1}(W_{h(x)})$ vecindad de $x$ y $h^{-1}(K)$ compacto. Esto prueba que $X$ es local localmente compacto, como localmente compacto y Haussdorf implica  regular entonces hemos probado que toda variedad es regular, por la definición de variedad tenemos que esta es 2-contable, luego por el teorema de Urysohn toda variedad es metrizable.
+\end{proof}

@@ -2,4 +2,9 @@
 
  \item Demuestra que si $X$ es un producto numerable de espacios con subconjuntos densos numerables, entonces $X$ tiene un subconjunto denso numerable.
 
-   
+\begin{proof}
+    Sea $X=\displaystyle{\prod_{i=1}^{\infty}}X_i$ tal que para cada $X_i$ existe $D_i$ contable denso en $X_i$.
+    Ahora, sea $x \in X$ fijo pero arbitrario, $x = (x_i)_{i\in \mathbb{N}}$ y sea $K \subset \mathbb{N}$ finito, considere $B_K$ el subespacio de $X$ que consiste de los puntos $y = (y_i)_{i\in \mathbb{N}}$ tales que $y_i=x_i$ para $i \in \mathbb{N} - K$ y $y_i = w_i$ para $i \in K$ donde $w_i \in D_i$, note que $B_K$ es contable, pues es isomorfo a $\displaystyle{\prod_{i \in K}} D_i$ el cual es contable por ser producto finito de conjuntos contables. Ahora sea
+     $$D = \displaystyle \bigcup_{\substack{K \subset \mathbb{N} \\ |K| < |\mathbb{N}|}} B_K $$
+     $D$ es contable pues es unión contable de conjuntos contables. $D$ es denso en $X$: en efecto, sea $p \in X$ y $U = \displaystyle{\prod_{i \in \mathbb{N}}} U_i$ una vecindad básica de $p$, con esto tenemos que $U_i= X_i$ para todos salvo finitos naturales $i$, además, en los índices restantes $D_i \cap U_i \neq \emptyset$ pues $\overline{D_i}=X_i$, de esta manera existe $K \subseteq \mathbb{N}$ finito tal que existe $y \in B_K \cap U$, luego $U \cap D \neq \emptyset$, por lo tanto $D$ es denso en $X$.
+\end{proof}

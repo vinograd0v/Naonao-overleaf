@@ -1,3 +1,31 @@
 %!TEX root = ../main.tex
 
-\item Sea \( X \) un espacio compacto de Hausdorff. Suponga que para cada \( x \in X \), existe una vecindad \( U \) de \( x \) y un entero positivo \( k \) tal que \( U \) puede ser embebido en \( \mathbb{R}^k \). Mostrar que \( X \) puede ser embebido en \( \mathbb{R}^N \) para algún entero positivo \( N \).
+\item Sea \( X \) un espacio compacto y Hausdorff. Suponga que para cada \( x \in X \), existe una vecindad \( U \) de \( x \) y un entero positivo \( k \) tal que \( U \) puede ser embedido en \( \mathbb{R}^k \). Mostrar que \( X \) puede ser embedido en \( \mathbb{R}^N \) para algún entero positivo \( N \).
+
+\begin{proof}
+    Como $X$ es Haussdorf y compacto entonces es normal, luego podemos cubrir a $X$ con un número finito de $\{U_i\}$ que pueden ser embedidos en $\mathbb{R}^{k_i}$, sean $\{g_i\}$ los embedimientos correspondientes, como $X$ es normal, tenemos una partición de la unidad $\{\phi_i\}$ dominada por $\{U_i\}$. Sea $A_i=\operatorname{supp}(\phi_i)$, para cada $i=1,\ldots,n$ defina la función $h_i: X\mapsto \mathbb{R}^m$ como
+
+    $$
+h_i(x)= \begin{cases}\phi_i(x) \cdot g_i(x) & \text { si } x \in U_i \\ \mathbf{0}=(0, \ldots, 0) & \text { si } x \in X-A_i\end{cases}
+$$
+
+Ahora defina
+$$
+F: X \longrightarrow(\underbrace{\mathbb{R} \times \cdots \times \mathbb{R}}_{n \text { veces }} \times \underbrace{\mathbb{R}^m \times \cdots \times \mathbb{R}^m}_{n \text { veces }})
+$$
+
+como
+$$
+F(x)=\left(\phi_1(x), \ldots, \phi_n(x), h_1(x), \ldots, h_n(x)\right).
+$$
+
+Claramente $F$ es continua pues es continua componente a componente y ya habíamos probado que $h_i$ es continua, basta ver que $F$ es inyectiva. Suponga $F(x)=F(y)$, entonces $\phi_i(x)=$ $\phi_i(y)$ y $h_i(x)=h_i(y)$ para todo $i$. Ahora como $\phi_i(x)>0$ para algún $i$, $\phi_i(y)>0$ también, luego $x, y \in U_i$. Así
+
+$$
+\phi_i(x) \cdot g_i(x)=h_i(x)=h_i(y)=\phi_i(y) \cdot g_i(y)
+$$
+
+
+se concluye que $g_i(x)=g_i(y)$. Pero $g_i: U_i \rightarrow \mathbb{R}^m$ es inyectiva, esto es $x=y$.
+
+\end{proof}

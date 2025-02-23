@@ -2,4 +2,6 @@
 
    \item Demuestra que si $X$ es Lindelöf y $Y$ es compacto, entonces $X \times Y$ es Lindelöf.
 
-   
+   \begin{proof}
+      Sea $\mathcal{C}$ un cubrimiento por abiertos de $X \times Y$, como $Y$ es compacto tenemos que para cada $x \in X$, $\{x\}\times Y$ es compacto y $\mathcal{C}$ lo cubre, luego existe un subcubrimiento finito $\textsl{C}_x=\{C_i\}_{i\leq n}$ además $\bigcup\textsl{C}_x$ es un abierto que contiene a $\{x\}\times Y$, por lo tanto, aplicando el lema del tubo, existe $W_x \subseteq X$ abierto tal que $W_x \times Y \subseteq \bigcup \textsl{C}_x$, así $\{W_x\}_{x\in X}$ es un cubrimiento por abiertos de $X$, ya que $X$ es Lindelöf obtenemos un subcubrimiento contable $\{W_i\}_{i \in \mathbb{N}}$, ahora, como para cada $W_i \times Y$ existe un subcubrimiento finito de $\mathcal{C}$, la unión de estos cubrimientos cubre a $X \times Y$, y como es unión contable de conjuntos finitos, es contable.  
+   \end{proof}

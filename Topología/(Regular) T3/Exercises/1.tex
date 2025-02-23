@@ -1,10 +1,14 @@
 %!TEX root = ../main.tex
-
-
 \item 
     \begin{enumerate}
         \item Un \textit{$G_{\delta}$-conjunto} en un espacio $X$ es un conjunto $A$ que es igual a una intersección numerable de conjuntos abiertos de $X$. Demuestra que en un espacio $T_1$ de primera numerabilidad, cada conjunto unitario es un $G_{\delta}$-conjunto.
-        \item Existe un espacio familiar en el cual cada conjunto unitario es un $G_{\delta}$-conjunto, pero que no satisface el axioma de primera numerabilidad. ¿Cuál es?  
-        
-        La terminología proviene del alemán. La ``G'' representa ``Gebiet,'' que significa ``conjunto abierto,'' y la ``$\delta$'' representa ``Durchschnitt,'' que significa ``intersección.''
+        \begin{proof}
+        Sea $\{x\}$ un conjunto unitario arbitrario, como $X$ es $1-$contable, entonces existe $B_x=\{B_i\}_{i\in \mathbb{N}}$ una base contable para  $x$, es claro que $x\in \bigcap_{i=1}^{\infty}B_i$, falta ver que dado $y\neq x,$ $y\not\in \bigcap_{i=1}^{\infty}B_i$, como $y\neq x$, entonces existen $V_x$ y $V_y$ vecindades de $x$ y  $y$ respectivamente tal que $y\not\in V_x$ y $x\not\in V_y$ ya que $X$ es $T_1$, esto es nos da que exite $B_i$ tal que $y\notin B_i$, lo que concluye el resultado.
+        \end{proof}
+        \item Existe un espacio familiar en el cual cada conjunto unitario es un $G_{\delta}$-conjunto, pero que no satisface el axioma de primera numerabilidad. ¿Cuál es?\\
+
+        \textbf{Solución.} Este espacio es $\mathbb{R}^{\omega}$ con la topología de cajas, este espacio no es $1-$contable ya que dado $x=(x_n)_n$  y una colección $\{U_i:i\in \mathbb{N}\}$ de vecindades de $x$, podemos suponer que $U_i=\prod_n(a_n^{(i)},b_n^{(i)})$ donde $a_n^{(i)}<x_n<b_n^{(i)}$, tomando $c_n=\frac{a_n^{(n)}+x_n}{2}$ y $d_n=\frac{x_n+b_n^{(n)}}{2}$ se sigue que $V=\prod_n(c_n,d_n)$ es una vecindad de $x$, pero $U_n\not\subset V$ para cada $n$.\\
+
+        Note ahora que dado $x=(x_n)_n,$ tome $U_i=\prod_n\left(x_n-\frac{1}{i},x_n+\frac{1}{i}\right)$ para cada $i$, en efecto $\bigcap_{i} U_i=\{x\}
+            $
     \end{enumerate}

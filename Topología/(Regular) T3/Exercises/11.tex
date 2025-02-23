@@ -1,3 +1,12 @@
 %!TEX root = ../main.tex
 
   \item Sea $f: X \to Y$ una función continua. Demuestra que si $X$ es Lindelöf, o si $X$ tiene un subconjunto denso numerable, entonces $f(X)$ satisface la misma condición.
+\begin{proof}
+  Sea $\{B_\alpha\}_\alpha$ un cubrimiento de $f(X)$, $A_\alpha=f^{-1}(B_\alpha)$ es abierto en $X$ ya que $f$ es continua y $\{A_\alpha\}_\alpha$ cubre a $X$, como $X$ es Lindelöf, entonces existe un subcubrimiento contable $\left\{f^{-1}(B_{\alpha_i})\right\}_{i\in \mathbb{N}}$, luego $\{(B_{\alpha_i})\}_{i\in \mathbb{N}}$ es un cubrimiento contable de $f(X)$.\\
+
+  Suponga que $X$ tiene un subconjunto denso contable $D$, como $f$ es continua entonces
+
+  $$f(\overline{D})=f(X)\subset \overline{f(D)},$$
+
+  esto nos da que $f(D)$ es denso en $f(X)$ y como $D$ es contable entonces $F(D)$ también.
+\end{proof}

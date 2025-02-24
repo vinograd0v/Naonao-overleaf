@@ -1,4 +1,21 @@
 %!TEX root = ../main.tex
 
 \item Una familia indexada \( \{ A_{\alpha} \} \) de subconjuntos de \( X \) se dice \textit{familia indexada puntualmente finita} si cada \( x \in X \) pertenece a \( A_{\alpha} \) solo para un número finito de valores de \( \alpha \).  
-    \textbf{Lema}. Sea \( X \) un espacio normal; sea \( \{ U_1, U_2, \dots \} \) una cobertura indexada puntualmente finita de \( X \). Entonces, existe una cobertura indexada \( \{ V_1, V_2, \dots \} \) de \( X \) tal que \( \bar{V}_n \subset U_n \) para cada \( n \).
+    \textbf{Lema (de la contracción)}. Sea \( X \) un espacio normal; sea \( \{ U_1, U_2, \dots \} \) un cubrimiento indexado puntualmente finito de \( X \). Entonces, existe un cubrimiento indexado \( \{ V_1, V_2, \dots \} \) de \( X \) tal que \( \bar{V}_n \subset U_n \) para cada \( n \).
+
+\begin{proof}
+    Sea 
+    \[
+    A_1 = X - \left(\bigcup_{i=2}^{\infty} U_i \right) 
+    \]
+    $A_1$ es cerrado en $X$ y además está contenido en $U_1$ pues $\{U_1,U_2,\ldots\}$ cubre a $X$, por normalidad existe $V_1$ tal que $A_1 \subseteq V_1 \subseteq \overline{V_1} \subseteq U_1$. Además ${V_1,U_2,\ldots}$ cubre a $X$.
+
+    De manera recursiva, si son dados $V_1,V_2, \ldots, V_{k-1}$ tales que $\overline{V_i}\subseteq U_i$ y $\{V_1,V_2,\ldots,V_k-1,U_k,U_{k+1},\ldots\}$ cubre a $X$, defina
+
+    \[
+    A_k = X- (V_1 \cup \ldots \cup V_{k-1}) - \left(\bigcup_{i=k+1}^{\infty} U_i \right)
+    \]
+    $A_k$ es cerrado en $X$ y $A_k \subseteq U_k$, luego existe $V_k$ tal que $A_k \subseteq V_k \subseteq \overline{V_k} \subseteq U_k$. Así $\{V_1,\ldots,V_k,U_{k+1},\ldots\}$ cubre a $X$.
+
+    Queremos ver que $\{V_1,V_2,\ldots\}$ cubre a $X$. Sea $x \in X$, como $\{U_1, U_2, \ldots\}$ es una familia indexada puntualmente finita, $x \in U_k$ para finitos índices $k$, tome $n$ el mayor natural tal que $x \in U_n$, es decir $x \notin U_k$ para $k > n$, luego, como $\{V_1,\ldots,V_n,U_{n+1},\ldots\}$ cubre a $X$, debe existir un $k \leq n$ tal que $x \in V_k$, así $\{V_1,V_2,\ldots\}$ cubre a $X$.
+\end{proof}

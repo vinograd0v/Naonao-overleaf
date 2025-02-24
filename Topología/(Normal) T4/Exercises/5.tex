@@ -1,11 +1,79 @@
 %!TEX root = ../main.tex
 
 \item La condición de Hausdorff es una parte esencial en la definición de una variedad; no se sigue de las otras partes de la definición. Considere el siguiente espacio:  
-    Sea \( X \) la unión del conjunto \( \mathbb{R} - \{ 0 \} \) y el conjunto de dos puntos \( \{ p, q \} \). Se topologiza \( X \) tomando como base la colección de todos los intervalos abiertos en \( \mathbb{R} \) que no contienen \( 0 \), junto con todos los conjuntos de la forma \( (-a,0) \cup \{ p \} \cup (0,a) \) y todos los conjuntos de la forma \( (-a,0) \cup \{ q \} \cup (0,a) \), para \( a > 0 \). El espacio \( X \) se llama \textit{la recta con dos orígenes}.
+    Sea \( X \) la unión del conjunto \( \mathbb{R} - \{ 0 \} \) y el conjunto de dos puntos \( \{ p, q \} \). Se topologiza \( X \) tomando como base la colección de todos los intervalos abiertos en \( \mathbb{R} \) que no contienen al \( 0 \), junto con todos los conjuntos de la forma \( (-a,0) \cup \{ p \} \cup (0,a) \) y todos los conjuntos de la forma \( (-a,0) \cup \{ q \} \cup (0,a) \), para \( a > 0 \). El espacio \( X \) se llama \textit{la recta con dos orígenes}.
     
     \begin{enumerate}
         \item Verificar que esto es una base para una topología.
+
+        \begin{proof}
+            Denote por $\mathcal{B}$ a la colección dada en el enunciado.
+
+            Sea $x \in X$, veamos que existe $U \in \mathcal{B}$ tal que $x \in U$, para esto tenemos dos casos:
+
+            \begin{itemize}
+                \item[i.]
+                Si $x \in \mathbb{R}-\{0\}$ tome el intervalo $(0,x+1)$ si $x>0$, si no, tome $(x-1,0)$.
+                \item[ii.]
+                Si $x \in \{p,q\}$ tome $(-a,0) \cup \{x\} \cup (0,a)$. 
+            \end{itemize}
+
+            Ahora sea $x \in U_1 \cap U_2$ donde $U_1,U_2 \in \mathcal{B}$, tenemos los siguientes casos:
+
+            \begin{itemize}
+                \item[i.]
+                 Si $U_1$ y $U_2$ son intervalos abiertos que no contienen al 0, i.e., $U_1 = (a,b)$ y $U_2 = (c,d)$  considere $U_3=(e,f)$ donde $e=\max\{a,c\}$ y $f=\min\{b,d\}$.
+
+                \item[ii.]
+                  Si $U_1$ es un intervalo abierto que no contiene al 0 y $U_2= (-a,0) \cup \{y\} \cup (0,a)$, donde $a>0$ y $y \in \{p,q\}$. Tenemos que $U_1 = (b,c)$, Si $b<0$ necesariamente $c<0$, luego podemos tomar $U_3 = (e,c)$ donde $e=\max\{-a,b\}$. Ahora, si $b>0$, tome $U_3 = (b,e)$ donde $e=\min\{a,c\}$.
+
+                \item[iii.]
+                Si $U_1$ y $U_2$ son de la forma $(-a_1,0) \cup \{y\} \cup (0,a_1)$ y $(-a_2,0) \cup \{y\}\cup (0,a_2)$ con $y \in \{p,q\}$, tome $U_3 = (-a,0) \cup \{y\} \cup (0,a)$ con $a = \min\{a_1,a_2\}$.
+
+                \item[iv.]
+                Si $U_1$ es de la forma $(-a,0) \cup \{p\} \cup (0,a)$ y $U_2$ es de la forma $(-b,0) \cup \{q\} \cup (0,b)$, entonces $x$ debe pertenecer o bien a $(-a,0) \cap (-b,0)$ o bien $(0,a) \cap (0,b)$, en cualquiera de los dos casos procedemos como en el caso i.
+            \end{itemize}
+
+            De ésta forma, para cada caso conseguimos un $U_3$ tal que $x \in U_3 \subseteq U_1 \cap U_2$, concluyendo así que $\mathcal{B}$ es una base.
+        \end{proof}
         \item Mostrar que cada uno de los espacios \( X - \{ p \} \) y \( X - \{ q \} \) es homeomorfo a \( \mathbb{R} \).
+
+        \begin{proof}
+            Sea
+            \begin{align*}
+                f: X-\{p\} &\longrightarrow \mathbb{R}\\ 
+                x &\longmapsto \begin{cases}
+                    x & \text{si }  x \in \mathbb{R}-\{0\}\\
+                    0 & \text{si } x = q 
+                \end{cases} 
+            \end{align*}
+            $f$ claramente es biyectiva, hay que ver que es contínua, note que $f|_{\mathbb{R}-\{0\}}=Id_{\mathbb{R}-\{0\}}$, luego, si probamos que $f$ es contínua en $q$ tendremos que $f$ es contínua. Sea $U$ una vecindad básica de $0=f(q)$, es decir $U = (a,b)$ con $a < 0 < b$, luego $f^{-1}(U)=(a,0) \cup \{q\} \cup (0,b)$ si tomamos $0 < c \leq \min\{|a|,|b|\}$, tenemos que $(-c,0) \cup \{q\} \cup (0, c)$ es una vecindad de $q$ contenida en $f^{-1}(U)$, por lo tanto $f$ es contínua en $q$. Ahora veamos que $f$ es abierta, para esto solo necesitamos verificar que la imagen de un abierto básico es abierta en $\mathbb{R}$, sea $U$ un abierto básico de $X-\{p\}$, si $U$ es un intervalo abierto que no contiene al 0, $f(U)$ es él mismo, si $U$ es de la forma $(-a,0)\cup \{q\} \cup (0,a)$, entonces $f(U)=(-a,a)$, el cual es abierto en $\mathbb{R}$, por tanto al ser $f$ continua, biyectiva y abierta, es un homeomorfismo. Para ver que $X-\{q\}$ es isomorfo a $\mathbb{R}$ la prueba es análoga.
+        \end{proof}
         \item Mostrar que \( X \) satisface el axioma \( T_1 \), pero no es de Hausdorff.
+        \begin{proof}
+            Sea $x\in X$, veamos que $\{x\}$ es cerrado. 
+            Si $x \in \mathbb{R}-\{0\}$ tenemos que
+            \begin{align*}
+                X-\{x\} &= (-\infty,x) \cup [(x,0) \cup \{p\} \cup (0,-x)] \cup [(x,0) \cup \{q\} \cup (0,-x)] \cup (0,\infty), \text{  si } x<0\\
+                X-\{x\} &=(-\infty,0) \cup [(-x,0) \cup \{p\} \cup (0,x)] \cup [(-x,0) \cup \{q\} \cup (0,x)] \cup (x,\infty), \text{  si } x>0
+            \end{align*}
+            Ademas 
+            \begin{align*}
+                X-\{p\} & = (-\infty,0) \cup [(-a,0) \cup \{q\} \cup (0,a)] \cup (0,\infty)\\
+                \intertext{y}
+                X-\{q\} & = (-\infty,0) \cup [(-a,0) \cup \{p\} \cup (0,a)] \cup (0,\infty)
+            \end{align*}
+            para algún $a>0$, de ésta manera $X-\{x\}$ es abierto para todo $x \in X$ y por lo tanto $\{x\}$ es cerrado.
+
+            Para ver que $X$ no es Hausdorff, tome $p$ y $q$ y sean $U_p$, $U_q$ vecindades de $p$ y $q$ respectivamente, tales que $q \neq U_p$ y $p \neq U_q$. Ya que $U_p$ es abierto, existe $(-a,0)\cup {p} \cup (0,a) \subseteq U_p$ para algún $a>0$, de manera análoga existe $(-b,0)\cup \{q\} \cup (0,b) \subseteq U_q$ con $b>0$, ahora tome $c=\min\{a,b\}$, note que $(-c,0)\cup (0,c) \subseteq U_p \cap U_q$, luego $X$ no puede ser Hausdorff. 
+         \end{proof}
         \item Mostrar que \( X \) satisface todas las condiciones para ser una 1-variedad, excepto la condición de Hausdorff.
+        \begin{proof}
+            Para ver que $X$ tiene una base contable, considere la colección de los intervalos abiertos con extremos racionales, los conjuntos de la forma $(-r,0)\cup \{p\} \cup (0,r)$ y los conjuntos de la forma $(-r,0) \cup \{q\} \cup (0,r)$ con $r \in \mathbb{Q}^+$. Esta colección es contable, pues es unión finita de conjuntos contables, además, por la densidad de los racionales, forma una base para $X$.
+
+            Ahora, veamos que dado $x \in X$ existe una vecindad de $x$ que es homeomorfa a un abierto de $\mathbb{R}$, Si $x \in \mathbb{R}-\{0\}$, tenemos que existen $a,b \in \mathbb{R}-\{0\}$ tales que $x \in 
+            (a,b)$ y $0 \notin (a,b)$, además $(a,b)$ es homeomorfo a $\mathbb{R}$.
+
+            Por (b), tenemos que $X-\{p\}$ y $X-\{q\}$ son vecindades de $q$ y $p$, respectivamente, que son homeomorfas a $\mathbb{R}$. Por lo tanto $X$ cumple todas las condiciones de una 1-variedad, excepto ser Hausdorff.
+        \end{proof}
     \end{enumerate}

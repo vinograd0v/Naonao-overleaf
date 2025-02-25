@@ -3,7 +3,7 @@
 \item Sea \( X \) un espacio compacto y Hausdorff. Suponga que para cada \( x \in X \), existe una vecindad \( U \) de \( x \) y un entero positivo \( k \) tal que \( U \) puede ser embedido en \( \mathbb{R}^k \). Mostrar que \( X \) puede ser embedido en \( \mathbb{R}^N \) para algún entero positivo \( N \).
 
 \begin{proof}
-    Como $X$ es Haussdorf y compacto entonces es normal, luego podemos cubrir a $X$ con un número finito de $\{U_i\}$ que pueden ser embedidos en $\mathbb{R}^{k_i}$, sean $\{g_i\}$ los embedimientos correspondientes, como $X$ es normal, tenemos una partición de la unidad $\{\phi_i\}$ dominada por $\{U_i\}$. Sea $A_i=\operatorname{supp}(\phi_i)$, para cada $i=1,\ldots,n$ defina la función $h_i: X\mapsto \mathbb{R}^m$ como
+    Como $X$ es Haussdorf y compacto entonces es normal, luego podemos cubrir a $X$ con un número finito de $\{U_i\}$ que pueden ser embedidos en $\mathbb{R}^{k_i}$, sean $\{g_i\}$ los embedimientos correspondientes, como $X$ es normal, tenemos una partición de la unidad $\{\phi_i\}$ dominada por $\{U_i\}$. Sea $A_i=\operatorname{supp}(\phi_i)$, para cada $i=1,\ldots,n$ defina la función $h_i: X\rightarrow \mathbb{R}^{k_i}$ como
 
     $$
 h_i(x)= \begin{cases}\phi_i(x) \cdot g_i(x) & \text { si } x \in U_i \\ \mathbf{0}=(0, \ldots, 0) & \text { si } x \in X-A_i\end{cases}
@@ -11,7 +11,7 @@ $$
 
 Ahora defina
 $$
-F: X \longrightarrow(\underbrace{\mathbb{R} \times \cdots \times \mathbb{R}}_{n \text { veces }} \times \underbrace{\mathbb{R}^m \times \cdots \times \mathbb{R}^m}_{n \text { veces }})
+F: X \longrightarrow\underbrace{\mathbb{R} \times \cdots \times \mathbb{R}}_{n \text { veces }} \times \underbrace{\mathbb{R}^{k_1} \times \cdots \times \mathbb{R}^{k_n}}
 $$
 
 como
@@ -26,6 +26,6 @@ $$
 $$
 
 
-se concluye que $g_i(x)=g_i(y)$. Pero $g_i: U_i \rightarrow \mathbb{R}^m$ es inyectiva, esto es $x=y$.
+se concluye que $g_i(x)=g_i(y)$. Pero $g_i: U_i \rightarrow \mathbb{R}^{k_i}$ es inyectiva, esto es $x=y$.
 
 \end{proof}

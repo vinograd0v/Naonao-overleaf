@@ -1,0 +1,29 @@
+%!TEX root = ../main.tex
+
+\section{Problema 2}
+Sea
+\[
+f(x) = (x - r_1)(x - r_2) \dots (x - r_d),
+\]
+donde $r_1 < r_2 < \dots < r_d$.
+
+\begin{itemize}
+    \item Probar que si $x_0 > r_d$ la sucesión de Newton-Raphson converge a $r_d$.
+    \item Para un polinomio
+    \[
+    P(x) = a_d x^d + \dots + a_0, \quad a_d \neq 0,
+    \]
+    tal que sus $d$ raíces son reales y distintas, se propone el siguiente método para aproximar todas sus raíces:
+    \begin{itemize}
+        \item Se comienza con un valor $x_0$ mayor que
+        \[
+        M = \max \left\{ 1, \sum_{i=0}^{d-1} \frac{|a_i|}{|a_d|} \right\}.
+        \]
+        \item Se genera a partir de $x_0$ la sucesión de Newton-Raphson, que, según el ítem anterior, converge a la raíz más grande de $P$, llamémosla $r_d$; obteniéndose de este modo un valor aproximado $\tilde{r_d}$.
+        \item Se divide $P$ por $x - \tilde{r_d}$ y se desprecia el resto, dado que $r_d \approx \tilde{r_d}$. Se redefine ahora $P$ como el resultado de esta división y se comienza nuevamente desde el primer ítem, para hallar las otras raíces.
+    \end{itemize}
+    \item Aplicar este método para aproximar todas las raíces del polinomio
+    \[
+    P(x) = 2x^3 - 4x + 1.
+    \]
+\end{itemize}

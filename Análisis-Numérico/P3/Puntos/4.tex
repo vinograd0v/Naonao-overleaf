@@ -1,0 +1,22 @@
+%!TEX root = ../main.tex
+
+\section{Problema 4: Silueta de la Mano}
+Para dibujar la silueta de su mano, siga los siguientes pasos:
+
+\begin{itemize}
+    \item Preparamos una tabla de abcisas y ordenadas usando los siguientes comandos de MATLAB:
+    \begin{verbatim}
+    figure('position',get(0,'screensize'))
+    axes('position',[0 0 1 1])
+    [x,y] = ginput;
+    \end{verbatim}
+    \item Dibuje su mano en un papel y póngalo sobre la pantalla del computador. Use el ratón para seleccionar alrededor de 37 puntos que delineen su mano (como se muestra en la figura). Termine la instrucción \texttt{ginput} oprimiendo enter.
+    \item Grafique los puntos $(x, y)$ obtenidos y la mano correspondiente mediante el comando \texttt{plot} de MATLAB.
+    \item Implemente el método de splines cúbicos.
+    \item Interpole por separado los puntos $(i, x_i)$ e $(i, y_i)$ mediante splines cúbicos usando su programa.
+    \item Grafique la curva parametrizada que se obtiene.
+    \item Estime el área de su mano usando la fórmula del área de Gauss:
+    \[
+    A = \frac{1}{2} \left| \sum_{i=1}^{n-1} x_i y_{i+1} + x_n y_1 - \sum_{i=1}^{n-1} x_{i+1} y_i - x_1 y_n \right|.
+    \]
+\end{itemize}

@@ -1,0 +1,16 @@
+%!TEX root = ../main.tex
+
+\section{Problema 1}
+Dada la función
+\[
+f(x) = x + \frac{1}{x} - 2, \quad f: \mathbb{R}_{>0} \to \mathbb{R},
+\]
+se construye el siguiente algoritmo para aproximar la raíz $r = 1$:
+\[
+x_{n+1} = 2 - \frac{1}{x_n}.
+\]
+
+\begin{itemize}
+    \item Verificar que si $x_0 > 1$ entonces la sucesión $\{x_n\}$ es monótona decreciente y acotada inferiormente por 1. Concluir que $x_n \to 1$, aunque esta iteración no está en las hipótesis del teorema del punto fijo. ¿Qué hipótesis no se cumple?
+    \item Dar un algoritmo para aproximar la raíz de $f$ que converja cuadráticamente.
+\end{itemize}

@@ -1,0 +1,96 @@
+\documentclass[12pt, a4paper]{article}%Tipo de documento y tamaño de letra%
+\usepackage[spanish]{babel}
+\usepackage{lipsum}
+\usepackage{color,graphicx}%Para poder insertar graficas%
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{amsmath,amssymb}%Insertar unos símbolos matemáticos especiales%
+%%%%%%%%%%%%%%%% LA INTEGRAL COMEMIERDA ESA%%
+
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%para poner código xd
+\usepackage{listings}
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    stepnumber=1,
+    numbersep=10pt,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false,
+    keywordstyle=\color{blue!75!black},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+}
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape `T1/ntxtlf/m/up' undefined}
+\WarningFilter{latexfont}{Some}
+\usepackage{setspace}
+\usepackage[most]{tcolorbox}
+\usepackage[T1]{fontenc}
+\usepackage{fourier,libertine}
+\let\oldstylenums\oldstyle
+\usepackage{array}
+\usepackage{layout}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{picinpar}
+\pagestyle{empty}
+\input{boxes}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},
+ left=25mm,
+ top=30mm,
+ }
+
+\usepackage{bbm}
+
+\begin{document}
+
+\setlength{\parindent}{0cm}
+\hoffset-0.46cm
+\voffset-1.46cm
+
+\begin{window}[0,l,{\includegraphics[scale=0.21]{logo.eps}},]
+\large\scshape  \hspace{0.4cm}\textsf{Universidad Nacional de Colombia} \\
+\textcolor{white}{\tiny.}  \large \hspace{1.5cm} \textsf{Facultad de Ciencias} \\
+\textcolor{white}{\tiny.}   \normalsize\hspace{2.15cm}\textsf{Análisis Numérico I}\\
+\hspace*{3.2cm}\textsf{Parcial III}
+\end{window}
+
+\vspace{0.6cm}
+\small
+\textsf{Mateo Andrés Manosalva Amaris\\
+Edgar Santiago Ochoa Quiroga\\
+Sergio Alejandro Bello Torres} 
+\normalsize
+\dotfill
+\vspace{0.7cm}
+
+\section*{\textcolor{white}{Ejercicios}}
+\vspace*{-2cm} %esto es porque me raya que la sección salga y tampoco quiero que quede espacio xd
+
+%La madre para el que mueva algo en el main.tex
+\input{Puntos/1}
+\input{Puntos/2}
+\input{Puntos/3}
+\input{Puntos/4}
+\input{Puntos/5}
+\end{document}

@@ -1,0 +1,12 @@
+%!TEX root = ../main.tex
+
+\section{Problema 5: Integración Numérica}
+Se tiene la integral
+\[
+I = \int_0^1 \frac{4}{1 + x^2} dx = \pi.
+\]
+
+\begin{itemize}
+    \item Use las reglas compuestas del punto medio, del trapecio y de Simpson para aproximar $I$ para varios tamaños de paso de integración $h_n = 1/n$, $n = 10, 50, 100, 250, 500, 1000, 1500, 2000$. Grafique el logaritmo del error absoluto versus $n$ para cada paso. Describa el efecto de redondeo de los errores cuando $h \to 0$.
+    \item Implemente el método de integración de Romberg para calcular $I$. Grafique el logaritmo del error en los términos diagonales en la tabla de extrapolación versus $\log h$. Verifique sus resultados con la teoría.
+\end{itemize}

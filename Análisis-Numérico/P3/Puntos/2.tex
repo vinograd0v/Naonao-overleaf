@@ -9,6 +9,36 @@ donde $r_1 < r_2 < \dots < r_d$.
 
 \begin{itemize}
     \item Probar que si $x_0 > r_d$ la sucesión de Newton-Raphson converge a $r_d$.
+
+    \begin{proof}
+        Escribamos $f(x)=(x-r_d)g(x)$ con $g(x)=(x-r_1)\cdots (x-r_{d-1}).$ De esta manera, $f'(x)=g(x)+(x-r_d)g'(x)$, luego la iteración del metodo de Newton Raphson es de la forma:
+         \[
+         x_{k+1}=x_k-\frac{(x_k-r_d)g(x)}{(x_k-r_d)g'(x_k)+g(x_k)}
+        \]
+        Ahora asuma que $x_0>r_d$, es decir $x_0-r_d > 0$, esto implica que $x_0-r_i>0$ para $i=1,\ldots,a$ pues $r_d$ es la mayor raíz de $f(x)$. Con esto en mente note que:
+        \begin{align*}
+        x_1 - r_d &= x_0 - r_d - \frac{(x_0-r_d)g(x)}{(x_0-r_d)g'(x_0)+g(x_0)} \\ 
+        &=(x_0 - r_d)\left(1-\frac{g(x_0)}{(x_0-r_d)g'(x_0)+g(x_0)}\right)
+        \end{align*}
+        Ahora, veamos que $g'(x_0)>0$:
+        \[
+        g'(x_0)=\sum_{i=1}^{d-1}\left(\prod_{\substack{j=1 \\ j \neq i}}^{d-1} (x_0 - r_j)\right)
+        \]
+        Como cada factor de cada producto es positivo, tenemos que cada sumando es positivo, y por lo tanto $g'(x_0) >0$,luego $(x_0-r_d)g'(x_0)+g(x)>g(x)$. Así
+        \[
+        0 < \frac{g(x_0)}{(x_0-r_d)g'(x_0)+g(x_0)} <1
+        \]
+        Y así
+        \[
+        x_1-r_d=(x_0 - r_d)\left(1-\frac{g(x_0)}{(x_0-r_d)g'(x_0)+g(x_0)}\right) >0
+        \]
+        Por lo tanto $x_1-r_d > 0$. Procediendo de manera inductiva llegamos a que $x_k - r_d >0$ y además, como
+        \[
+        0<\left(1-\frac{g(x_{k-1})}{(x_{k-1}-r_d)g'(x_{k-1})+g(x_{k-1})}\right) < 1
+        \]
+        Vemos que existe una constante $M \in (0,1)$ tal que $x_k - r_d<M(x_{k+1} - r_d)$ lo cual implica que $x_k-r_d < M^{k}(x_0 - r_d)$, como $M^{k}\xrightarrow{n\rightarrow \infty} 0$, tenemos que $x_k$ converge a $r_d$
+
+    \end{proof}
     \item Para un polinomio
     \[
     P(x) = a_d x^d + \dots + a_0, \quad a_d \neq 0,

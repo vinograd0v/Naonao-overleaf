@@ -56,4 +56,18 @@ donde $r_1 < r_2 < \dots < r_d$.
     \[
     P(x) = 2x^3 - 4x + 1.
     \]
+
+    \begin{solution}
+        Para implementar éste metodo en Matlab tendremos en cuenta varios aspectos importantes: si tenemos $P(x)= a_dx^d + \ldots + a_0$, su derivada es $P'(x)=da_dx^{d-1}+\ldots+a_2x+a_1$, con lo cual podemos definir dos funciones tales que dada una lista de coeficientes y una variable $x$, podemos evaluar $P(x)$ y $P'(x)$, además, sabemos que evaluar directamente es muy costoso computacionalmente, pues a medida que aumenta el grado del polinomio, hay que efectuar muchas operaciones tan solo para calcular $x^d$, por lo tanto escribimos $P(x)=x(x(\cdots(a_dx+a_{d-1})\cdots)+a_1)+a_0$ y hacemos lo mismo con $P'(x)$. Tambien consideramos que al dividir por $x-r_i$, podemos aplicar regla de Ruffini o división sintética, es decir, si tenemos $p(x)=a_nx^n + \cdots + a_0$ y dividimos entre $b(x)=x-r$ obtendremos un polinomio $q(x) = b_{n-1}x^{n-1} + \cdots + b_0 $ a partir de la siguiente regla de recurrencia:
+        \begin{align*}
+            b_{n-1} &= a_{n}\\
+            b_{n-2} &= a_{n-1}+rb_{n-1}\\ 
+            \vdots \\   
+            b_{0} &= a_1 + rb_1
+        \end{align*}
+        Note que en este caso omitimos el residuo de la división, pues solo nos importa obtener los coeficientes. 
+
+    Ya con todo esto, podemos aplicar el método de Newton-Rapshon al polinomio dado, de donde obtuvimos que sus raíces son $r_1 = -1.525687120865518$, $r_2 = 0.258652022504153$ y $r_3 = 1.267035098361366$. Al evaluar el polinomio en cada raíz obtenemos que $P(r_1) =  0.111022302462516 \times 10^{-15}$, $P(r_2)= -0.888178419700125 \times 10^{-15}$ y\\ $P(r_3)= -0.666133814775094 \times 10^{-15}$. Con esto podemos observar que el método de Newton-Raphson aproxima muy bien las raíces, pues aunque al hacer división sintética nos arriesgamos a perder un coeficiente, las aproximaciones resultantes son muy exactas, con una precisión de 15 cifras decimales.
+
+    \end{solution}
 \end{itemize}

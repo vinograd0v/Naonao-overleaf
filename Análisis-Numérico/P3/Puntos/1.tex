@@ -12,5 +12,32 @@ x_{n+1} = 2 - \frac{1}{x_n}.
 
 \begin{itemize}
     \item Verificar que si $x_0 > 1$ entonces la sucesión $\{x_n\}$ es monótona decreciente y acotada inferiormente por 1. Concluir que $x_n \to 1$, aunque esta iteración no está en las hipótesis del teorema del punto fijo. ¿Qué hipótesis no se cumple?
+    \begin{sproof} Primero mostraremos que la sucesion esta acotada inferiormente por 1. Esto se hara por induccion. Para el caso base como $x_0>1$, tenemos que
+    $$\frac{1}{x_0}<1$$
+    Luego al multiplicar por $-1$ a ambos lados, y sumar $2$ obtenemos que
+    $$2-\frac{1}{x_0}>2-1=1$$
+    Pero note que el lado izquierdo de la desigualdad es $x_1$, luego $x_1>1$, Ahora si suponemos que $x_k>1$, por un argumento analogo al previo tenemos que $-\dfrac{1}{x_1}>-1$, luego sumando $2$ tenemos que
+    $$x_{k+1}=2-\frac{1}{x_k}>2-1=1.$$
+    De esta manera se prueba que la sucesion esta acotada inferiormente por $1.$\\
+    Ahora probemos por induccion nuevamente, que es monotona decreciente. Primero el caso base.\\
+        Si $x_0>1$, tenemos que $x_0-1>0$, luego $(x_0-1)^2>0$, si expandimos el binomio obtenemos que $x_0^2-2x_0+1>0$, luego como en particular $x_0>0$, podemos dividir en la desigualdad, obteniendo asi
+        $$x_0-2+\frac{1}{x_0}>0.$$
+        Si reorganizamos tenemos que
+        $$x_0>2-\frac{1}{x_0}=x_1.$$
+        Probando asi el caso base. Ahora si suponemos que $x_{k-1}>x_k$, note que como estan acotadas inferiormente por $1$, podemos asegurar que
+        $$\frac{1}{x_{k-1}}<\frac{1}{x_k}.$$
+        Multiplicando por $-1$ y sumando $2$ a ambos lados obtenemos que
+        $$2-\frac{1}{x_{k-1}}>2-\frac{1}{x_k}.$$
+        Pero por la definicion de la sucesion, esto es
+        $$x_{k}>x_{k+1}.$$
+        Mostrando asi que es monotona decreciente. Luego como es una sucesion monotona, decreciente y acotada inferiormente, sabemos que converge, es decir $\lim_{n\to\infty}x_n=x$. Luego considerando un termino arbitrario de la sucesion 
+        $$x_{n+1}=2-\frac{1}{x_n},$$
+        Si hacemos que $n\to\infty$, tenemos que 
+        $$x=2-\frac{1}{x},$$
+        luego multiplicando por $x$ y juntando todo a un lado
+        $$x^2-2x+1=0,$$
+        facotirzando obtenemos que $(x-1)^2=0$, asi conluimos que $x=1,$ es decir que nuestra sucesion converge a $1.$
+        Note que la hipotes de punto fijo que no se cumple es la de ser contraccion
+    \end{sproof}
     \item Dar un algoritmo para aproximar la raíz de $f$ que converja cuadráticamente.
 \end{itemize}

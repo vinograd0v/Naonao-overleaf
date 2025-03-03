@@ -4,6 +4,52 @@
 Sea $f \in C^2[a, b]$, y sean $x_0 = a, x_1 = a + h, \dots, x_n = b$, donde $h = \dfrac{b-a}{n}$. Considerar la poligonal $l(x)$ que interpola a $f$ en los puntos $x_i, i = 0 \dots n$. Probar que
 
 \begin{itemize}
-    \item[a)]$$|f(x) - l(x)| \leq \frac{h^2}{2} \max_{x \in [a,b]} |f''(x)|$$.
-    \item[b)] $$|f'(x) - l'(x)| \leq h \max_{x \in [a,b]} |f''(x)|$$.
+    \item[a)]$$|f(x) - l(x)| \leq \frac{h^2}{2} \max_{x \in [a,b]} |f''(x)|.$$
+
+    \begin{proof}
+        Primero recordemos que $l(x)=\dfrac{f(x_{i+1})-f(x_i)}{h}(x-x_i)+f(x_i)$ para $[x_i,x_{i+1}]$, note  que por el teorema de Taylor
+
+        $$l(x)=f(x_i)+f^{\prime}(x_i)(x-x_i)+\frac{f^{\prime\prime}(c_1)}{2}(x_{i+1}-x_i)(x-x_i), \text{ con } c_1\in (x_i,x),$$
+
+        luego 
+        $$f(x)-l(x)=(f(x)-f(x_i))-\left(f^{\prime}(x_i)(x-x_i)+\frac{f^{\prime\prime}(c_1)}{2}(x_{i+1}-x_i)(x-x_i)\right).$$
+
+        Aplicando nuevamente teorema de Taylor
+
+        $$f(x)-f(x_i)=(x-x_i)f^{\prime}(x_i)+\dfrac{f^{\prime\prime}(c_2)}{2}(x-x_i)^2, \text{ con }c_2\in (x_i,x),$$
+
+        ahora juntando las identidades obtenemos que
+
+        \begin{align*}
+            f(x)-l(x)&=\frac{f^{\prime\prime}(c_2)}{2}(x-x_i)^2-\frac{f^{\prime\prime}(c_1)}{2}(x-x_i)(x_{i+1}-x_i)\\
+            &=\frac{1}{2}(x-x_i)(f^{\prime\prime}(c_2)(x-x_i)-f^{\prime\prime}(c_1)(x_{i+1}-x_i))
+        .\end{align*}
+        por la continuidad de $f^{\prime\prime}$, existe un $C$ tal que 
+
+        $$f(x)-l(x)=\frac{1}{2}(x-x_i)f^{\prime\prime}(C)((x-x_i)-(x_{i+1}-x_i))=\frac{1}{2}f^{\prime\prime}(C)(x-x_i)(x-x_{i+1}).$$
+
+        Finalmente, para $x\in [x_i,x_{i+1}]$ obtenemos que
+
+        $$|f(x)-l(x)|\leq\frac{1}{2}|f^{\prime\prime}(C)|(x_{i+1}-x_i)^2=\frac{h^2}{2}|f^{\prime\prime}(C)|,$$
+
+        por tanto en el intervalo $[a.b]$ se sigue que
+
+        $$|f(x)-l(x)|\leq=\frac{h^2}{2}\max_{x\in [a,b]}|f^{\prime\prime}(x)|$$
+    \end{proof}
+
+    \item[b)] $$|f'(x) - l'(x)| \leq h \max_{x \in [a,b]} |f''(x)|.$$
+
+    \begin{proof}
+        Como $l(x)=\dfrac{f(x_{i+1})-f(x_i)}{h}(x-x_i)+f(x_i)=f^{\prime}(C)(x-x_i)+f(x_i)$, tenemos que $l^{\prime}(x)=f^{\prime}(C)$ para algún $C\in (x_i,x_{i+1})$ por el teorema del valor medio, utilizando las identidades del punto anterior, se sigue que
+
+        $$f^{\prime}(x)=f^{\prime}(x_i)(x-x_i)^{\prime}+\frac{f^{\prime\prime}(c_2)}{2}((x-x_i)^2)^{\prime}=f^{\prime}(x_i)+f^{\prime\prime}(c_2)(x-x_i)$$
+
+        y por tanto
+
+        \begin{align*}
+            |f^{\prime}(x)-l^{\prime}(x)|&=|f^{\prime}(x_i)+f^{\prime\prime}(c_2)(x-x_i)-f^{\prime}(x_i)-f^{\prime\prime}(c_3)(C-x_i)|\\
+            &=|f^{\prime\prime}(c_2)(x-x_i)-f^{\prime\prime}(c_3)(C-x_i)|\\
+            &\leq h \max_{x \in [a,b]} |f''(x)|
+        .\end{align*}
+    \end{proof}
 \end{itemize}

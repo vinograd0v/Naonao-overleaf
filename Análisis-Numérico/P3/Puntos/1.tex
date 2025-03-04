@@ -12,5 +12,61 @@ x_{n+1} = 2 - \frac{1}{x_n}.
 
 \begin{itemize}
     \item Verificar que si $x_0 > 1$ entonces la sucesión $\{x_n\}$ es monótona decreciente y acotada inferiormente por 1. Concluir que $x_n \to 1$, aunque esta iteración no está en las hipótesis del teorema del punto fijo. ¿Qué hipótesis no se cumple?
+    \begin{sproof} Primero mostraremos que la sucesion esta acotada inferiormente por 1. Esto se hara por induccion. Para el caso base como $x_0>1$, tenemos que
+    $$\frac{1}{x_0}<1$$
+    Luego al multiplicar por $-1$ a ambos lados, y sumar $2$ obtenemos que
+    $$2-\frac{1}{x_0}>2-1=1$$
+    Pero note que el lado izquierdo de la desigualdad es $x_1$, luego $x_1>1$, Ahora si suponemos que $x_k>1$, por un argumento análogo al previo tenemos que $-\dfrac{1}{x_1}>-1$, luego sumando $2$ tenemos que
+    $$x_{k+1}=2-\frac{1}{x_k}>2-1=1.$$
+    De esta manera se prueba que la sucesión esta acotada interiormente por $1.$\\
+    Ahora probemos por inducción nuevamente, que es monótona decreciente. Primero el caso base.\\
+        Si $x_0>1$, tenemos que $x_0-1>0$, luego $(x_0-1)^2>0$, si expandimos el binomio obtenemos que $x_0^2-2x_0+1>0$, luego como en particular $x_0>0$, podemos dividir en la desigualdad, obteniendo así
+        $$x_0-2+\frac{1}{x_0}>0.$$
+        Si reorganizamos tenemos que
+        $$x_0>2-\frac{1}{x_0}=x_1.$$
+        Probando así el caso base. Ahora si suponemos que $x_{k-1}>x_k$, note que como están acotadas interiormente por $1$, podemos asegurar que
+        $$\frac{1}{x_{k-1}}<\frac{1}{x_k}.$$
+        Multiplicando por $-1$ y sumando $2$ a ambos lados obtenemos que
+        $$2-\frac{1}{x_{k-1}}>2-\frac{1}{x_k}.$$
+        Pero por la definición de la sucesión, esto es
+        $$x_{k}>x_{k+1}.$$
+        Mostrando así que es monótona decreciente. Luego como es una sucesión monótona, decreciente y acotada interiormente, sabemos que converge, es decir $\lim_{n\to\infty}x_n=x$. Luego considerando un termino arbitrario de la sucesión 
+        $$x_{n+1}=2-\frac{1}{x_n},$$
+        Si hacemos que $n\to\infty$, tenemos que 
+        $$x=2-\frac{1}{x},$$
+        luego multiplicando por $x$ y juntando todo a un lado
+        $$x^2-2x+1=0,$$
+        factorizando obtenemos que $(x-1)^2=0$, así concluimos que $x=1,$ es decir que nuestra sucesión converge a $1.$
+        Note que de base tenemos la iteración definida es la función
+        $$g(x)=2-\frac{1}{x}$$
+        Primero dependemos de como estemos definiendo el dominio, ya que para el teorema de punto fijo necesitamos que el espacio sobre el que trabajamos sea completo. Como estamos asumiendo que $x_0>1$, asumiremos que estamos definiendo $g$ sobre $[1,\infty),$ en caso contrario esa es la hipótesis que no se cumple. De igual manera podemos notas que la función dada no es contracción. Mostremos esto por contradicción. Si fuera contracción existe $0<k<1$ tal que
+        $$\left|g(x)-g(y)\right|\leq k|x-y|$$
+        Para todo $x,y\in[1,\infty]$ diferentes. En particular tomemos $y=1.$ Luego tenemos que
+        $$\left|2-\frac{1}{x}-\left(2-\frac{1}{1}\right)\right|=\left|\frac{x-1}{x}\right|\leq k|x-1|.$$
+        Como $x>1$ ya que tiene que ser diferente a $y$ tenemos que
+        $$\frac{1}{x}\leq k,$$
+        Pero note que independientemente del $k$ fijado, tomando un $x$ lo suficientemente cercano a $1$, la desigualdad es al contrario. Mostrando así que no es contracción.
+    \end{sproof}
     \item Dar un algoritmo para aproximar la raíz de $f$ que converja cuadráticamente.
+    \begin{solution}
+        Lo primero que podríamos pensar es usar el método de Newton, pero note que
+        $$f^\prime(x)=1-\frac{1}{x^2}$$
+        Si evaluamos en $r=1$ note que $f^\prime(1)=0$, pero ademas
+        $$f^{\prime\prime}(x)=\frac{2}{x^3},$$
+        por lo que $f^{\prime\prime}(1)=2\neq 0.$ Esto quiere decir que $1$ es un cero de multiplicidad 2, pero sabemos que Newton para multiplicidad mayor que uno no converge cuadraticamente. Por lo que la idea sera usar el método de Newton Modificado cuando se conoce la multiplicidad del cero. Para esto si el método de Newton era
+        $$x_{n+1}=x_{n}-\frac{f(x_n)}{f^\prime(x_n)},$$
+        entonces como la multiplicidad del cero es $2$ tenemos que
+         $$x_{n+1}=x_{n}-2\frac{f(x_n)}{f^\prime(x_n)}=x_n-2\frac{x_n+\dfrac{1}{x_n}-2}{1-\dfrac{1}{x_n^2}},$$
+         si simplificamos un poco esta expresión tenemos que
+         $$x_{n+1}=x_n-2\frac{(x_n^2-2x_n+1)x_n}{x_n^2-1}=x_n-2\frac{x_n(x_n-1)}{x_n+1}=x_n\left(1-2\frac{x_n-1}{x_n+1}\right)=x_n\frac{3-x_n}{x_n+1}.$$
+         Este sera nuestro algoritmo con convergencia cuadrática. Sabemos que al ser una modificación de Newton la aproximación convergerá a $1$ siempre y cuando $x_0$ sea lo suficientemente cercano a la raíz, por lo que nos preocuparemos solo por el siguiente limite
+         $$\lim_{n\to\infty}\frac{|x_{n+1}-1|}{|x_n-1|^2},$$
+         Si este resulta ser finito tendremos la convergencia cuadrática deseada. Primero note que
+         $$\frac{|x_{n+1}-1|}{|x_n-1|^2}=\frac{\left|x_n\dfrac{3-x_n}{x_n+1}-1\right|}{|x_n-1|^2}=\frac{|3x_n-x_n^2-x_n-1|}{|x_n+1||x_n-1|^2}=\frac{|(x_n-1)^2|}{|x_n+1||x_n-1|^2}=\frac{1}{|x_n+1|}.$$
+         Luego 
+         $$\lim_{n\to\infty}\frac{|x_{n+1}-1|}{|x_n-1|^2}=\lim_{n\to \infty}\frac{1}{|x_n+1|}=\frac{1}{2}.$$
+         Por lo que este algoritmo tiene convergencia cuadrática como lo deseábamos.
+
+         \sqed
+    \end{solution}
 \end{itemize}

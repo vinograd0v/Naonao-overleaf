@@ -44,12 +44,17 @@ Sea $f \in C^2[a, b]$, y sean $x_0 = a, x_1 = a + h, \dots, x_n = b$, donde $h =
 
         $$f^{\prime}(x)=f^{\prime}(x_i)(x-x_i)^{\prime}+\frac{f^{\prime\prime}(c_2)}{2}((x-x_i)^2)^{\prime}=f^{\prime}(x_i)+f^{\prime\prime}(c_2)(x-x_i)$$
 
-        y por tanto
+        de la misma manera
+        $$f^{\prime}(C)=f^{\prime}(x_i)+f^{\prime\prime}(c_3)(C-x_i)$$
 
+        con $c_3\in (C,x_i)$ ya que no necesiramente es el mismo $c_2,$ ahora juntando las identidades se sigue que 
         \begin{align*}
             |f^{\prime}(x)-l^{\prime}(x)|&=|f^{\prime}(x_i)+f^{\prime\prime}(c_2)(x-x_i)-f^{\prime}(x_i)-f^{\prime\prime}(c_3)(C-x_i)|\\
             &=|f^{\prime\prime}(c_2)(x-x_i)-f^{\prime\prime}(c_3)(C-x_i)|\\
-            &\leq h \max_{x \in [a,b]} |f''(x)|
-        .\end{align*}
+            &\leq (x-C) |f''(\omega)|
+        ,\end{align*}
+donde la existencia de $\omega$ se sigue de que $f\in C^2[a,b]$. Ahora, en el intervalo $[a,b]$ la cota que obtenemos es
+
+$$|f^{\prime}(x)-l^{\prime}(x)|\leq h\max_{x\in [a,b]}|f^{\prime\prime}(x)|$$
     \end{proof}
 \end{itemize}

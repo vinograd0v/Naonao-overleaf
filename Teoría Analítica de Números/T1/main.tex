@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{color,graphicx}
+\usepackage{graphics}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{picinpar}
+\usepackage{newtxtext,fourier}
+\input{Files/boxes}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=25mm,
+ top=30mm,
+ }
+\begin{document}
+\setlength{\parindent}{0cm}
+\hoffset-0.46cm
+\voffset-1.46cm
+\noindent
+\hbox to \linewidth{
+  \begin{minipage}[t]{40pt}%
+    \vspace*{0pt}\includegraphics[scale=0.25]{Graphics/logo.eps}
+  \end{minipage}
+  \hss
+  \begin{minipage}[t]{0.8\linewidth}%
+    \vspace*{15pt}\centering
+    \large Universidad Nacional de Colombia\\
+    \normalsize Facultad de Ciencias\\
+    \normalsize Teoría analítica de números\\
+  \end{minipage}%
+  \hss
+}
+\phantom{xd}\\
+\small
+\textsf{Mateo Andrés Manosalva Amaris}
+\normalsize
+\dotfill
+\vspace{0.7cm}
+
+\textbf{Ejercicio 1.}
+\begin{theorem}
+    Dado $x\geq 2$,
+    $$\sum_{n\leq x}\varphi(n)=\dfrac{3x^2}{\pi^2}+O(x\log x)$$
+\end{theorem}
+\begin{proof}
+    En efecto
+    \begin{align*}
+    \sum_{n\leq x}\varphi(n)&=\sum_{n\leq x}n\sum_{d\mid n}\dfrac{\mu(d)}{d}\\
+    &=\sum_{dk\leq x}dk\dfrac{\mu(d)}{d}\\
+    &=\sum_{dk\leq x}k\mu(d)\\
+    &=\sum_{d\leq x}\mu(d)\sum_{k\leq x/d}k\\
+    &=\dfrac{1}{2}\sum_{d\leq x}\mu(d)\left(\left[\dfrac{x}{d}\right]\left(\left[\dfrac{x}{d}\right]+1\right)\right),
+    \end{align*}
+    y como $[x]=x+O(1)$, se sigue que 
+    \begin{align*}
+        \sum_{n\leq x}\varphi(n)&=\dfrac{1}{2}\sum_{d\leq x} \mu(d)\left(\dfrac{x^2}{d^2}+O\left(\dfrac{x}{d}\right)\right),\\
+    \end{align*}    
+    realizando el producto y usando que $\mu(d)=O(1)$, obtenemos
+    \begin{align*}
+        \sum_{n\leq x}\varphi(n)&=\dfrac{1}{2}\sum_{d\leq x}\left(\mu(d)\dfrac{x^2}{d^2}+O\left(\dfrac{x}{d}\right)\right)\\
+        &=\dfrac{x^2}{2}\sum_{d\leq x}\dfrac{\mu(d)}{d^2}+O\left(x\sum_{d\leq x}\frac{1}{d}\right)\\
+        &=\dfrac{x^2}{2}\left(\sum_{d=1}^{\infty}\dfrac{\mu(d)}{d^2}-\sum_{d>x}\dfrac{\mu(d)}{d^2}\right)+O(x\log x)\\
+        &= \dfrac{x^2}{2\zeta(2)}+O\left(x^2\sum_{d>x}\dfrac{1}{d^2}\right)+O(x\log x)\\
+        &=\dfrac{3x^2}{\pi^2}+O(x)+O(x\log x)\\
+        &=\dfrac{3x^2}{\pi^2}+O(x\log x)
+    \end{align*}
+\end{proof}
+ \end{document}

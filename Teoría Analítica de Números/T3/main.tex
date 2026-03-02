@@ -1,0 +1,65 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{color,graphicx}
+\usepackage{graphics}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{picinpar}
+\usepackage{newtxtext,fourier}
+\input{Files/boxes}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=25mm,
+ top=30mm,
+ }
+\begin{document}
+\setlength{\parindent}{0cm}
+\hoffset-0.46cm
+\voffset-1.46cm
+\noindent
+\hbox to \linewidth{
+  \begin{minipage}[t]{40pt}
+    \vspace*{0pt}\includegraphics[scale=0.22]{Graphics/logo.eps}
+  \end{minipage}
+  \hss
+  \begin{minipage}[t]{0.8\linewidth}
+    \vspace*{15pt}\centering
+     Universidad Nacional de Colombia\\
+    \small Facultad de Ciencias\\
+    Teoría analítica de números\\
+    Tarea III
+  \end{minipage}
+  \hss
+}
+\phantom{xd}\\
+\small
+\textsf{Mateo Andrés Manosalva Amaris}
+\normalsize
+\dotfill
+\vspace{0.3cm}
+
+\textbf{Ejercicio 1.} Demuestre que la serie
+$$\sum_p\dfrac{1}{p\log p}$$ es convergente
+
+\begin{proof}
+  Note que,
+
+  $$\sum_{p\leq x}\frac{1}{p\log p}=\sum_{p\leq x}\frac{\log p}{p\log^2p},$$
+  podemos convertir esta suma en una integral de Riemann-Stieltjess como sigue
+  \begin{align*}
+    \sum_{p\leq x}\frac{1}{p\log p}&=\int_{2^-}^x\frac{1}{\log^2t}d\left(\sum_{n\leq t}\frac{\mathbb{1}_p(n)\log(n)}{n}\right)\\
+    &=\int_{2^-}^x\frac{1}{\log^2t}d\left(\log t+O(1)\right)\\
+    &=\int_{2^-}^x\frac{1}{t\log^2t}dt\\
+    &=\dfrac{1}{\log 2}-\frac{1}{\log x}\\
+    &=O(1)
+  .\end{align*}
+\end{proof}
+Luego tomando $x\to \infty$, acabamos
+\end{document}

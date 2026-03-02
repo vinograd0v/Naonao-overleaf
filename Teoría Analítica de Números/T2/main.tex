@@ -1,0 +1,97 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{color,graphicx}
+\usepackage{graphics}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{picinpar}
+\usepackage{newtxtext,fourier}
+\input{Files/boxes}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=25mm,
+ top=30mm,
+ }
+\begin{document}
+\setlength{\parindent}{0cm}
+\hoffset-0.46cm
+\voffset-1.46cm
+\noindent
+\hbox to \linewidth{
+  \begin{minipage}[t]{40pt}
+    \vspace*{0pt}\includegraphics[scale=0.22]{Graphics/logo.eps}
+  \end{minipage}
+  \hss
+  \begin{minipage}[t]{0.8\linewidth}
+    \vspace*{15pt}\centering
+     Universidad Nacional de Colombia\\
+    \small Facultad de Ciencias\\
+    Teoría analítica de números\\
+    Tarea II
+  \end{minipage}
+  \hss
+}
+\phantom{xd}\\
+\small
+\textsf{Mateo Andrés Manosalva Amaris}
+\normalsize
+\dotfill
+\vspace{0.3cm}
+
+\textbf{Ejercicio 1.}
+\begin{theorem}
+    Dado $x\geq 2$,
+    $$\psi(x)-\vartheta(x)=O(\sqrt{x}\log x)$$
+\end{theorem}
+
+\begin{proof}
+Por definición 
+\begin{align*}
+\psi(x)-\vartheta(x)&=\sum_{p^k\leq x}\log p-\sum_{p\leq x}\log p\\
+&=\sum_{\substack{p^k\leq x\\k\geq 2}}\log p   
+.\end{align*}
+
+Note que, en realidad, la suma es finita, dado $p$ primo, siempre existe $k$ tal que $p^k>x$. Más precisamente, dado $p$, la suma para cuando $k=\log_p(x)$, obtenemos lo siguiente:
+
+$$
+\psi(x)-\vartheta(x)=\sum_{p^k\leq x}\log p \sum_{2\leq k\leq\log_p(x)}1
+,$$
+podemos escribir esto de una manera más sencilla de controlar, en efecto, si $p$ es un número primo tal que $x^{\frac{1}{k}}<p<x^{\frac{1}{2}}$, entonces $p^k>x$, por lo que realmente, podemos tomar la primera suma hasta $p\leq \sqrt{x}$ y esto no altera la igualdad. Esto es
+
+\begin{align*}
+  \psi(x)-\vartheta(x)&=\sum_{p\leq \sqrt{x} }\log p \sum_{2\leq k\leq\log_p(x)}1\\
+  &\leq\sum_{p\leq \sqrt{x} }\log p \left[\dfrac{\log x}{\log p} \right]\\
+  &\leq \sqrt{x}\log x
+.\end{align*}
+\end{proof}
+
+\textbf{Ejercicio 2.}
+\begin{theorem}
+    Dado $x\geq 2$,
+    $$\psi(x)-\vartheta(x)=O(\sqrt{x})$$
+\end{theorem}
+
+\begin{proof}
+  En efecto
+
+  \begin{align*}
+    \psi(x)-\vartheta(x)&=\sum_{2\leq k\leq \log_p(x)}\vartheta(x^{1/k})\\
+    &\leq\vartheta(x^{1/2})+\vartheta(x^{1/3})\sum_{3\leq k\leq \log_p(x)}1\\
+    &\leq\vartheta(x^{1/2})+\vartheta(x^{1/3})\left[\frac{\log x}{\log p}\right]
+  .\end{align*}
+Por los teoremas de Chevyshev, sabemos que $\vartheta(x)=O(x)$, así
+$$
+\psi(x)-\vartheta(x)=O(\sqrt{x})+O(x^{1/3}\log x)=O(\sqrt{x})
+$$
+ya que
+$$\lim_{x \to \infty} \dfrac{x^{1/3}\log x}{\sqrt{x}}=\lim_{x \to \infty}x^{-1/6}\log x=0$$
+\end{proof}
+
+\end{document}

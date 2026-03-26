@@ -1,0 +1,182 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{color,graphicx}
+\usepackage{graphics}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{picinpar}
+\usepackage{newtxtext,fourier}
+\input{Files/boxes}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=25mm,
+ top=30mm,
+ }
+\begin{document}
+\setlength{\parindent}{0cm}
+\hoffset-0.46cm
+\voffset-1.46cm
+\noindent
+\hbox to \linewidth{
+  \begin{minipage}[t]{40pt}
+    \vspace*{0pt}\includegraphics[scale=0.22]{Graphics/logo.eps}
+  \end{minipage}
+  \hss
+  \begin{minipage}[t]{0.8\linewidth}
+    \vspace*{15pt}\centering
+     Universidad Nacional de Colombia\\
+    \small Facultad de Ciencias\\
+    Teoría analítica de números\\
+    Tarea III
+  \end{minipage}
+  \hss
+}
+\phantom{xd}\\
+\small
+\textsf{Mateo Andrés Manosalva Amaris}
+\normalsize
+\dotfill
+\vspace{0.3cm}
+
+Recordemos primero la transformada de Fourier en $\mathbb{R}$. 
+
+\begin{definition}
+  Si $f \in L^1(\mathbb{R})$, se define
+\[
+\mathcal{F}(f)(\xi) = \widehat{f}(\xi) =
+\int_{\mathbb{R}} f(x)e^{-2\pi i x \xi}\, dx.
+\]
+
+Si además $f, \widehat{f} \in L^1(\mathbb{R})$, se tiene la fórmula de inversión
+\[
+f(x) =
+\int_{\mathbb{R}} \widehat{f}(\xi)e^{2\pi i x \xi}\, d\xi.
+\]
+\end{definition}
+
+La idea de este taller es observar que la transformada de Mellin puede interpretarse como una versión multiplicativa de la transformada de Fourier.
+
+\begin{definition}
+  Sea $f : \mathbb{R}^+ \to \mathbb{C}$ tal que la integral converja. La transformada de Mellin de $f$ se define por
+\[
+\mathcal{M}(f)(s) =
+\int_0^{\infty} f(y) y^s \frac{dy}{y}.
+\]
+
+Bajo hipótesis adecuadas, se tiene la fórmula de inversión
+\[
+f(y) = \frac{1}{2\pi i}
+\int_{(\sigma)} \mathcal{M}(f)(s) y^{-s}\, ds,
+\]
+donde $\int_{(\sigma)}$ denota integración sobre la recta vertical $\Re(s)=\sigma$.
+\end{definition}
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+\item Mostrar que la transformada de Mellin puede entenderse como la transformada de Fourier en el grupo multiplicativo $(\mathbb{R}^+, \cdot)$.
+
+\textbf{Sugerencia:} use el cambio de variables $y = e^x$, de modo que
+\[
+\frac{dy}{y} = dx.
+\]
+Después compare la expresión obtenida con la transformada de Fourier en $\mathbb{R}$, identificando convenientemente el parámetro $s$ con una variable puramente imaginaria.
+
+\textbf{Solución.} Considere la transformada de Mellin:
+
+$$\mathcal{M}(f)(s))=\int_0^\infty f(y)y^s\dfrac{dy}{y},$$
+
+aplicando el cambio de variable sugerido, $y=e^x$, obtenemos que 
+
+$$\int_0^\infty f(y)y^s\dfrac{dy}{y}=\int_{-\infty}^{\infty}f(e^x)e^{xs}dx,$$
+
+por definición de $\mathcal{F}$, tomando $s=-2\pi i \xi$, obtenemos que
+
+$$\mathcal{F}(f\circ e )\left(\xi\right)=\mathcal{F}(f\circ e )\left(\frac{s}{2\pi}i\right)=\mathcal{M}(f)(s).$$
+
+Esto nos permite concluir que la transformada de Mellin es justamente la transformada de Fourier, pero en $(\mathbb{R}^+,\cdot)$, ya que la función exponencial es justamente un isomorfismo entre los grupos aditivo y mulplicativo de $\mathbb{R}$, los detalles técnicos sobre el sentido de integración en este grupo se esclarecen en los siguientes numerales.
+
+\item Compare la fórmula de inversión de Fourier con la fórmula de inversión de Mellin.
+
+\textbf{Solución.} Como vimos, la tranformada de Mellin consiste en la transformada de Fourier de $f\circ e$, podemos aplicar entonces el teorema de inversión de Fourier, que bajo hipótesis adecuadas debería permitir invertir la transformada de Mellin, sin embargo, esto es formal, dada $f\in L^1(\mathbb{R})$ no necesariamente $f\circ e \in L^1(\mathbb{R})$, deben añadirse condiciones de decaimiento sobre $\mathcal{M}(f)(s)$ para garantizar la convergencia. Veamos cómo se relacionan estas fórmulas de inversión.
+
+Considere el cambio de variables $y=e^x$ en la inversión de Mellin.
+
+\begin{align*}
+f(e^x)=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\mathcal{M}(f)(s)e^{-xs}ds  
+.\end{align*}
+
+Ahora tome $s=\sigma+it$ de manera que $ds=idt$,
+
+\begin{align*}
+f(e^x)&=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}\mathcal{M}(f)(s)e^{-xs}ds\\
+&=\frac{e^{-x\sigma}}{2\pi}\int_{\mathbb{R}}\mathcal{M}(f)(\sigma+it)e^{-xit}dt\\
+&=\int_{\mathbb{R}}e^{-x\sigma}\mathcal{M}(f)(\sigma-2\pi iw)e^{2\pi i wx}dw
+.\end{align*}
+
+Ahora bien, la transformada de Mellin se puede escribir como una transformada de Fourier, note que
+
+\begin{align*}
+  \mathcal{M}(f)\left(\sigma-2\pi iw\right)&=\widehat{f\circ e}\left(\frac{\sigma}{2 \pi}i+w\right)\\
+  &=\int_\mathbb{R}f(e^x)e^{-2\pi i x\left((2\pi)^{-1}\sigma i+w\right)}dx\\
+  &=\int_\mathbb{R}f(e^x)e^{x\sigma}e^{-2\pi ixw}dx\\
+  &=\widehat{e^{x\sigma}f \circ e}(w),
+  \end{align*}
+
+por lo que finalmente, obtenemos que,
+
+$$e^{x\sigma}f(e^x)=\int_{\mathbb{R}}\widehat{e^{x\sigma}f\circ e}(w)e^{2\pi i wx}dw.$$
+
+Esto es justamente lo esperado de aplicar inversión de Fourier $\widehat{e^{x\sigma}f\circ e}$ siempre que esto sea posible.
+
+\item Explique por qué la medida natural en $(\mathbb{R}^+, \cdot)$ es $\dfrac{dy}{y}$ y no la medida $dy$.
+
+\textbf{Solución.}
+Dado un grupo topológico localmente compacto, el teorema de Weyl no dice que existe una única medida invariante por la operación del grupo. Como mencionamos, la transformada de Mellin es la transformada de Fourier pasando por el isomorfismo de grupos:
+
+\begin{align*}
+  f : (\mathbb{R},+) &\longrightarrow (\mathbb{R}^+,\cdot) \\
+  x &\longmapsto f(x) = e^x
+\end{align*}
+
+Este isomorfismo, de hecho, ya nos transforma la medida de modo que si $y=e^x$, $\dfrac{dy}{y}=dx$, veamos que justamente esta es la medida invariante con respecto al producto. Considere la integral
+
+$$\int_a^b \frac{dy}{y},$$
+
+note que si $ky=x$, entonces $kdy=dx$, esto concluye que $\dfrac{dy}{y}=\dfrac{dx}{x}$, así pues
+
+$$\int_{ka}^{kb} \frac{dx}{x}=\int_a^b\frac{dy}{y}$$
+
+\item Explique qué papel juega el cambio de variables $y = e^x$ en la relación entre la transformada de Mellin y la transformada de Fourier.
+
+\textbf{Solución.} Como mencionamos, el rol de la exponencial es justamente el ismomorfismo de grupos.
+
+\begin{align*}
+  f : (\mathbb{R},+) &\longrightarrow (\mathbb{R}^+,\cdot) \\
+  x &\longmapsto f(x) = e^x
+\end{align*}
+
+Lo que esclarece que la transformada de Mellin sea la versión multiplicativa de la tranformada de Fourier.
+
+\item Explique cómo se interpreta la recta vertical $\Re(s)=\sigma$ en la fórmula de inversión de Mellin.
+
+\textbf{Solución.} En el numeral (2) realizamos el cambio de variables $s=\sigma+iT$, donde $\sigma$ es fijo y $t$ es un parámetro real variando entre $(-\infty,\infty)$, este paso, esencialmente, nos permitía pasar de la fórmula de inversión de Mellin a la de Fourier, justamente, la forma en la que se interpreta esto viene de
+
+$$\dfrac{1}{2\pi i}\int_{(\sigma)}\mathcal{M}(f)(s)y^{-s}ds=\lim_{T \to \infty} \frac{1}{2\pi i}\int_{\sigma -iT}^{\sigma +iT}\mathcal{M}(f)()$$
+
+En donde al cambiar a una integral real estamos parametrizando la recta vertical en el plano complejo a través de $s=\sigma+iT$ con $T\in \mathbb{R}$.
+\end{enumerate}
+\subsection*{Referencia}
+
+\begin{itemize}
+  \item Elias M. Stein y Rami Shakarchi, \textit{Fourier Analysis: An Introduction}. 
+\end{itemize}
+
+\end{document}

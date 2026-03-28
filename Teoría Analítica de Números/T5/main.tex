@@ -34,7 +34,7 @@
      Universidad Nacional de Colombia\\
     \small Facultad de Ciencias\\
     Teoría analítica de números\\
-    Tarea III
+    Parcial I
   \end{minipage}
   \hss
 }
@@ -60,7 +60,7 @@ F_1(n)=\sum_{\substack{1\leq k\leq n\\ (k,n)=1}} f\!\left(\frac{k}{n}\right).
   \begin{align*}
     F_1(n)&=\sum_{\substack{k=1\\(k,n)}}^n f\left(\frac{k}{n}\right)=\sum_{k=1}^n e((k,n))f\left(\frac{k}{n}\right)\\
     &=\sum_{k\leq n}\left(\sum_{\substack{d\mid k\\d\mid n}}\mu(d)\right)f\left(\frac{k}{n}\right)\\
-    &=\sum_{d\mid n}\mu(d)\left(\sum_{\substack{k\leq n\\d\mid k}}f\left(\frac{x}{n}\right)\right) &&\text{Cambiando el orden de sumación}\\
+    &=\sum_{d\mid n}\mu(d)\left(\sum_{\substack{k\leq n\\d\mid k}}f\left(\frac{k}{n}\right)\right) &&\text{Cambiando el orden de sumación}\\
     &=\sum_{d\mid n}\mu(d)\left(\sum_{dq\leq n}f\left(\frac{dq}{n}\right)\right)\\
     &=\sum_{d\mid n}\mu(d)\left(\sum_{q\leq n/d}f\left(\frac{q}{n/d}\right)\right)=\sum_{d\mid n}\mu(d)F\left(\frac{n}{d}\right)
   .\end{align*}
@@ -74,16 +74,19 @@ F_1(n)=\sum_{\substack{1\leq k\leq n\\ (k,n)=1}} f\!\left(\frac{k}{n}\right).
     \]
 
  \begin{proof}
-      Sea $F(n)=\displaystyle\sum_{k=1}^ne^{2\pi ik/n}$, recordemos que estas son las raices del polinomomio $x^n-1$, así pues las fórmulas de Vieta nos dan que
+      Sea $F(n)=\displaystyle\sum_{k=1}^ne^{2\pi ik/n}$, recordemos que
 
-      $$F(n)=\begin{cases}
-        1 \quad n=1,\\
-        0 \quad n>1
-      \end{cases}$$
+      $$F(n)=
+\sum_{k=1}^n e^{2\pi i k/n}
+= \left(\sum_{k=0}^{n-1} e^{2\pi i k/n}\right) + e^{2\pi i}
+- 1
+= \frac{1 - e^{2\pi i n/n}}{1 - e^{2\pi i/n}} + 1 - 1
+= \frac{1 - e^{2\pi i}}{1 - e^{2\pi i/n}}
+= 0 \quad (n>1),
+    $$
+es claro que $F(n)=1$ si $n=1$. Obtenemos que $F(n)=e(n)=(1*\mu)(n)$, por el numeral anterior $F_1=\mu* F=\mu*e=\mu$, esto es 
 
-     obtenemos que $F(n)=e(n)=(1*\mu)(n)$, por el numeral anterior $F_1=\mu* F=\mu*e=\mu$, esto es 
-
-     \[F_1=\sum_{\substack{1\leq k\leq n\\(k,n)=1}} e^{2\pi i k/n}=\mu(n).
+     \[F_1(n)=\sum_{\substack{1\leq k\leq n\\(k,n)=1}} e^{2\pi i k/n}=\mu(n).
     \]
     \end{proof}   
 \end{enumerate}
@@ -113,6 +116,125 @@ Pruebe:
     \end{cases}
     \]
 \end{enumerate}
+
+\begin{lemma}
+    Sea $x\geq 1$, entonces tenemos las siguientes identidades
+
+    \begin{enumerate}[$\bullet$]
+        \item 
+        $\displaystyle\sum_{n \le x} \frac{1}{n^s}= \frac{x^{1-s}}{1-s} + \zeta(s) + O(x^{-s})\quad \text{si } s > 0,\; s \ne 1. $
+        \item $\displaystyle\sum_{n \le x} n^\alpha
+= \frac{x^{\alpha+1}}{\alpha+1} + O(x^\alpha)
+\quad \text{si } \alpha \ge 0.$
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Note que
+\begin{align*}
+\sum_{n \le x} \frac{1}{n^s}
+&= 1 + \int_1^x \frac{1}{t^s} \, d[t] \\
+&= 1 + \int_1^x \frac{1}{t^s} \, dt - \int_1^x \frac{1}{t^s} \, d\{t\} \\
+&= 1 + \frac{x^{1-s}}{1-s} - \frac{1}{1-s} - \int_1^x \frac{1}{t^s} \, d\{t\} \\
+&= 1 + \frac{x^{1-s}}{1-s} - \frac{1}{1-s}
+- \left( \frac{\{x\}}{x^s} + s \int_1^x t^{-s-1} \{t\} \, dt \right).
+\end{align*}
+
+Como $\{t\} = O(1)$, entonces
+\begin{align*}
+\sum_{n \le x} \frac{1}{n^s}
+&= \frac{x^{1-s}}{1-s} + 1 + \frac{1}{s-1}
+- s \int_1^x \frac{\{t\}}{t^{s+1}} \, dt + O(x^{-s}) \\
+&= \frac{x^{1-s}}{1-s} + \frac{s}{s-1}
+- s \int_1^x \frac{\{t\}}{t^{s+1}} \, dt + O(x^{-s}) \\
+&= \frac{x^{1-s}}{1-s} + \zeta(s) + O(x^{-s}),
+\end{align*}
+
+por la representación integral de $\zeta(s)$, esta representación integral tiene sentido para $s > 0$
+con $s \neq 1$, lo que concluye el resultado.\\
+
+Para la segunda identidad, procedemos de la misma forma
+
+\begin{align*}
+\sum_{n \le x} n^{\alpha}
+&= 1 + \int_1^x t^\alpha \, d[t] \\
+&= [x]x^\alpha - \int_1^x [t] \, d(t^\alpha) \\
+&= [x]x^\alpha - \alpha \int_1^x [t] t^{\alpha-1} \, dt \\
+&= x^{\alpha+1} + O(x^\alpha)
+   - \alpha \int_1^x (t + O(1)) t^{\alpha-1} \, dt \\
+&= x^{\alpha+1} + O(x^\alpha)
+   - \alpha \int_1^x t^\alpha \, dt
+   + O\!\left(\int_1^x t^{\alpha-1} dt\right) \\
+&= \frac{\alpha x^{\alpha+1}+x^{\alpha+1} }{\alpha+1}+ O(x^\alpha)- \alpha \frac{x^{\alpha+1}-1}{\alpha+1}+ O(x^\alpha) \\
+&= \frac{x^{\alpha+1}}{\alpha+1} + O(x^\alpha).
+\end{align*}
+\end{proof}
+
+Con estas estimaciones podemos proceder con la prueba de manera más directa.\\
+
+\begin{proof}
+(i) Por el lema anterior
+
+\begin{align*}
+\sum_{n \le x} \sigma_\alpha(n)
+&= \sum_{n \le x} \sum_{m \mid n} m^\alpha
+= \sum_{d \le x} \sum_{m \le x/d} m^\alpha \\
+&= \sum_{d \le x} \left(
+\frac{1}{\alpha+1}\left(\frac{x}{d}\right)^{\alpha+1}
++ O\!\left(\frac{x^\alpha}{d^\alpha}\right)
+\right) \\
+&= \frac{x^{\alpha+1}}{\alpha+1}
+\sum_{d \le x} \frac{1}{d^{\alpha+1}}
++ O\!\left(x^\alpha \sum_{d \le x} \frac{1}{d^\alpha}\right) \\
+&= \frac{x^{\alpha+1}}{\alpha+1}
+\left(
+\frac{x^{-\alpha}}{-\alpha} + \zeta(\alpha+1) + O\left(x^{-\alpha-1}\right)
+\right) + O\left(
+x^\alpha \left(
+\frac{x^{1-\alpha}}{1-\alpha} + \zeta(\alpha) + O\left(x^{-\alpha}\right)
+\right)
+\right) \\
+&= \frac{\zeta(\alpha+1)}{\alpha+1} x^{\alpha+1}
++ O(x) + O(1) + O(x^\alpha) \\
+&= \frac{\zeta(\alpha+1)}{\alpha+1} x^{\alpha+1}
++ O(x^\beta),
+\end{align*}
+
+donde $\beta = \max\{1,\alpha\}.$\\
+
+(ii) De la misma forma
+
+\[
+\sum_{n \le x} \sigma_{\alpha}(n)
+= \sum_{n \le x} \sum_{d \mid n} d^{\alpha}
+= \sum_{d \le x} d^{\alpha} \sum_{\substack{n \le x \\ d \mid n}} 1
+= \sum_{d \le x} d^{\alpha} \left( \frac{x}{d} + O(1) \right)= x \sum_{d \le x} d^{\alpha-1} + O\!\left(\sum_{d \le x} d^{\alpha}\right).
+\]
+
+ Si $\alpha \neq -1$, entonces
+
+\begin{align*}
+    \sum_{n \le x} \sigma_{\alpha}(n)&=x\left(\frac{x^{\alpha}}{\alpha}+\zeta(1-\alpha)+O(x^{\alpha-1})\right)+O\left(\frac{x^{1+\alpha}}{1+\alpha}+\zeta(-\alpha)+O(x^\alpha)\right)\\
+    &=x\zeta(1-\alpha)+O(x^{1+\alpha})+O(1)
+.\end{align*}
+
+Tenemos dos consideraciones, en efecto si $-1<\alpha<0$, entonces $O(x^{1+\alpha})$ domina a $O(1)$, si $\alpha<-1$, domina $O(1)$. así pues concluimos 
+
+$$\sum_{n \le x} \sigma_{\alpha}(n)=x\zeta(1-\alpha)+O(x^{\beta})\quad \text{donde } \beta=\max\{0,1+\alpha\}.$$
+
+Para concluir, en el caso $\alpha=-1$,
+\begin{align*}
+\sum_{n\le x}\sigma_{-1}(n)
+&=\sum_{n\le x}\sum_{d\mid n}\frac{1}{d}
+=\sum_{d\le x}\frac{1}{d}\sum_{\substack{n\le x\\ d\mid n}}1
+=\sum_{d\le x}\frac{1}{d}\left\lfloor \frac{x}{d}\right\rfloor \\
+&=\sum_{d\le x}\frac{1}{d}\left(\frac{x}{d}+O(1)\right)\\
+&= x\sum_{d\le x}\frac{1}{d^2} + O\!\left(\sum_{d\le x}\frac{1}{d}\right) \\
+&= x\left(\frac{\pi^2}{6}+O\!\left(\frac{1}{x}\right)\right) + O(\log x)
+= \frac{\pi^2}{6}\,x + O(\log x).
+\end{align*}
+\end{proof}
+
 \textbf{Ejercicio 3:} Sea
 
 $$F(s)=\sum_{n=1}^\infty \dfrac{a_n}{n^s},$$
@@ -199,7 +321,7 @@ F(s)=\sum_{k=0}^{\infty}\sum_{n=1}^\infty\dfrac{(a-s)^k}{k!}f(n)(\log n)^k n^{-a
 
 Nuevamente, como el radio de convergencia de (2) es mayor que 1, entonces, es convergente para algún $s\in \mathbb{R}$ tal que $s=c-\varepsilon$, con $\varepsilon>0$. En efecto $a-s=1+\varepsilon$, así pues, la serie (2) tiene términos no negativos para $n\geq n_0$, por lo tanto, el teorema de Tonelli permite cambiar el orden de sumación. Obtenemos que
 
-$$F(c-\varepsilon)=\sum_{n=1}^\infty\dfrac{f(n)}{n^a}\sum_{k=0}^\infty\dfrac{((1+\varepsilon)\log n)^k}{k!}=\sum_{n=1}^\infty\dfrac{f(n)}{n^a}e^{(1+\varepsilon)\log n}=\sum_{n=1}^\infty \dfrac{f(n)}{n^{c-e}}.$$
+$$F(c-\varepsilon)=\sum_{n=1}^\infty\dfrac{f(n)}{n^a}\sum_{k=0}^\infty\dfrac{((1+\varepsilon)\log n)^k}{k!}=\sum_{n=1}^\infty\dfrac{f(n)}{n^a}e^{(1+\varepsilon)\log n}=\sum_{n=1}^\infty \dfrac{f(n)}{n^{c-\varepsilon}}.$$
 
 Esto es, $F(s)=\displaystyle\sum_{n=1}^\infty f(n)n^{-s}$ converge para $s=c-\varepsilon$, entonces en particular, converge en el semiplano $\sigma>c-\varepsilon$.
 \end{proof}

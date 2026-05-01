@@ -1,0 +1,27 @@
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=1em}
+
+\newcommand{\sqed}{\hfill\includegraphics[height=2ex]{sancoya.png}}
+
+\theoremstyle{definition}
+\declaretheoremstyle[
+    headfont=\bfseries\color{black!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.7pt,
+        rightline=true, topline=true, bottomline=true,
+        linecolor=black, backgroundcolor=black!2!white,
+    }
+]{thmbox}
+
+\declaretheorem[style=thmbox, name=Definición]{definition}
+\declaretheorem[style=thmbox, numbered=no, name=Ejemplo]{example}
+\declaretheorem[style=thmbox, name=Proposición]{prop}
+\declaretheorem[style=thmbox, name=Teorema, numbered=no]{theorem}
+\declaretheorem[style=thmbox, name=Lema]{lemma}
+\declaretheorem[style=thmbox, numbered=no, name=Corolario]{corollary}
+\declaretheorem[style=thmbox, numbered=no, name=Nota]{note}
+
+
+

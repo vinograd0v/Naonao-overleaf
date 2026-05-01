@@ -34,7 +34,7 @@
      Universidad Nacional de Colombia\\
     \small Facultad de Ciencias\\
     Teoría analítica de números\\
-    Parcial I
+    Tarea V
   \end{minipage}
   \hss
 }
@@ -43,289 +43,185 @@
 \textsf{Mateo Andrés Manosalva Amaris}
 \normalsize
 \dotfill
-\vspace{0.3cm}
 
-\textbf{Ejercicio 1.} Sea $f(x)$ una función definida para todo racional $x\in[0,1]$ y defina
+\begin{theorem}
+    Sea $\mu(n)$ la función de Möbius y 
+$$
+M(x) = \sum_{n \leq x} \mu(n).
+$$
+Entonces
+$$
+\frac{M(x)}{x} \to 0 \quad \text{cuando } x \to \infty.
+$$
+\end{theorem}
+
+Antes de elaborar una prueba veamos cómo se comporta la serie de Dirichlet asociada a $\mu(n)$. Sea
 \[
-F(n)=\sum_{k=1}^{n} f\!\left(\frac{k}{n}\right),
-\qquad
-F_1(n)=\sum_{\substack{1\leq k\leq n\\ (k,n)=1}} f\!\left(\frac{k}{n}\right).
+g(s):=\zeta(s)-\frac{1}{s-1}.
 \]
-\begin{enumerate}[(i)]
-    \item Muestre que $F_1=\mu * F$ (convolución de Dirichlet).
+Tenemos que $g$ es holomorfa alrededor de $s=1$, podemos escribir
+$$
+\zeta(1+w)=\frac{1}{w}+g(1+w).
+$$
+Por tanto,
+$$
+\frac{1}{\zeta(1+w)}
+=
+\frac{1}{\dfrac{1}{w}+g(1+w)}
+=
+\frac{w}{1+w g(1+w)}.
+$$
 
-    \begin{proof}
-  Considere la suma con condición de coprimalidad, en efecto
-
-  \begin{align*}
-    F_1(n)&=\sum_{\substack{k=1\\(k,n)}}^n f\left(\frac{k}{n}\right)=\sum_{k=1}^n e((k,n))f\left(\frac{k}{n}\right)\\
-    &=\sum_{k\leq n}\left(\sum_{\substack{d\mid k\\d\mid n}}\mu(d)\right)f\left(\frac{k}{n}\right)\\
-    &=\sum_{d\mid n}\mu(d)\left(\sum_{\substack{k\leq n\\d\mid k}}f\left(\frac{k}{n}\right)\right) &&\text{Cambiando el orden de sumación}\\
-    &=\sum_{d\mid n}\mu(d)\left(\sum_{dq\leq n}f\left(\frac{dq}{n}\right)\right)\\
-    &=\sum_{d\mid n}\mu(d)\left(\sum_{q\leq n/d}f\left(\frac{q}{n/d}\right)\right)=\sum_{d\mid n}\mu(d)F\left(\frac{n}{d}\right)
-  .\end{align*}
-
-  Esto es, sencillamente que $F_1=\mu*F$, lo que se quería probar.
-\end{proof}
-
-    \item Pruebe que $\mu(n)$ es la suma de las raíces $n$-ésimas primitivas de la unidad:
-    \[
-    \mu(n)=\sum_{\substack{1\leq k\leq n\\(k,n)=1}} e^{2\pi i k/n}.
-    \]
-
- \begin{proof}
-      Sea $F(n)=\displaystyle\sum_{k=1}^ne^{2\pi ik/n}$, recordemos que
-
-      $$F(n)=
-\sum_{k=1}^n e^{2\pi i k/n}
-= \left(\sum_{k=0}^{n-1} e^{2\pi i k/n}\right) + e^{2\pi i}
-- 1
-= \frac{1 - e^{2\pi i n/n}}{1 - e^{2\pi i/n}} + 1 - 1
-= \frac{1 - e^{2\pi i}}{1 - e^{2\pi i/n}}
-= 0 \quad (n>1),
-    $$
-es claro que $F(n)=1$ si $n=1$. Obtenemos que $F(n)=e(n)=(1*\mu)(n)$, por el numeral anterior $F_1=\mu* F=\mu*e=\mu$, esto es 
-
-     \[F_1(n)=\sum_{\substack{1\leq k\leq n\\(k,n)=1}} e^{2\pi i k/n}=\mu(n).
-    \]
-    \end{proof}   
-\end{enumerate}
-\textbf{Ejercicio 2.} Sea
-\[
-\sigma_\alpha(n)=\sum_{d\mid n} d^\alpha.
-\]
-Pruebe:
-\begin{enumerate}[(i)]
-    \item Si $\alpha>0$ y $\alpha\neq 1$, entonces
-    \[
-    \sum_{n\leq x}\sigma_\alpha(n)
-    =
-    \zeta(\alpha+1)\frac{x^{\alpha+1}}{\alpha+1}
-    +O\!\left(x^\beta\right),
-    \qquad
-    \beta=\max\{1,\alpha\}.
-    \]
-
-    \item Si $\alpha<0$ y $\beta=\max\{0,1+\alpha\}$, entonces para $x\geq 2$,
-    \[
-    \sum_{n\leq x}\sigma_\alpha(n)
-    =
-    \begin{cases}
-    \zeta(1-\alpha)x+O(x^\beta), & \text{si } \alpha\neq -1,\\[1mm]
-    \dfrac{\pi^2}{6}x+O(\log x), & \text{si } \alpha=-1.
-    \end{cases}
-    \]
-\end{enumerate}
-
-\begin{lemma}
-    Sea $x\geq 1$, entonces tenemos las siguientes identidades
-
-    \begin{enumerate}[$\bullet$]
-        \item 
-        $\displaystyle\sum_{n \le x} \frac{1}{n^s}= \frac{x^{1-s}}{1-s} + \zeta(s) + O(x^{-s})\quad \text{si } s > 0,\; s \ne 1. $
-        \item $\displaystyle\sum_{n \le x} n^\alpha
-= \frac{x^{\alpha+1}}{\alpha+1} + O(x^\alpha)
-\quad \text{si } \alpha \ge 0.$
-    \end{enumerate}
-\end{lemma}
-
-\begin{proof}
 Note que
-\begin{align*}
-\sum_{n \le x} \frac{1}{n^s}
-&= 1 + \int_1^x \frac{1}{t^s} \, d[t] \\
-&= 1 + \int_1^x \frac{1}{t^s} \, dt - \int_1^x \frac{1}{t^s} \, d\{t\} \\
-&= 1 + \frac{x^{1-s}}{1-s} - \frac{1}{1-s} - \int_1^x \frac{1}{t^s} \, d\{t\} \\
-&= 1 + \frac{x^{1-s}}{1-s} - \frac{1}{1-s}
-- \left( \frac{\{x\}}{x^s} + s \int_1^x t^{-s-1} \{t\} \, dt \right).
-\end{align*}
+$
+w g(1+w)\to 0$ cuando $w\to 0.$
+Luego
+$1+w g(1+w)\neq 0.$
+Así,
+$$
+\frac{w}{1+w g(1+w)}
+$$
+es holomorfa alrededor de $w=0$. Además
 
-Como $\{t\} = O(1)$, entonces
-\begin{align*}
-\sum_{n \le x} \frac{1}{n^s}
-&= \frac{x^{1-s}}{1-s} + 1 + \frac{1}{s-1}
-- s \int_1^x \frac{\{t\}}{t^{s+1}} \, dt + O(x^{-s}) \\
-&= \frac{x^{1-s}}{1-s} + \frac{s}{s-1}
-- s \int_1^x \frac{\{t\}}{t^{s+1}} \, dt + O(x^{-s}) \\
-&= \frac{x^{1-s}}{1-s} + \zeta(s) + O(x^{-s}),
-\end{align*}
+$$
+\lim_{w\to 0}\frac{1}{\zeta(1+w)}=0.
+$$
 
-por la representación integral de $\zeta(s)$, esta representación integral tiene sentido para $s > 0$
-con $s \neq 1$, lo que concluye el resultado.\\
+Por lo tanto, $\dfrac{1}{\zeta(s)}$ tiene una singularidad removible en $s=1$ por el teorema de la singularidad removible de Riemann.
+Como $\zeta(s)\neq 0$ en $\Re(s)\geq 1$, luego concluimos que $\dfrac{1}{\zeta(s)}$ no tiene polos en la región $\Re(s)\geq 1$. Más aún, observemos su serie de Taylor alrededor de $s=1$, note que 
 
-Para la segunda identidad, procedemos de la misma forma
-
-\begin{align*}
-\sum_{n \le x} n^{\alpha}
-&= 1 + \int_1^x t^\alpha \, d[t] \\
-&= [x]x^\alpha - \int_1^x [t] \, d(t^\alpha) \\
-&= [x]x^\alpha - \alpha \int_1^x [t] t^{\alpha-1} \, dt \\
-&= x^{\alpha+1} + O(x^\alpha)
-   - \alpha \int_1^x (t + O(1)) t^{\alpha-1} \, dt \\
-&= x^{\alpha+1} + O(x^\alpha)
-   - \alpha \int_1^x t^\alpha \, dt
-   + O\!\left(\int_1^x t^{\alpha-1} dt\right) \\
-&= \frac{\alpha x^{\alpha+1}+x^{\alpha+1} }{\alpha+1}+ O(x^\alpha)- \alpha \frac{x^{\alpha+1}-1}{\alpha+1}+ O(x^\alpha) \\
-&= \frac{x^{\alpha+1}}{\alpha+1} + O(x^\alpha).
-\end{align*}
-\end{proof}
-
-Con estas estimaciones podemos proceder con la prueba de manera más directa.\\
-
-\begin{proof}
-(i) Por el lema anterior
-
-\begin{align*}
-\sum_{n \le x} \sigma_\alpha(n)
-&= \sum_{n \le x} \sum_{m \mid n} m^\alpha
-= \sum_{d \le x} \sum_{m \le x/d} m^\alpha \\
-&= \sum_{d \le x} \left(
-\frac{1}{\alpha+1}\left(\frac{x}{d}\right)^{\alpha+1}
-+ O\!\left(\frac{x^\alpha}{d^\alpha}\right)
-\right) \\
-&= \frac{x^{\alpha+1}}{\alpha+1}
-\sum_{d \le x} \frac{1}{d^{\alpha+1}}
-+ O\!\left(x^\alpha \sum_{d \le x} \frac{1}{d^\alpha}\right) \\
-&= \frac{x^{\alpha+1}}{\alpha+1}
+$$
+\zeta(s)=\frac{1}{s-1}+\gamma + a_1(s-1)+a_2(s-1)^2+\cdots ,
+$$
+donde \(\gamma\) es la constante de Euler--Mascheroni. Entonces
+$$
+\zeta(s)
+=
+\frac{1}{s-1}
 \left(
-\frac{x^{-\alpha}}{-\alpha} + \zeta(\alpha+1) + O\left(x^{-\alpha-1}\right)
-\right) + O\left(
-x^\alpha \left(
-\frac{x^{1-\alpha}}{1-\alpha} + \zeta(\alpha) + O\left(x^{-\alpha}\right)
-\right)
-\right) \\
-&= \frac{\zeta(\alpha+1)}{\alpha+1} x^{\alpha+1}
-+ O(x) + O(1) + O(x^\alpha) \\
-&= \frac{\zeta(\alpha+1)}{\alpha+1} x^{\alpha+1}
-+ O(x^\beta),
-\end{align*}
+1+\gamma(s-1)+a_1(s-1)^2+a_2(s-1)^3+\cdots
+\right).
+$$
+Por lo tanto
+$$
+\frac{1}{\zeta(s)}
+=
+(s-1)\dfrac{1}{\left(
+1+\gamma(s-1)+a_1(s-1)^2+O((s-1)^3)
+\right)}.
+$$
 
-donde $\beta = \max\{1,\alpha\}.$\\
+Sea
+$$
+A=\gamma(s-1)+a_1(s-1)^2+O((s-1)^3).
+$$
 
-(ii) De la misma forma
-
+Entonces
+$$
+(1+A)^{-1}
+=
+1-\gamma(s-1)-a_1(s-1)^2+\gamma^2(s-1)^2+O((s-1)^3),
+$$
+obtenemos
+\begin{equation}
+    \frac{1}{\zeta(s)}
+=
+(s-1)-\gamma(s-1)^2+(\gamma^2-a_1)(s-1)^3+O((s-1)^4).
+\end{equation}
+\begin{theorem}
+Sea $A$ una función real definida en $[1,\infty)$ tal que, para algún número $\alpha$,
 \[
-\sum_{n \le x} \sigma_{\alpha}(n)
-= \sum_{n \le x} \sum_{d \mid n} d^{\alpha}
-= \sum_{d \le x} d^{\alpha} \sum_{\substack{n \le x \\ d \mid n}} 1
-= \sum_{d \le x} d^{\alpha} \left( \frac{x}{d} + O(1) \right)= x \sum_{d \le x} d^{\alpha-1} + O\!\left(\sum_{d \le x} d^{\alpha}\right).
+\int_{1}^{\infty} \frac{A(x)-\alpha x}{x^{2}}\,dx
 \]
+converge.
 
- Si $\alpha \neq -1$, entonces
-
-\begin{align*}
-    \sum_{n \le x} \sigma_{\alpha}(n)&=x\left(\frac{x^{\alpha}}{\alpha}+\zeta(1-\alpha)+O(x^{\alpha-1})\right)+O\left(\frac{x^{1+\alpha}}{1+\alpha}+\zeta(-\alpha)+O(x^\alpha)\right)\\
-    &=x\zeta(1-\alpha)+O(x^{1+\alpha})+O(1)
-.\end{align*}
-
-Tenemos dos consideraciones, en efecto si $-1<\alpha<0$, entonces $O(x^{1+\alpha})$ domina a $O(1)$, si $\alpha<-1$, domina $O(1)$. así pues concluimos 
-
-$$\sum_{n \le x} \sigma_{\alpha}(n)=x\zeta(1-\alpha)+O(x^{\beta})\quad \text{donde } \beta=\max\{0,1+\alpha\}.$$
-
-Para concluir, en el caso $\alpha=-1$,
-\begin{align*}
-\sum_{n\le x}\sigma_{-1}(n)
-&=\sum_{n\le x}\sum_{d\mid n}\frac{1}{d}
-=\sum_{d\le x}\frac{1}{d}\sum_{\substack{n\le x\\ d\mid n}}1
-=\sum_{d\le x}\frac{1}{d}\left\lfloor \frac{x}{d}\right\rfloor \\
-&=\sum_{d\le x}\frac{1}{d}\left(\frac{x}{d}+O(1)\right)\\
-&= x\sum_{d\le x}\frac{1}{d^2} + O\!\left(\sum_{d\le x}\frac{1}{d}\right) \\
-&= x\left(\frac{\pi^2}{6}+O\!\left(\frac{1}{x}\right)\right) + O(\log x)
-= \frac{\pi^2}{6}\,x + O(\log x).
-\end{align*}
-\end{proof}
-
-\textbf{Ejercicio 3:} Sea
-
-$$F(s)=\sum_{n=1}^\infty \dfrac{a_n}{n^s},$$
-
-donde $a_n$ es completamente multiplicativa y la serie converge absolutamente para $\sigma>\sigma_a$. Probar que para $\sigma>\sigma_a$ se cumple que 
-
-$$\dfrac{F^\prime(s)}{F(s)}=-\sum_{n=1}^\infty\dfrac{a_n\Lambda(n)}{n^s}$$
-
-\begin{lemma}
-    Sean $f$ y $g$ las funciones aritmética asociadas a $F(s)$ y $G(s)$, considere $h=f*g$ y $H(s)$ su serie de Dirichlet asociada. Si $F(s)$ y $G(s)$ convergen absolutamente en $s$, entonces $H(s)$ también y además $H(s)=F(s)G(s)$ 
-\end{lemma}
-
-\begin{proof}
-     Por la convergencia absoluta
-     \begin{align*}
-         F(s)G(s)&=\sum_{k=1}^\infty\dfrac{f(k)}{k^s}\sum_{m=1}^\infty\dfrac{g(m)}{m^s}\\
-         &=\sum_{k=1}^\infty\sum_{m=1}^\infty\dfrac{f(k)g(m)}{k^sm^s}\\
-         &=\sum_{n=1}^{\infty}\dfrac{1}{n^s}\sum_{km=n}f(k)g(m)\\
-         &=\sum_{n=1}^\infty\dfrac{(f*g)(n)}{n^s}
-     \end{align*}
-
-     La convergencia absoluta de $H(s)$ se sigue de 
-
-     $$\sum_{n=1}^\infty\left|\dfrac{h(n)}{n^s}\right|=\sum_{n=1}^{\infty}\dfrac{1}{|n^s|}\sum_{km=n}|f(k)||g(m)|=\sum_{k=1}^\infty\left|\dfrac{f(k)}{k^s}\right|\sum_{m=1}^\infty\left|\dfrac{g(m)}{m^s}\right|<\infty$$
-\end{proof}
-
-\begin{lemma}
-    Sea $f$ una función completamente multiplicativa, entonces $(f(g*h))(n)=(fg*fh)(n)$.
-\end{lemma}
-
-\begin{proof}
-Por hipótesis, $f$ es completamente multiplicativa, esto es, $f(n)=f(j)f\left(\dfrac{n}{j}\right)$, así pues
-    \begin{align*}
-        (f(g*h))(n)&=f(n)\sum_{j\mid n}g(j)h\left(\dfrac{n}{j}\right)\\
-        &=\sum_{j\mid n}g(j)f(j)h\left(\dfrac{n}{j}\right)f\left(\dfrac{n}{j}\right)\\
-        &=\sum_{j\mid n}fg(j)fh\left(\dfrac{n}{j}\right)\\
-        &=(fg*fh)(n).
-    \end{align*}
-\end{proof}
-
-Ahora procedemos con la prueba.
-
- \begin{proof}
-     En efecto, para $\sigma>\sigma_a$ se cumple que
-
-    \begin{align*}
-        F^\prime(s)&=-\sum_{n=1}^\infty\dfrac{a_n\log n}{n^s}\\
-        &=-\sum_{n=1}^\infty\dfrac{a_n(\Lambda*1)(n)}{n^s} &&\text{Teorema Fundamental de la Aritmética}\\
-        &=-\sum_{n=1}^\infty\dfrac{a_n\Lambda(n)*a_n}{n^s}\\
-        &=-\sum_{n=1}^\infty\dfrac{a_n\Lambda(n)}{n^s}\sum_{n=1}^\infty\dfrac{a_n}{n^s}=-\sum_{n=1}^\infty\dfrac{a_n\Lambda(n)}{n^s}F(s),
-    \end{align*}
-    donde la separación de esta convolución como un producto, está justificada por el lema anterior, ya que $F(s)$ converge absolutamente en el semiplano $\sigma>\sigma_a$, además como $\Lambda(n)\leq \log n$ y $F^\prime(s)$ converge absolutamente en $\sigma>\sigma_a$, entonces también lo hace $\displaystyle\sum_{n=1}^\infty\dfrac{a_n\Lambda(n)}{n^s}.$ De esto se sigue el resultado.
- \end{proof}
-
-
-\textbf{Ejercicio 4.} Sea
-\[
-F(s)=\sum_{n=1}^{\infty} \frac{f(n)}{n^{s}},
-\]
-convergente para $\sigma>c$, donde $c$ es finito, y suponga que $f(n)\ge 0$ para todo $n\ge n_0$.
-
-\begin{enumerate}[(a)]
-    \item Demostrar que si $F(s)$ es analítica en un disco alrededor de $s=c$, entonces la serie converge en $\sigma>c-\varepsilon$ para algún $\varepsilon>0$.
-
-    \item Concluir que si la abscisa de convergencia $\sigma_c$ es finita, entonces $F(s)$ tiene una singularidad en el punto $s=\sigma_c$ sobre el eje real.
+Supongamos además que se cumple una de las siguientes condiciones:
+\begin{enumerate}
+  \item[(i)] $A$ es creciente y no negativa; o
+  \item[(ii)] existe otra función $B$ tal que $B$ y $B-A$ son crecientes y no negativas, y además, para algún número $\beta$,
+  \[
+  \int_{1}^{\infty} \frac{B(x)-\beta x}{x^{2}}\,dx
+  \]
+  converge.
 \end{enumerate}
 
+Entonces,
+\[
+\frac{A(x)}{x} \longrightarrow \alpha
+\qquad \text{cuando } x \to \infty.
+\]
+\end{theorem}
+
+Queremos aplicar el teorema anterior para $A(x)=\sum_{n\leq x} \mu(n)$, esto se hace en virtud de la segunda condición, ya que podemos tomar
+
+$$B(x)=\sum_{n\leq x}1=x,$$
+
+como $|\mu(n)|\leq 1$, se sigue que $A(x)\leq x$, de esta forma $B(x)$ y $(B-A)(x)$ son crecientes y no negativas, tomando $\beta=1$, la integral
+
+\[
+  \int_{1}^{\infty} \frac{B(x)-\beta x}{x^{2}}\,dx
+  \]
+
+converge. Bastaría ver que, en efecto
+
+\[
+\int_{1}^{\infty} \frac{A(x)}{x^{2}}\,dx
+\]
+
+converge, ya que en este caso $\alpha=0$ y esto es precisamente, que $A(x)/x\to 0$ cuando $x\to \infty$. Para esto usamos el siguiente teorema. 
+
+\pagebreak
+
+\begin{lemma}
+Sea $f$ una función compleja diferenciable en una región que contiene
+$$
+\{ s : \Re(s) \geq 1 \},
+$$
+salvo posiblemente en $s = 1$. Supóngase que:
+
+\begin{itemize}
+\item[(i)]
+$$
+f(s) = \int_1^\infty \frac{A(x)}{x^{s+1}}\,dx, \qquad \Re(s) > 1;
+$$
+
+\item[(ii)]
+$$
+f(s) = \frac{\alpha}{s-1} + g(s),
+$$
+donde $g$ es diferenciable en $s = 1$;
+
+\item[(iii)] existe una constante $M$ tal que
+$$
+|A(x)| \leq Mx, \qquad x \geq 1.
+$$
+\end{itemize}
+
+Entonces,
+$$
+\int_1^\infty \frac{A(x) - \alpha x}{x^2}\,dx
+$$
+converge y su valor es $g(1)$.
+\end{lemma}
+
 \begin{proof}
-    Sea $a=1+c$, como $F$ es analítica en $a$, entonces por el teorema de Taylor
+    
+Note que para $\Re(s)>1$
 
-    \begin{align}
-        F(s)=\sum_{k=0}^\infty\dfrac{F^{(k)}(a)}{k!}(s-a)^k,
-    \end{align}
+$$g(s)=\sum_{n=1}^{\infty}\dfrac{\mu(n)}{n^s}=1+\int_1^\infty x^{-s}d(A(x))=s\int_1^\infty\dfrac{A(x)}{x^{s+1}}dx,$$
 
- además el radio de convergencia de esta serie de potencias es mayor que 1, ya que $F$ es analítica en $c$. Como vimos $\displaystyle F^\prime(s)=-\sum_{n=1}^\infty\dfrac{f(n)\log n}{n^s}$, luego derivando de forma iterada, obtenemos que
+así pues, sea $f(s)=\dfrac{g(s)}{s}=\dfrac{0}{s-1}+\eta(s)$ con $\eta(s)$ analítica en $s=1$ por (1), ya que vimos que $g(s)=\dfrac{1}{\zeta(s)}$ no tiene polos en $s=1$, además, como vimos $|A(x)|\leq x$, de esto se sigue que 
 
-    $$F^{(k)}(a)=(-1)^k \sum_{n=1}^{\infty}f(n)(\log n)^kn^{-a}$$
-
-podemos reescribir (1) como:
-
-\begin{align}
-F(s)=\sum_{k=0}^{\infty}\sum_{n=1}^\infty\dfrac{(a-s)^k}{k!}f(n)(\log n)^k n^{-a}
-\end{align}
-
-Nuevamente, como el radio de convergencia de (2) es mayor que 1, entonces, es convergente para algún $s\in \mathbb{R}$ tal que $s=c-\varepsilon$, con $\varepsilon>0$. En efecto $a-s=1+\varepsilon$, así pues, la serie (2) tiene términos no negativos para $n\geq n_0$, por lo tanto, el teorema de Tonelli permite cambiar el orden de sumación. Obtenemos que
-
-$$F(c-\varepsilon)=\sum_{n=1}^\infty\dfrac{f(n)}{n^a}\sum_{k=0}^\infty\dfrac{((1+\varepsilon)\log n)^k}{k!}=\sum_{n=1}^\infty\dfrac{f(n)}{n^a}e^{(1+\varepsilon)\log n}=\sum_{n=1}^\infty \dfrac{f(n)}{n^{c-\varepsilon}}.$$
-
-Esto es, $F(s)=\displaystyle\sum_{n=1}^\infty f(n)n^{-s}$ converge para $s=c-\varepsilon$, entonces en particular, converge en el semiplano $\sigma>c-\varepsilon$.
+$$
+\int_1^\infty \frac{A(x)}{x^2}\,dx
+$$
+converge a $\eta(1)=\lim_{s\to 1} \dfrac{s}{\zeta(s)}=0$
 \end{proof}
 
-Finalmente, supongamos que $\sigma_c$ no es una singularidad de $F$, luego $F(s)$ es analítica en $s=\sigma_c$, pero por lo anterior, esto significa que $F(s)$ converge en $\sigma>c-\varepsilon$ lo que contradice que $\sigma_c$ es la abscisa de convergencia.
+Esto completa la prueba. Es tentador escribir que 
 
+$$
+\int_1^\infty \frac{A(x)}{x^2}\,dx=\dfrac{1}{\zeta(1)}
+$$
+ y concluir de manera automáticamente la convergencia de la integral, sin embargo, esto es impreciso, la expresión integral en (i) solo es válida para $\Re(s)>1$, estudiar el comportamiento en $s=1$, la parte Tauberiana de la prueba, permite dar una prueba rigurosa.
 \end{document}
